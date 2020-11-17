@@ -12,6 +12,10 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
+# Install langs
+brew install nvm
+brew install rust
+
 # Install some other useful utilities like `sponge`.
 brew install moreutils
 
