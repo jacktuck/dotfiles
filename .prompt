@@ -1,0 +1,8 @@
+if [[ ! -d "$HOME/.zsh" ]]
+then
+	mkdir -p "$HOME/.zsh"
+	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi 
+
+autoload -U promptinit; promptinit
+prompt pure
