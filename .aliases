@@ -11,7 +11,6 @@ alias -- -="cd -"
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias g="git"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -82,7 +81,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Open VSCode
-alias c="code-insiders"
+alias c="code"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -144,3 +143,29 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Git aliases
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+alias gp='git add -ip'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+
+alias gcmsg='git commit -m'
+alias gcam='git commit -a -m'
+
+alias gco='git checkout'
+alias gcm='git checkout $(git_main_branch)'
+alias gcd='git checkout develop'
+alias gcb='git checkout -b'
+
+alias gclean='git clean -xfd'
+alias gs='git status'
+
+alias gd='git diff'
+alias gdca='git diff --cached'
+alias gds='git diff --staged'
