@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function git_main_branch() {
+git_main_branch() {
   local branch
   for branch in main trunk; do
     if command git show-ref -q --verify refs/heads/$branch; then
@@ -11,7 +11,7 @@ function git_main_branch() {
   echo master
 }
 
-function git_main_branch() {
+git_main_branch() {
   local branch
   for branch in main trunk; do
     if command git show-ref -q --verify refs/heads/$branch; then
@@ -20,4 +20,8 @@ function git_main_branch() {
     fi
   done
   echo master
+}
+
+gclone() {
+  git clone "$1" && cd "$(basename "$1" .git)"
 }
