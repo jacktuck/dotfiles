@@ -166,10 +166,10 @@ alias gcb='git checkout -b'
 alias gclean='git clean -xfd'
 alias gs='git status'
 alias gl='git log'
-alias gpl='git pull origin $(git_main_branch)'
+alias gpl='git pull origin $(git_current_branch)'
 
-alias ghp='git push origin $(git_main_branch)'
-alias gphf='git push origin $(git_main_branch) -f'
+alias ghp='git push origin $(git_current_branch)'
+alias gphf='git push origin $(git_current_branch) -f'
 
 alias gd='git diff'
 alias gdca='git diff --cached'
