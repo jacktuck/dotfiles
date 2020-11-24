@@ -1,7 +1,5 @@
-# Add `~/bin` to the `$PATH`
+export PATH="/Library/TeX/texbin/latexmk:$PATH"
 export PATH="$HOME/bin:$PATH";
-
-# Add `~/.cargo/bin` to the `$PATH`
 export PATH="$HOME/.cargo/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
