@@ -13,3 +13,6 @@ unset file;
 # Add tab completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Lazy directory switching
+setopt autocd
