@@ -40,6 +40,7 @@ brew install openssh
 brew install git
 brew install ssh-copy-id
 brew install tree
+brew cask install mactex-no-gui
 
 # Remove outdated versions from the cellar.
 brew cleanup
