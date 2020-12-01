@@ -16,3 +16,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Lazy directory switching
 setopt autocd
+
+# Load NVM
+source $(brew --prefix nvm)/nvm.sh
+
