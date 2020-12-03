@@ -43,8 +43,8 @@ brew install ssh-copy-id
 brew install tree
 brew cask install mactex-no-gui
 
-# Install pygmentize for coloured less output
-brew install pygmentize
+# Install bat for coloured less output
+brew install bat
 
 # Remove outdated versions from the cellar.
 brew cleanup

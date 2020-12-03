@@ -40,6 +40,5 @@ export GPG_TTY=$(tty);
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
-# Add colored less output
-export LESS='-R';
-export LESSOPEN='|pygmentize -g %s';
+export BAT_THEME="TwoDark"
+export BAT_PAGER="less -RF"
