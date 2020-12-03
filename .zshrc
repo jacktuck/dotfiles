@@ -4,7 +4,7 @@
 for file in ~/.{path,prompt,exports,functions,aliases,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
-unset file;
+unset file
 
 # Add tab completion
 autoload -Uz compinit && compinit
