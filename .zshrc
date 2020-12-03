@@ -1,7 +1,3 @@
-export PATH="/Library/TeX/texbin/latexmk:$PATH"
-export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.cargo/bin:$PATH";
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -21,4 +17,3 @@ setopt autocd
 mkdir -p ~/.nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
