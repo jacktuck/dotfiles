@@ -18,5 +18,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt autocd
 
 # Load NVM
+mkdir -p ~/.nvm
+export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
