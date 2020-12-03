@@ -38,6 +38,7 @@ brew install grep
 brew install openssh
 
 # Install other useful binaries.
+brew install ripgrep
 brew install git
 brew install ssh-copy-id
 brew install tree
