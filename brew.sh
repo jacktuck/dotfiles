@@ -12,40 +12,28 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-# Install langs
-brew install nvm
-brew install pyenv
-brew install rust
-
 # Install some other useful utilities like `sponge`.
 brew install moreutils
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 
-# Install GNU `sed`, overwriting the built-in `sed`.
+brew install nvm
+brew install pyenv
+brew install rust
 brew install gnu-sed
-
-# Install `wget` with IRI support.
 brew install wget
-
-# Install GnuPG to enable PGP-signing commits.
 brew install gnupg
-
-# Install more recent versions of some macOS tools.
 brew install vim
 brew install grep
 brew install openssh
-
-# Install other useful binaries.
 brew install ripgrep
 brew install git
 brew install ssh-copy-id
 brew install tree
 brew cask install mactex-no-gui
-
-# Install bat for coloured less output
 brew install bat
+brew install aria2
 
 # Remove outdated versions from the cellar.
 brew cleanup
