@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-export PATH="/Library/TeX/texbin/latexmk:$PATH"
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.cargo/bin:$PATH";
 
