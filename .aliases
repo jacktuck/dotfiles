@@ -174,6 +174,3 @@ alias gpf='git push origin $(git_current_branch) -f'
 alias gd='git diff'
 alias gdca='git diff --cached'
 alias gds='git diff --staged'
-
-alias cat='bat --plain --paging=never'
-alias less='bat --plain --paging=always --pager="less -RF --no-init"'
