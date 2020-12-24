@@ -31,7 +31,7 @@ brew install ripgrep
 brew install git
 brew install ssh-copy-id
 brew install tree
-brew cask install mactex-no-gui
+brew install basictex
 brew install aria2
 
 # Remove outdated versions from the cellar.
