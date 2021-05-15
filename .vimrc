@@ -106,4 +106,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
 call plug#end()
