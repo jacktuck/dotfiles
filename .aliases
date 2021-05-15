@@ -174,3 +174,6 @@ alias gpf='git push origin $(git_current_branch) -f'
 alias gd='git diff'
 alias gdca='git diff --cached'
 alias gds='git diff --staged'
+
+# Miscellaneous
+alias screencapture='osascript ~/scripts/screen_capture.scpt'
