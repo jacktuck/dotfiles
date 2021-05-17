@@ -163,7 +163,7 @@ alias gcm='git checkout $(git_main_branch)'
 alias gcd='git checkout develop'
 alias gcb='git checkout -b'
 
-alias gclean='git clean -xfd'
+alias gclean='git clean -xfd --exclude node_modules'
 alias gs='git status'
 alias gl='git log'
 alias gpl='git pull origin $(git_current_branch)'
