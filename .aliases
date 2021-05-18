@@ -146,6 +146,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Git aliases
 alias g='git'
+alias git_current_branch='git rev-parse --symbolic-full-name --abbrev-ref HEAD'
 
 alias ga='git add'
 alias gaa='git add --all'
