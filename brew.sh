@@ -29,6 +29,7 @@ brew install grep
 brew install openssh
 brew install ripgrep
 brew install git
+brew install diff-so-fancy
 brew install ssh-copy-id
 brew install tree
 brew install basictex
