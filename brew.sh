@@ -18,6 +18,10 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 
+# Install Docker
+brew install --cask docker
+brew install docker-compose
+
 brew install nvm
 brew install pyenv
 brew install rust
