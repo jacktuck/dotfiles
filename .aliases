@@ -166,7 +166,7 @@ alias gcb='git checkout -b'
 
 alias gclean='git clean -xfd --exclude node_modules'
 alias gs='git status'
-alias gl='git log'
+alias gl='git log --name-status'
 alias gpl='git pull origin $(git_current_branch)'
 
 alias gp='git push origin $(git_current_branch)'
