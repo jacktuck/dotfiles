@@ -18,5 +18,5 @@ mkdir -p ~/.nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-[ ! -f "$HOME/z.sh" ] && wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O "$HOME/z.sh"
+[ ! -f "$HOME/z.sh" ] && curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o "$HOME/z.sh"
 . "$HOME/z.sh"
