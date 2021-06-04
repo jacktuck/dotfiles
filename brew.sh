@@ -39,6 +39,7 @@ brew install tree
 brew install basictex
 brew install aria2
 brew install tmux
+brew install gh
 
 # Remove outdated versions from the cellar.
 brew cleanup
