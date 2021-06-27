@@ -8,7 +8,7 @@ set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
-set esckeys
+" set esckeys
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
@@ -139,6 +139,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
+" let g:fzf_prefer_tmux = 1
+let g:fzf_layout = { 'down': '~40%' }
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -146,4 +149,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim'
 Plug 'justinmk/vim-dirvish'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
