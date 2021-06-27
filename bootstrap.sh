@@ -12,4 +12,7 @@ rsync --exclude ".git/" \
 	--exclude "LICENSE-MIT.txt" \
 	-avh --no-perms . ~;
 
+mkdir -p ~/.config/nvim 
+cp ~/.vimrc ~/.config/nvim/init.vim
+cp -r .vim/* ~/.config/nvim/
 source ~/.zshrc;
