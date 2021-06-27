@@ -139,14 +139,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-let g:dirvish_git_indicators = {
-  \ 'Modified'  : 'M',
-  \ 'Staged'    : '+',
-  \ 'Untracked' : 'U',
-  \ 'Renamed'   : '>',
-  \ 'Unknown'   : '?'
-\ }
-
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -154,5 +146,4 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim'
 Plug 'justinmk/vim-dirvish'
-Plug 'kristijanhusak/vim-dirvish-git'
 call plug#end()
