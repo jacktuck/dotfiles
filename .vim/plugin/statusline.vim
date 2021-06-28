@@ -19,11 +19,11 @@ function! StatusLineGitFlag()
     if b:git_behind_flag == ""
       let b:git_behind_flag = ''
     else
-      let b:git_behind_flag = '⇣'
+      let b:git_behind_flag = ' ⇣'
     endif
   endif
 
-  return b:git_branch .  b:git_dirty_flag . ' ' . b:git_behind_flag . '  |'
+  return b:git_branch .  b:git_dirty_flag . b:git_behind_flag . '  |'
 endfunction
 
 function! s:StatusLineClearVars()
