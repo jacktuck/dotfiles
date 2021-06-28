@@ -22,7 +22,7 @@ function! StatusLineGitFlag()
 endfunction
 
 set statusline=%(\ %{fugitive#head()}%)
-set statusline+=%(\ %{StatusLineGitFlag()}\ \ \|%)
+set statusline+=%(%{StatusLineGitFlag()}\ \ \|%)
 " set statusline+=%{expand('%:~:F')}
 set statusline+=%(\ \ %{pathshorten(expand('%:~:F'))}\ \ %) " File path
 
