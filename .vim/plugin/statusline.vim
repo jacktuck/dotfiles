@@ -21,6 +21,17 @@ function! StatusLineGitFlag()
   return b:git_dirty_flag . b:git_behind_flag
 endfunction
 
+function! s:StatusLineClearVars()
+  unlet! b:git_dirty_flag
+  unlet! b:git_behind_flag
+endfunction
+
+augroup StatusLine
+  au!
+
+  autocmd WinEnter,CursorHold * call <SID>StatusLineClearVars()
+augroup END
+
 set statusline=%(\ %{fugitive#head()}%)
 set statusline+=%(%{StatusLineGitFlag()}\ \ \|%)
 " set statusline+=%{expand('%:~:F')}
