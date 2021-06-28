@@ -83,15 +83,15 @@ function! StatusLineALE() abort
 endfunction
 
 " set statusline+%\ \ (%{fugitive#head()}\ \|%)
-set statusline=%(\ \ *%{fugitive#head()}%*\ \|%)
+set statusline=%(\ %{fugitive#head()}\ \ \|%)
 " set statusline+=%(%r%m\ %)
 
 " set statusline+=%2*%(%{StatusLineALE()}\ %)%*
 "
 " set statusline+=%{expand('%:~:F')}
-set statusline+=%{pathshorten(expand('%:~:F'))} " File path
+set statusline+=%(\ \ %{pathshorten(expand('%:~:F'))}\ \ \|%) " File path
 
 " set statusline+=%<%=
-set statusline+=%(%{&filetype}\ \|\ %) " File type
-set statusline+=%(%3p%%\ \|\ %)
+set statusline+=%(\ \ %{&filetype}\ \ \|%) " File type
+set statusline+=%(%3p%%\ \ \|%)
 set statusline+=%3l(%L):%-3c
