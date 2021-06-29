@@ -76,6 +76,7 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 au FocusGained,BufEnter * :checktime
+set autochdir
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -149,8 +150,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 Plug 'neoclide/coc.nvim'
-Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
