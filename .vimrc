@@ -1,5 +1,5 @@
 set background=dark
-colorscheme seoul256
+colorscheme molokai
 
 " Make Vim more useful
 set nocompatible
@@ -157,7 +157,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'neoclide/coc.nvim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
