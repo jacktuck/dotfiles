@@ -152,4 +152,5 @@ Plug 'neoclide/coc.nvim'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 call plug#end()
