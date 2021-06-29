@@ -15,7 +15,7 @@ function! StatusLineGitFlag()
   if !exists('b:git_behind_flag')
     let b:git_behind_flag = functions#GitExecInPath("git rev-list HEAD...origin/". b:git_branch)[:-2]
     if b:git_behind_flag != ""
-      let b:git_behind_flag = ' ⇣'
+      let b:git_behind_flag = ' ⇡'
     endif
   endif
 
