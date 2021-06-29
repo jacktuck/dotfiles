@@ -75,9 +75,13 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+" Reloading
 au FocusGained,BufEnter * :checktime
-" set autochdir
-autocmd BufEnter * silent! lcd %:p:h
+set autoread
+
+set autochdir
+"autocmd BufEnter * silent! lcd %:p:h
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
