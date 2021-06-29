@@ -36,16 +36,13 @@ augroup StatusLine
   autocmd WinEnter,CursorHold * call <SID>StatusLineClearVars()
 augroup END
 
-" set statusline=%(\ %{fugitive#head()}%)
-set statusline+=\ \ %{StatusLineGitFlag()}\ \ 
+set statusline+=\ %{StatusLineGitFlag()}
 " set statusline+=%{expand('%:~:F')}
-set statusline+=%{pathshorten(expand('%:~:F'))} " File path
+set statusline+=\ \ %{pathshorten(expand('%:~:F'))} " File path
 
 set statusline+=%= " Align right
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=%(%4p%%%) " File progress
-set statusline+=%4l(%L):%-4c " Line/column number
-" set statusline+=\ %p%%
-" set statusline+=\ %l:%c
+set statusline+=%y
+set statusline+=\ \ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ \ [%{&fileformat}\]
+set statusline+=\ \ %p%%
+set statusline+=\ \ %l:%c\ 
