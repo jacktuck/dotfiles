@@ -1,4 +1,8 @@
 function! StatusLineGitFlag()
+  if !exists('g:loaded_fugitive')
+    return ''
+  endif
+
   let b:git_branch = fugitive#head()
 
   if b:git_branch == ""
