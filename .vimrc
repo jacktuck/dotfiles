@@ -80,8 +80,8 @@ set scrolloff=3
 au FocusGained,BufEnter * :checktime
 set autoread
 
-set autochdir
-"autocmd BufEnter * silent! lcd %:p:h
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
