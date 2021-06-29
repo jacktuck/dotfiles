@@ -23,7 +23,7 @@ function! StatusLineGitFlag()
     endif
   endif
 
-  return b:git_branch .  b:git_dirty_flag . b:git_behind_flag . '  |'
+  return b:git_branch .  b:git_dirty_flag . b:git_behind_flag . '  |  '
 endfunction
 
 function! s:StatusLineClearVars()
@@ -38,9 +38,10 @@ augroup StatusLine
 augroup END
 
 " set statusline=%(\ %{fugitive#head()}%)
+set statusline=%(\ \ %)
 set statusline+=%(%{StatusLineGitFlag()}%)
 " set statusline+=%{expand('%:~:F')}
-set statusline+=%(\ \ %{pathshorten(expand('%:~:F'))}\ \ %) " File path
+set statusline+=%(%{pathshorten(expand('%:~:F'))}\ \ %) " File path
 
 set statusline+=%= " Align right
 set statusline+=%(\ \ %{&filetype}\ \ \|%) " File type
