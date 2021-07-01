@@ -36,6 +36,8 @@ augroup StatusLine
   autocmd WinEnter,CursorHold * call <SID>StatusLineClearVars()
 augroup END
 
+hi StatusLine cterm=bold gui=bold guibg=White guifg=Black
+
 set statusline+=\ %{StatusLineGitFlag()}
 " set statusline+=%{expand('%:~:F')}
 set statusline+=\ \ %{pathshorten(expand('%:~:F'))} " File path
