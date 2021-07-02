@@ -151,6 +151,7 @@ let g:ci_dark_enable_bold = 1
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
