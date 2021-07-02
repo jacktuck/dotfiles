@@ -167,6 +167,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'yunlingz/ci_dark'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
 colorscheme ci_dark
