@@ -143,12 +143,6 @@ set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
