@@ -79,6 +79,9 @@ set scrolloff=3
 
 set number relativenumber
 
+" Show at most this many items in the popup menu
+set pumheight=10
+
 " Reloading
 au FocusGained,BufEnter * :checktime
 set autoread
