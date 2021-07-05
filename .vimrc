@@ -171,8 +171,6 @@ nnoremap x "_x
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
-let g:ci_dark_enable_bold = 1
-
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -186,8 +184,12 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'yunlingz/ci_dark'
+Plug 'chriskempson/base16-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
-colorscheme ci_dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
