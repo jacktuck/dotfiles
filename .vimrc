@@ -42,7 +42,7 @@ set number
 " Enable syntax highlighting
 syntax on
 " enable true colors
-set termguicolors
+set notermguicolors
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
