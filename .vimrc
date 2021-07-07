@@ -186,6 +186,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 if filereadable(expand("~/.vimrc_background"))
