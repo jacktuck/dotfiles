@@ -22,8 +22,8 @@ let mapleader=","
 set binary
 set noeol
 " Centralize backups, swapfiles and undo history
+set noswapfile
 set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
@@ -76,6 +76,8 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+set updatetime=100
 
 set number relativenumber
 
