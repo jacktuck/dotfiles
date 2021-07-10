@@ -189,7 +189,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'TaDaa/vimade'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
+
+let g:vimade = {}
+let g:vimade.fadelevel = 0.7
+let g:vimade.enablefocusfading = 1
 
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
