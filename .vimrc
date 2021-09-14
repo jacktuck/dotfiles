@@ -163,13 +163,6 @@ if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
 endif
 "}
 
-" Cut into black hole register
-nnoremap d "_d
-nnoremap D "_D
-nnoremap c "_c
-nnoremap C "_C
-nnoremap x "_x
-
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
