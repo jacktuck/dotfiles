@@ -40,7 +40,7 @@ hi StatusLine cterm=bold gui=bold guibg=White guifg=Black
 
 set statusline+=\ %{StatusLineGitFlag()}
 " set statusline+=%{expand('%:~:F')}
-set statusline+=\ \ %{pathshorten(expand('%:~:F'))} " File path
+set statusline+=\ \ %f " File path
 
 set statusline+=%= " Align right
 set statusline+=%y

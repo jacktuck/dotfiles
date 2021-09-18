@@ -58,8 +58,6 @@ set ignorecase
 set incsearch
 " Always show status line
 set laststatus=2
-" Enable mouse in all modes
-set mouse=a
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
@@ -179,19 +177,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'TaDaa/vimade'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+colorscheme nord
 let g:vimade = {}
 let g:vimade.fadelevel = 0.7
 let g:vimade.enablefocusfading = 1
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
