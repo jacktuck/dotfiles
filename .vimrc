@@ -25,7 +25,7 @@ set noeol
 set noswapfile
 set backupdir=~/.vim/backups
 if exists("&undodir")
-	set undodir=~/.vim/undo
+  set undodir=~/.vim/undo
 endif
 
 " Don’t create backups when editing files in certain directories
@@ -91,11 +91,11 @@ autocmd BufEnter * silent! lcd %:p:h
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
@@ -103,12 +103,12 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Automatic commands
 if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  " Enable file type detection
+  filetype on
+  " Treat .json files as .js
+  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  " Treat .md files as Markdown
+  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
 " coc config
@@ -164,6 +164,12 @@ endif
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
+au User AirlineAfterInit  :let g:airline_section_z = ''
+
+let g:vimade = {}
+let g:vimade.fadelevel = 0.7
+let g:vimade.enablefocusfading = 1
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -181,10 +187,8 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'TaDaa/vimade'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 colorscheme nord
-let g:vimade = {}
-let g:vimade.fadelevel = 0.7
-let g:vimade.enablefocusfading = 1
