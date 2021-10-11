@@ -39,6 +39,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# GNU sed for me
+alias sed=gsed
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
