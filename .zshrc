@@ -10,4 +10,4 @@ unset file
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-bindkey -v
+# bindkey -v
