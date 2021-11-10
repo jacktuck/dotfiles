@@ -89,6 +89,8 @@ set autoread
 " set autochdir
 autocmd BufEnter * silent! lcd %:p:h
 
+nnoremap \ :noh<return>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
   let save_cursor = getpos(".")
