@@ -14,3 +14,18 @@ git_main_branch() {
 gclone() {
   git clone "$1" && cd "$(basename "$1" .git)"
 }
+
+localsync () {
+  if [ $# -lt 2 ]; then
+    echo "Needs at least two arguments"
+    return 1
+  fi
+
+  rsync -ar \
+    --exclude='node_modules' \
+    --exclude='.gitignore' \
+    --exclude='.git' \
+    --exclude='.DS_Store' \
+    "$1" "$2"
+}
+
