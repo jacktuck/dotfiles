@@ -183,3 +183,4 @@ alias vf='vim $(fzf)'
 
 # Miscellaneous
 alias screencapture='osascript ~/scripts/screen_capture.scpt'
+alias restart_en0='sudo ifconfig en0 down && sudo ifconfig en0 up'
