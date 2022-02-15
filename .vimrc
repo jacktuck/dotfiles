@@ -105,6 +105,8 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Automatic commands
 if has("autocmd")
+   " Jump to the last position when reopening a file
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   " Enable file type detection
   filetype on
   " Treat .json files as .js
