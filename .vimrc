@@ -79,6 +79,7 @@ set updatetime=100
 
 set number relativenumber
 
+
 " Show at most this many items in the popup menu
 set pumheight=10
 
@@ -157,6 +158,10 @@ set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
+set noshowmode 
+set noshowcmd 
+set shortmess+=F
+
 " Fugitive {
 if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
   nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -175,11 +180,10 @@ endif
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
-au User AirlineAfterInit  :let g:airline_section_z = ''
-
-let g:vimade = {}
-let g:vimade.fadelevel = 0.7
-let g:vimade.enablefocusfading = 1
+let g:airline_theme='base16_nord'
+let g:airline_section_z = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
@@ -197,10 +201,11 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'TaDaa/vimade'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'RRethy/nvim-base16'
 Plug 'vim-airline/vim-airline'
-Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-colorscheme nord
+colorscheme base16-nord

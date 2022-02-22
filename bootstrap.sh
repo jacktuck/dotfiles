@@ -14,8 +14,4 @@ rsync --exclude ".git/" \
 
 ./iterm2/setup.sh
 
-mkdir -p ~/.config/nvim 
-cp ~/.vimrc ~/.config/nvim/init.vim
-cp -r .vim/* ~/.config/nvim/
-
 source ~/.zshrc;
