@@ -1,4 +1,5 @@
 set background=dark
+set shell=/bin/zsh
 
 " Make Vim more useful
 set nocompatible
@@ -83,13 +84,6 @@ set number relativenumber
 " Show at most this many items in the popup menu
 set pumheight=10
 
-" Reloading
-au FocusGained,BufEnter * :checktime
-set autoread
-
-" set autochdir
-autocmd BufEnter * silent! lcd %:p:h
-
 nnoremap \ :noh<return>
 
 " Strip trailing whitespace (,ss)
@@ -162,6 +156,12 @@ set noshowmode
 set noshowcmd 
 set shortmess+=F
 
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>z <cmd>lua require'telescope'.extensions.z.list({ cmd = { vim.o.shell, "-ic", "z -ls" } })<CR>
+
 " Fugitive {
 if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
   nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -195,9 +195,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-abolish'
 Plug 'neoclide/coc.nvim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'stsewd/fzf-checkout.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
@@ -206,6 +203,16 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'RRethy/nvim-base16'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-z.nvim'
 call plug#end()
+
+lua << EOF
+require'telescope'.setup{}
+require'telescope'.load_extension'z'
+EOF
 
 colorscheme base16-nord
