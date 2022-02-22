@@ -210,7 +210,11 @@ Plug 'nvim-telescope/telescope-z.nvim'
 call plug#end()
 
 lua << EOF
-require'telescope'.setup{}
+require'telescope'.setup{
+	defaults = {
+	  file_ignore_patterns = { ".git" }
+	}
+}
 require'telescope'.load_extension'z'
 EOF
 
