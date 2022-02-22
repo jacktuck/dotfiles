@@ -158,7 +158,6 @@ set shortmess+=F
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>z <cmd>lua require'telescope'.extensions.z.list({ cmd = { vim.o.shell, "-ic", "z -ls" } })<CR>
 
