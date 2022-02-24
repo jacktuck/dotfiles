@@ -120,6 +120,9 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
+  \ 'coc-yaml',
+  \ 'coc-go',
+  \ 'coc-java'
   \ ]
 
 " Use <c-space> to trigger completion.
