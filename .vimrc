@@ -211,16 +211,24 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true
+  }
+}
+
 require'telescope'.setup{
   extensions = {
     project = {
       base_dirs = {
-        '~/code',
+	'~/code',
       }
-		}
+    }
   },
   defaults = {
     file_ignore_patterns = { ".git" }
