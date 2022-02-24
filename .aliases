@@ -179,7 +179,8 @@ alias gd='git diff'
 alias gdca='git diff --cached'
 alias gds='git diff --staged'
 
-alias vf='vim $(fzf)'
+alias vi='nvim'
+alias vim='nvim'
 
 # Miscellaneous
 alias screencapture='osascript ~/scripts/screen_capture.scpt'
