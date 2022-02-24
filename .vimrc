@@ -80,6 +80,7 @@ set updatetime=100
 
 set number relativenumber
 
+" autocmd BufEnter * silent! lcd %:p:h
 
 " Show at most this many items in the popup menu
 set pumheight=10
@@ -159,7 +160,7 @@ set shortmess+=F
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>z <cmd>lua require'telescope'.extensions.z.list({ cmd = { vim.o.shell, "-ic", "cd ~/code; z -c" }, cwd = "~/code" })<CR>
+nnoremap <leader>z <cmd>lua require'telescope'.extensions.project.project{}<CR>
 
 " Fugitive {
 if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
@@ -206,16 +207,24 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'nvim-telescope/telescope-z.nvim'
+Plug 'nvim-telescope/telescope-project.nvim'
 call plug#end()
 
 lua << EOF
 require'telescope'.setup{
-	defaults = {
-	  file_ignore_patterns = { ".git" }
-	}
+  extensions = {
+    project = {
+      base_dirs = {
+        '~/code',
+      }
+		}
+  },
+  defaults = {
+    file_ignore_patterns = { ".git" }
+  }
 }
-require'telescope'.load_extension'z'
+
+require'telescope'.load_extension('project')
 EOF
 
 colorscheme base16-nord
