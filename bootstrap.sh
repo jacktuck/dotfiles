@@ -2,16 +2,14 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin main;
-
-rsync --exclude ".git/" \
-	--exclude ".DS_Store" \
-	--exclude ".osx" \
-	--exclude "bootstrap.sh" \
-	--exclude "README.md" \
-	--exclude "LICENSE-MIT.txt" \
-	-avh --no-perms . ~;
+echo 'Installing/Updating Neovim plugins'
+nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
 
 ./iterm2/setup.sh
+
+for dir in $(fd -t d | xargs -n 1 basename); do
+  echo "stowing $dir";
+  stow $dir -t ~;
+done
 
 source ~/.zshrc;
