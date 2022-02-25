@@ -3,8 +3,8 @@
 export PATH="$HOME/bin:$PATH";
 
 # Load homebrew
-[ -d "/opts/homebrew/bin" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-[ -d "/usr/local/homebrew/bin" ] && eval "$(/usr/local/homebrew/bin/brew shellenv)"
+[ -d "/opts/homebrew/bin" ] && eval "$(/opt/homebrew/bin/brew shellenv)" # for m1 mac
+[ -d "/usr/local/homebrew/bin" ] && eval "$(/usr/local/homebrew/bin/brew shellenv)" # for intel mac
 
 # Make vim the default editor.
 export EDITOR='vim';
