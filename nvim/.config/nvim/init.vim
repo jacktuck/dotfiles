@@ -214,28 +214,7 @@ Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true
-  }
-}
-
-require'telescope'.setup{
-  extensions = {
-    project = {
-      base_dirs = {
-	'~/code',
-      }
-    }
-  },
-  defaults = {
-    file_ignore_patterns = { ".git" }
-  }
-}
-
-require'telescope'.load_extension('project')
-EOF
+lua require('plugins.nvim-treesitter')
+lua require('plugins.telescope')
 
 colorscheme base16-nord
