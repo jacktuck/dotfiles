@@ -10,6 +10,7 @@ tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "teamookla/speedtest"
+brew "antigen"
 brew "python@3.10"
 brew "ansible", link: false
 brew "libssh2"
