@@ -13,7 +13,7 @@ for dir in $(fd -t d . stow/ | xargs -n 1 basename); do
   stow -R -d stow $dir -t ~;
 done
 
-git clone https://github.com/kkga/nibar "Ubersicht/Ubersicht/widgets/nibar"
+[ ! -d 'Ubersicht' ] && git clone https://github.com/kkga/nibar "Ubersicht/Ubersicht/widgets/nibar"
 stow Ubersicht -t "$HOME/Library/Application Support/"
 
 source ~/.zshrc;
