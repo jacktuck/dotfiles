@@ -9,7 +9,6 @@ nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
 
 for dir in $(fd -t d . stow/ | xargs -n 1 basename); do
   echo "stowing $dir";
- # stow -d stow -D $dir
   stow -R -d stow $dir -t ~;
 done
 
