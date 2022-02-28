@@ -11,8 +11,8 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # bindkey -v
-#
-source /opt/homebrew/share/antigen/antigen.zsh
+[ -d "/opt/homebrew" ] && source /opt/homebrew/share/antigen/antigen.zsh # for m1 mac
+[ -d "/usr/local/homebrew" ] && source /usr/local/homebrew/share/antigen/antigen.zsh # for intel mac
 
 antigen bundle zsh-users/zsh-autosuggestions
 
