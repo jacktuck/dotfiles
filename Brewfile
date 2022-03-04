@@ -81,6 +81,7 @@ brew "mongodb/brew/mongocli"
 brew "mongodb/brew/mongodb-community"
 brew "qmk/qmk/qmk", link: false
 brew "teamookla/speedtest/speedtest"
+cask "hammerspoon"
 cask "amethyst"
 cask "basictex"
 cask "font-fira-code"
