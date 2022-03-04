@@ -12,7 +12,8 @@ for dir in $(fd -t d . stow/ | xargs -n 1 basename); do
   stow -R -d stow $dir -t ~;
 done
 
-[ ! -d 'ubersicht/Übersicht' ] && git clone https://github.com/kkga/nibar "ubersicht/Übersicht/widgets/nibar"
 stow ubersicht -t "$HOME/Library/Application Support/"
+
+[ ! -d ~/.hammerspoon/stackline ] && git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
 
 source ~/.zshrc;
