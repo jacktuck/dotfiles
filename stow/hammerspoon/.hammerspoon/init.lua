@@ -1,8 +1,10 @@
 stackline = require "stackline"
 stackline:init()
 
-
 -- Ensure the IPC command line client is available
 hs.ipc.cliInstall()
 
-stackline.config:set('paths.yabai', '/opt/homebrew/bin/yabai')
+
+brew_prefix = string.gsub(hs.execute("brew --prefix", true), '[\r\n]+', '')
+
+stackline.config:set('paths.yabai', brew_prefix  .. "/bin/yabai")
