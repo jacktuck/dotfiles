@@ -1,9 +1,8 @@
 stackline = require "stackline"
 stackline:init()
 
--- Ensure the IPC command line client is available
 hs.ipc.cliInstall()
-
+hs.autoLaunch(true)
 
 brew_prefix = string.gsub(hs.execute("brew --prefix", true), '[\r\n]+', '')
 

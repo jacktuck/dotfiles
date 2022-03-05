@@ -49,3 +49,4 @@ source $(brew --prefix nvm)/nvm.sh;
 [ ! -f "$HOME/z.sh" ] && wget "https://raw.githubusercontent.com/rupa/z/master/z.sh" -O "$HOME/z.sh" 
 . "$HOME/z.sh"
 
+
