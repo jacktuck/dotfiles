@@ -9,7 +9,7 @@ source ~/.zshrc;
 
 ./iterm2/setup.sh
 
-export STOW_DIRS=hammerspoon,nvim,ubersicht,zsh,git,iterm2,tmux,yabai
+export STOW_DIRS=hammerspoon,config,ubersicht,zsh,git,iterm2,tmux,yabai
 
 for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
   echo "stowing $dir";
