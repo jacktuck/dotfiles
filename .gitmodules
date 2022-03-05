@@ -1,0 +1,3 @@
+[submodule "ubersicht/Übersicht/widgets/nibar"]
+	path = ubersicht/Übersicht/widgets/nibar
+	url = git@github.com:jacktuck/nibar.git
