@@ -1,3 +1,7 @@
+# toggle full screen
+alt + cmd - f : yabai -m window --toggle zoom-fullscreen
+
+# reset layout
 alt + cmd - b : yabai -m space --layout bsp
 
 # navigate windows
