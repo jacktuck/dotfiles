@@ -1,4 +1,8 @@
-[submodule "ubersicht/Übersicht/widgets/nibar"]
+[submodule "nibar"]
 	path = ubersicht/Übersicht/widgets/nibar
 	url = git@github.com:jacktuck/nibar.git
+	ignore = all
+[submodule "work"]
+	path = work
+	url = git@github.com:jacktuck/work-dotfiles.git
 	ignore = all
