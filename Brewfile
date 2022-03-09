@@ -1,4 +1,3 @@
-
 brew "ansible", link: false
 brew "antigen"
 brew "aria2"
@@ -56,6 +55,7 @@ brew "yarn"
 brew "yq"
 cask "basictex"
 cask "font-fira-code"
+cask "font-hack-nerd-font"
 cask "hammerspoon"
 cask "sf-symbols"
 cask "ubersicht"
