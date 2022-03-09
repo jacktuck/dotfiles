@@ -1,0 +1,4 @@
+#!/bin/sh
+staged_files="$(git diff-index --cached --name-only HEAD)"
+
+echo $staged_files | grep --quiet Brewfile && cat Brewfile | sort | uniq | sponge Brewfile && git add Brewfile || true
