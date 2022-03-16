@@ -151,6 +151,8 @@ nmap <leader>al  <Plug>(coc-codeaction-line)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+nmap <leader>rn <Plug>(coc-rename)
+
 " Allow JS folding
 set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
@@ -213,9 +215,11 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
+lua require('plugins.bufferline')
 
 colorscheme base16-nord
