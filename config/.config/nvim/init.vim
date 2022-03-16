@@ -189,6 +189,7 @@ let g:airline_theme='base16_nord'
 let g:airline_section_z = ''
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
+let loaded_netrwPlugin = 1
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sleuth'
@@ -197,7 +198,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-abolish'
 Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
