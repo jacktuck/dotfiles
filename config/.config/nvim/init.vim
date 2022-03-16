@@ -185,10 +185,6 @@ endif
 " let g:fzf_prefer_tmux = 1
 let g:fzf_layout = { 'down': '~40%' }
 
-let g:airline_theme='base16_nord'
-let g:airline_section_z = ''
-let g:airline_section_error = ''
-let g:airline_section_warning = ''
 let loaded_netrwPlugin = 1
 
 call plug#begin('~/.vim/plugged')
@@ -206,8 +202,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'RRethy/nvim-base16'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -216,10 +210,12 @@ Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
 lua require('plugins.bufferline')
+lua require('plugins.lualine')
 
 colorscheme base16-nord
