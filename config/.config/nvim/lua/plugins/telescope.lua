@@ -20,10 +20,14 @@ require'telescope'.load_extension('project')
 _G.open_telescope = function()
     local first_arg = vim.v.argv[2]
     if first_arg and vim.fn.isdirectory(first_arg) == 1 then
-        require("telescope.builtin").find_files({
-          search_dirs = {first_arg},
-          hidden = true
-        })
+      if first_arg == '.' then
+        first_arg = null
+      end
+
+      require("telescope.builtin").find_files({
+        find_command = { "rg", "--files", "--hidden" },
+        search_dirs = {first_arg}
+      })
     end
 end
 
