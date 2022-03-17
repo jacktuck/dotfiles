@@ -6,8 +6,12 @@ require'telescope'.setup{
       }
     }
   },
+  pickers = {
+    find_files = {
+      find_command = { "rg", "--files", "--hidden"}
+    }
+  },
   defaults = {
-    file_ignore_patterns = { ".git" }
   }
 }
 
