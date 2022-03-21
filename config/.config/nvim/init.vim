@@ -165,7 +165,8 @@ set shortmess+=F
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fp <cmd>lua require'telescope'.extensions.project.project{}<CR>
+nnoremap <leader>fp <cmd>Telescope project<cr>
+nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 
 " Fugitive {
 if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
@@ -181,9 +182,6 @@ if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
   nnoremap <silent> <leader>gi :Git add -p %<CR>
 endif
 "}
-
-" let g:fzf_prefer_tmux = 1
-let g:fzf_layout = { 'down': '~40%' }
 
 let loaded_netrwPlugin = 1
 
@@ -208,9 +206,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
-Plug 'nvim-lualine/lualine.nvim'
+" Plug 'nvim-lualine/lualine.nvim'
+Plug 'camilledejoye/lualine.nvim', { 'branch': 'feat/theme-nvim-base16' }
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
@@ -218,4 +218,7 @@ lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
 
-colorscheme base16-nord
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
