@@ -6,6 +6,7 @@ for file in ~/.{exports,path,prompt,functions,aliases,zshoptions,ripjar}; do
 done;
 unset file
 
+
 # Add tab completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -14,9 +15,13 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle chriskempson/base16-shell
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 antigen apply
+
+# Set theme
+eval base16_material-darker

@@ -1,5 +1,9 @@
 require'telescope'.setup{
+  defaults = require('telescope.themes').get_dropdown {},
   extensions = {
+    file_browser = { 
+      hidden = true 
+    },
     project = {
       base_dirs = {
 	'~/code',
@@ -8,14 +12,13 @@ require'telescope'.setup{
   },
   pickers = {
     find_files = {
-      find_command = { "rg", "--files", "--hidden"}
+      find_command = { "rg", "--files", "--hidden"},
     }
-  },
-  defaults = {
   }
 }
 
 require'telescope'.load_extension('project')
+require'telescope'.load_extension('file_browser')
 
 _G.open_telescope = function()
     local first_arg = vim.v.argv[2]
