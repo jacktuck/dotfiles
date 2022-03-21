@@ -13,7 +13,7 @@ export STOW_DIRS=hammerspoon,config,zsh,git,iterm2,tmux,yabai
 
 for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
   echo "stowing $dir";
-  stow -R $dir -t ~;
+  stow $dir -t ~;
 done
 
 stow ubersicht -t "$HOME/Library/Application Support/"

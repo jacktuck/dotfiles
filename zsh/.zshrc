@@ -6,7 +6,6 @@ for file in ~/.{exports,path,prompt,functions,aliases,zshoptions,ripjar}; do
 done;
 unset file
 
-base16_material-darker
 
 # Add tab completion
 autoload -Uz compinit && compinit
@@ -23,3 +22,6 @@ bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 antigen apply
+
+# Set theme
+eval base16_material-darker
