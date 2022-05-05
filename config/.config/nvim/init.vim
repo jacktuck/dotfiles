@@ -85,6 +85,7 @@ set number relativenumber
 " Show at most this many items in the popup menu
 set pumheight=10
 
+xnoremap p pgvy
 nnoremap \ :noh<return>
 
 " Strip trailing whitespace (,ss)

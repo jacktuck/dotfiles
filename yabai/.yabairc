@@ -67,7 +67,7 @@ yabai -m signal --add event=space_changed \
 
 yabai -m rule --add app="^1Password 7$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
+# yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
 

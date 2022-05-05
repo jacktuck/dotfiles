@@ -1,15 +1,10 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{exports,path,prompt,functions,aliases,zshoptions,ripjar}; do
+for file in ~/dotfiles/{zsh,work}/.{exports,path,prompt,functions,aliases,zshoptions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file
-
-
-# Add tab completion
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # bindkey -v
 source $(brew --prefix)/share/antigen/antigen.zsh
@@ -25,3 +20,11 @@ antigen apply
 
 # Set theme
 eval base16_material-darker
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

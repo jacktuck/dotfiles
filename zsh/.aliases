@@ -139,6 +139,8 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+alias bump='npm version --git-tag-version false'
+
 # Git aliases
 alias g='git'
 alias git_current_branch='git rev-parse --symbolic-full-name --abbrev-ref HEAD'
