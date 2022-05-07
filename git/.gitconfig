@@ -5,23 +5,30 @@
 	# View the current working tree status using the short format.
 	s = status -s
 
-	# Show the diff between the latest commit and the current state.
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	# Show the diff 
+	d = diff
+	ds = diff --staged
 
 	# Pull in remote changes for the current repository and all its submodules.
 	p = pull --recurse-submodules
 
-	# Clone a repository including all submodules.
-	c = clone --recursive
+	c = commit
 
 	# Commit all changes.
 	ca = !git add -A && git commit -av
 
 	# Switch to a branch, creating it if necessary.
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Checkout our version of a file and add it
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+
+	# Checkout their version of a file and add it
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
+	discard = checkout --
+	purge = clean -xfd --exclude node_modules
+	nevermind = "!git reset --hard HEAD && git clean -d -f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
@@ -33,11 +40,6 @@
 
 	# Amend the currently staged files to the latest commit.
 	amend = commit --amend --reuse-message=HEAD
-
-  purge = clean -xfd --exclude node_modules
-
-	# Credit an author on the latest commit.
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
 	# Interactive rebase with the given number of latest commits.
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
@@ -165,7 +167,7 @@
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
-# URL shorthands
+	# URL shorthands
 
 [url "git@github.com:"]
 
