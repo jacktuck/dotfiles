@@ -187,19 +187,18 @@ endif
 let loaded_netrwPlugin = 1
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'RRethy/nvim-base16'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
@@ -210,8 +209,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
-" Plug 'nvim-lualine/lualine.nvim'
-Plug 'camilledejoye/lualine.nvim', { 'branch': 'feat/theme-nvim-base16' }
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
