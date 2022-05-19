@@ -6,7 +6,7 @@ for file in ~/dotfiles/{zsh,work}/.{exports,path,prompt,functions,aliases,zshopt
 done;
 unset file
 
-# bindkey -v
+bindkey '^R' history-incremental-search-backward
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
@@ -31,3 +31,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
+
+# Load NVM
+mkdir -p ~/.nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+[ ! -f "$HOME/z.sh" ] && wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O "$HOME/z.sh"
+. "$HOME/z.sh"
