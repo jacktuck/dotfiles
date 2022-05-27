@@ -22,15 +22,14 @@ let mapleader=","
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
-" Centralize backups, swapfiles and undo history
-set noswapfile
-set backupdir=~/.vim/backups
-if exists("&undodir")
-  set undodir=~/.vim/undo
-endif
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
+" Centralize backups, swapfiles and undo history
+silent !mkdir -p ~/.config/nvim/tmp/{backup,swap,undo,session}
+
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/swap,.
+set undofile
+set undodir=~/.config/nvim/tmp/undo,.
 
 " Respect modeline in files
 set modeline
@@ -170,7 +169,7 @@ nnoremap <leader>fp <cmd>Telescope project<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 
 " Fugitive {
-if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
+if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
   nnoremap <silent> <leader>gs :Gstatus<CR>
   nnoremap <silent> <leader>gd :Gdiff<CR>
   nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -186,7 +185,7 @@ endif
 
 let loaded_netrwPlugin = 1
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
