@@ -210,6 +210,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
