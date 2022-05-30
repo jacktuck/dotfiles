@@ -87,6 +87,9 @@ set pumheight=10
 xnoremap p pgvy
 nnoremap \ :noh<return>
 
+" Format tables in feature files. Mostly works.
+nnoremap tf :g/\|/Tab/\|<CR>ggn<CR>:noh<CR>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
   let save_cursor = getpos(".")
@@ -158,8 +161,8 @@ set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
-set noshowmode 
-set noshowcmd 
+set noshowmode
+set noshowcmd
 set shortmess+=F
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
