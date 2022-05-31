@@ -88,7 +88,15 @@ xnoremap p pgvy
 nnoremap \ :noh<return>
 
 " Format tables in feature files. Mostly works.
-nnoremap tf :g/\|/Tab/\|<CR>ggn<CR>:noh<CR>
+function! FormatTable()
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :g/\|/Tab /|
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
+endfunction
+
+nnoremap <leader>ft :call FormatTable()<CR>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
