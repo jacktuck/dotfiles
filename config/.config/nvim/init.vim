@@ -87,6 +87,17 @@ set pumheight=10
 xnoremap p pgvy
 nnoremap \ :noh<return>
 
+" Format tables in feature files. Mostly works.
+function! FormatTable()
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :g/\|/Tab /|
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
+endfunction
+
+nnoremap <leader>ft :call FormatTable()<CR>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
   let save_cursor = getpos(".")
@@ -158,8 +169,8 @@ set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
-set noshowmode 
-set noshowcmd 
+set noshowmode
+set noshowcmd
 set shortmess+=F
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -209,6 +220,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 lua require('plugins.nvim-treesitter')
