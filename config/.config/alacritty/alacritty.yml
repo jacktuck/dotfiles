@@ -3,7 +3,7 @@ env:
   COLORTERM: truecolor
 
 window:
-  decorations: None
+  decorations: Buttonless
   padding:
     x: 10 
     y: 5
