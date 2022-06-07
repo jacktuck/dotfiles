@@ -14,22 +14,20 @@ sketchybar --add   item          mailIndicator right                   \
                                  background.padding_left=-6            \
                                  update_freq=10                        \
                                                                        \
-           --add   item          calendar.time right                   \
-           --set   calendar.time update_freq=15                        \
-                                 icon.drawing=off                      \
-                                 script="$PLUGIN_DIR/time.sh"          \
-                                                                       \
-           --clone calendar.date label_template                        \
-           --set   calendar.date update_freq=60                        \
+           --add    item         dateTime right                        \
+           --set    dateTime     update_freq=60                        \
                                  position=right                        \
-                                 label=cal                             \
                                  drawing=on                            \
                                  background.padding_right=0            \
-                                 script="$PLUGIN_DIR/date.sh"          \
+                                 script="$PLUGIN_DIR/datetime.sh"      \
+                                 icon.font="$FONT:Bold:16.0"           \
+                                 icon=􀐬                                \
+                                 label.padding_right=10                \
+                                 label.padding_left=5                  \
+                                 background.padding_right=0            \
                                                                        \
            --add   bracket       calendar                              \
                                  mailIndicator                         \
                                  MeetingBar                            \
-                                 calendar.date                         \
-                                                                       \
+                                 dateTime                              \
            --set   calendar      background.drawing=on
