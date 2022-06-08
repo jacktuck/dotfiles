@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
+
+source ~/.zshrc
 
 NOTIFICATIONS="$(gh api notifications)"
 COUNT="$(echo "$NOTIFICATIONS" | jq 'length')"
