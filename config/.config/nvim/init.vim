@@ -208,7 +208,6 @@ Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'RRethy/nvim-base16'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
