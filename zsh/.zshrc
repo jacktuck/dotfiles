@@ -6,18 +6,17 @@ for file in ~/dotfiles/{zsh,work}/.{exports,path,prompt,functions,aliases,zshopt
 done;
 unset file
 
-bindkey '^R' history-incremental-search-backward
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle chriskempson/base16-shell
+
+antigen apply
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
-bindkey '^I'   complete-word       # tab          | complete
-bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
-
-antigen apply
 
 # Set theme
 eval base16_material-darker
@@ -40,3 +39,9 @@ source $(brew --prefix nvm)/nvm.sh
 
 [ ! -f "$HOME/z.sh" ] && wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O "$HOME/z.sh"
 . "$HOME/z.sh"
+
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^R' history-incremental-search-backward
