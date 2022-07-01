@@ -41,8 +41,9 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
-" enable true colors
-set notermguicolors
+
+set termguicolors
+
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
@@ -175,7 +176,7 @@ set shortmess+=F
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fp <cmd>Telescope project<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 
