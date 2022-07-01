@@ -1,5 +1,9 @@
-vim.opt.termguicolors = true
 require("bufferline").setup{
+  highlights = {
+    buffer_selected = {
+      gui = "bold"
+    },
+  },
   options = {
     mode = "tabs",
     show_close_icon = false,
