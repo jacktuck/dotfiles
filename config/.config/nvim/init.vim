@@ -128,9 +128,9 @@ set signcolumn=yes
 
 let g:coc_global_extensions = [
   \ 'coc-pairs',
+  \ 'coc-prettier',
   \ 'coc-tsserver',
   \ 'coc-eslint',
-  \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-yaml',
   \ 'coc-go',
@@ -164,6 +164,8 @@ nmap <leader>al  <Plug>(coc-codeaction-line)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 nmap <leader>rn <Plug>(coc-rename)
+
+nmap <leader>f  <Plug>(coc-format)
 
 " Allow JS folding
 set foldmethod=syntax "syntax highlighting items specify folds
@@ -207,7 +209,6 @@ Plug 'tpope/vim-abolish'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'RRethy/nvim-base16'
 Plug 'nvim-lua/plenary.nvim'

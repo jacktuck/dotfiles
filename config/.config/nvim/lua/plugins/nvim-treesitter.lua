@@ -9,7 +9,7 @@ require'nvim-treesitter.configs'.setup {
     "rust" 
   },
   highlight = {
-    enable = true
+    -- enable = true
   }
 }
 
