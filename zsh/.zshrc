@@ -11,7 +11,7 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle chriskempson/base16-shell
+# antigen bundle chriskempson/base16-shell
 
 antigen apply
 
@@ -19,7 +19,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
 # Set theme
-eval base16_material-darker
+# eval base16_material-darker
 
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"

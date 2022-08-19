@@ -126,8 +126,8 @@ endif
 " coc config
 set signcolumn=yes
 
+" \ 'coc-pairs',
 let g:coc_global_extensions = [
-  \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-prettier',
@@ -209,7 +209,7 @@ Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'RRethy/nvim-base16'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -227,8 +227,5 @@ lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
+lua require('plugins.catppuccin')
 
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
