@@ -1,6 +1,7 @@
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = log --pretty=oneline -n 10 --graph --abbrev-commit
+	ls = log --pretty=oneline -n 5 --graph --abbrev-commit --name-status
 
 	# View the current working tree status using the short format.
 	s = status -s
@@ -47,7 +48,7 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
 	# Remove the old tag with this name and tag the latest commit with it.
-	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1 && git push origin :refs/tags/$1; }; r"
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1 && git push origin $1; }; r"
 
 	# Find branches containing commit
 	fb = "!f() { git branch -a --contains $1; }; f"

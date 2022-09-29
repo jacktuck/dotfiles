@@ -1,0 +1,1 @@
+(pgrep caffeinate || caffeinate -d -s &) > /dev/null 2>&1

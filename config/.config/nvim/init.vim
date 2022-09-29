@@ -80,7 +80,7 @@ set updatetime=100
 
 set number relativenumber
 
-" autocmd BufEnter * silent! lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h
 
 " Show at most this many items in the popup menu
 set pumheight=10
