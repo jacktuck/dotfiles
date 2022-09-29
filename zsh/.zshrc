@@ -1,7 +1,7 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/dotfiles/{zsh,work}/.{exports,path,prompt,functions,aliases,zshoptions}; do
+for file in ~/dotfiles/{zsh,work}/.{services,exports,path,prompt,functions,aliases,zshoptions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file
