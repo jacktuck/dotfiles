@@ -29,7 +29,7 @@
 	# Checkout their version of a file and add it
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
-	discard = checkout --
+	co = checkout
 	purge = clean -xfd --exclude node_modules
 	nevermind = "!git reset --hard HEAD && git clean -d -f"
 
