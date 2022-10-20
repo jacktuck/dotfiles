@@ -80,8 +80,6 @@ set updatetime=100
 
 set number relativenumber
 
-autocmd BufEnter * silent! lcd %:p:h
-
 " Show at most this many items in the popup menu
 set pumheight=10
 
@@ -181,6 +179,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fp <cmd>Telescope project<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
+
+nnoremap <leader>o <cmd>Telescope oldfiles only_cwd=true<cr>
+nnoremap <leader>og <cmd>Telescope oldfiles <cr>
 
 " Fugitive {
 if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
