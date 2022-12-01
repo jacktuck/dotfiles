@@ -115,10 +115,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   " Enable file type detection
   filetype on
-  " Treat .json files as .js
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-  " Treat .md files as Markdown
-  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
 " coc config
@@ -177,9 +173,7 @@ set shortmess+=F
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fp <cmd>Telescope project<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
-
 nnoremap <leader>o <cmd>Telescope oldfiles only_cwd=true<cr>
 nnoremap <leader>og <cmd>Telescope oldfiles <cr>
 
