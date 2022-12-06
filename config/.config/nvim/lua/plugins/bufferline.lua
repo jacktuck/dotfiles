@@ -1,8 +1,6 @@
 require("bufferline").setup{
   highlights = {
-    buffer_selected = {
-      gui = "bold"
-    },
+    buffer_selected = { bold = true }
   },
   options = {
     mode = "tabs",

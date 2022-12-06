@@ -20,9 +20,6 @@
  
 	set-upstream = !git branch -u origin/$(git symbolic-ref --short HEAD)
 
-	# Switch to a branch, creating it if necessary.
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
 	# Checkout our version of a file and add it
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 

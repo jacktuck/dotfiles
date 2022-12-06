@@ -1,24 +1,13 @@
+local builtin = require('telescope.builtin')
+
 require'telescope'.setup{
   defaults = require('telescope.themes').get_dropdown {},
-  extensions = {
-    file_browser = { 
-      hidden = true 
-    },
-    project = {
-      base_dirs = {
-	'~/code',
-      }
-    }
-  },
   pickers = {
     find_files = {
       find_command = { "rg", "--files", "--hidden"},
     }
   }
 }
-
-require'telescope'.load_extension('project')
-require'telescope'.load_extension('file_browser')
 
 _G.open_telescope = function()
     local first_arg = vim.v.argv[2]
@@ -27,7 +16,7 @@ _G.open_telescope = function()
         first_arg = null
       end
 
-      require("telescope.builtin").find_files({
+      builtin.find_files({
         find_command = { "rg", "--files", "--hidden" },
         search_dirs = {first_arg}
       })
@@ -40,3 +29,4 @@ augroup TelescopeOnEnter
     autocmd VimEnter * lua open_telescope()
 augroup END
 ]], false)
+
