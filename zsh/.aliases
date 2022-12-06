@@ -141,8 +141,8 @@ alias path='echo -e ${PATH//:/\\n}'
 
 alias bump='npm version --git-tag-version false'
 
-alias vi='nvim'
-alias vim='nvim'
+alias vim="nvim"
+alias vi='echo "Never"'
 
 # Miscellaneous
 alias screencapture='osascript ~/scripts/screen_capture.scpt'
