@@ -18,14 +18,15 @@ require('lualine').setup {
             "filename",
             file_status = true, -- displays file status (readonly status, modified status)
             path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-        }
+        },
+      'branch', 
+      'diff', 
     },
     lualine_c = {},
-    lualine_x = {"lsp_progress"},
+    lualine_x = {},
     lualine_y = {
-      "diagnostics",
+      { 'diagnostics', sections = { 'error', 'warn' } },
       "filetype",
-      "fileformat",
       "progress",
     },
     lualine_z = {"location"},
