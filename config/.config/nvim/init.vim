@@ -86,42 +86,12 @@ set pumheight=10
 set foldtext=getline(v:foldstart).'...'.trim(getline(v:foldend)).'\ ('.(v:foldend-v:foldstart).'\ lines)'
 set fillchars=fold:\\
 
-xnoremap p pgvy
-nnoremap \ :noh<return>
 
-" Format tables in feature files. Mostly works.
-function! FormatTable()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :g/\|/Tab /|
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfunction
-
-nnoremap <leader>ft :call FormatTable()<CR>
-
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfunction
-noremap <leader>s :call StripWhitespace()<CR>
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Automatic commands
 if has("autocmd")
    " Jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  " Enable file type detection
-  filetype on
-  " Treat .json files as .js
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-  " Treat .md files as Markdown
-  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
 " coc config
@@ -175,22 +145,6 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-
-" Fugitive {
-if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
-  nnoremap <silent> <leader>gs :Gstatus<CR>
-  nnoremap <silent> <leader>gd :Gdiff<CR>
-  nnoremap <silent> <leader>gc :Gcommit<CR>
-  nnoremap <silent> <leader>gb :Gblame<CR>
-  nnoremap <silent> <leader>gl :Glog<CR>
-  nnoremap <silent> <leader>gp :Git push<CR>
-  nnoremap <silent> <leader>gr :Gread<CR>
-  nnoremap <silent> <leader>gw :Gwrite<CR>
-  nnoremap <silent> <leader>ge :Gedit<CR>
-  nnoremap <silent> <leader>gi :Git add -p %<CR>
-endif
-"}
-
 let loaded_netrwPlugin = 1
 
 call plug#begin('~/.config/nvim/plugged')
@@ -209,9 +163,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
@@ -225,4 +177,5 @@ lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
 lua require('plugins.catppuccin')
+lua require('mappings')
 
