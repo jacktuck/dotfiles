@@ -1,0 +1,80 @@
+{
+ "ConfigPath": {
+  "Path": "/Users/jwtuck/.config/containers/podman/machine/qemu/podman-machine-default.json"
+ },
+ "CmdLine": [
+  "/usr/local/homebrew/bin/qemu-system-x86_64",
+  "-m",
+  "2048",
+  "-smp",
+  "1",
+  "-fw_cfg",
+  "name=opt/com.coreos/config,file=/Users/jwtuck/.config/containers/podman/machine/qemu/podman-machine-default.ign",
+  "-qmp",
+  "unix:/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/qmp_podman-machine-default.sock,server=on,wait=off",
+  "-netdev",
+  "socket,id=vlan,fd=3",
+  "-device",
+  "virtio-net-pci,netdev=vlan,mac=5a:94:ef:e4:0c:ee",
+  "-device",
+  "virtio-serial",
+  "-chardev",
+  "socket,path=/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/podman-machine-default_ready.sock,server=on,wait=off,id=apodman-machine-default_ready",
+  "-device",
+  "virtserialport,chardev=apodman-machine-default_ready,name=org.fedoraproject.port.0",
+  "-pidfile",
+  "/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/podman-machine-default_vm.pid",
+  "-machine",
+  "q35,accel=hvf:tcg",
+  "-cpu",
+  "host",
+  "-virtfs",
+  "local,path=/Users/jwtuck,mount_tag=vol0,security_model=mapped-xattr",
+  "-drive",
+  "if=virtio,file=/Users/jwtuck/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-36.20221014.2.0-qemu.x86_64.qcow2"
+ ],
+ "Rootful": false,
+ "UID": 501,
+ "IgnitionFilePath": {
+  "Path": "/Users/jwtuck/.config/containers/podman/machine/qemu/podman-machine-default.ign"
+ },
+ "ImageStream": "testing",
+ "ImagePath": {
+  "Path": "/Users/jwtuck/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-36.20221014.2.0-qemu.x86_64.qcow2"
+ },
+ "Mounts": [
+  {
+   "ReadOnly": false,
+   "Source": "/Users/jwtuck",
+   "Tag": "vol0",
+   "Target": "/Users/jwtuck",
+   "Type": "9p"
+  }
+ ],
+ "Name": "podman-machine-default",
+ "PidFilePath": {
+  "Path": "/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/podman-machine-default_proxy.pid"
+ },
+ "VMPidFilePath": {
+  "Path": "/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/podman-machine-default_vm.pid"
+ },
+ "QMPMonitor": {
+  "Address": {
+   "Path": "/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/qmp_podman-machine-default.sock"
+  },
+  "Network": "unix",
+  "Timeout": 2000000000
+ },
+ "ReadySocket": {
+  "Path": "/var/folders/tz/3vv13yhs5dn59485zkbm2zfc0000gn/T/podman/podman-machine-default_ready.sock"
+ },
+ "CPUs": 1,
+ "DiskSize": 100,
+ "Memory": 2048,
+ "IdentityPath": "/Users/jwtuck/.ssh/podman-machine-default",
+ "Port": 57916,
+ "RemoteUsername": "core",
+ "Starting": false,
+ "Created": "2022-11-01T13:53:37.63638Z",
+ "LastUp": "2022-11-01T13:53:37.63638Z"
+}
