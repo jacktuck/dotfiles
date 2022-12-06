@@ -32,11 +32,6 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
-# Load NVM
-mkdir -p ~/.nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 [ ! -f "$HOME/z.sh" ] && wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O "$HOME/z.sh"
 . "$HOME/z.sh"
 
@@ -45,3 +40,8 @@ bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward
+
+# Load NVM
+mkdir -p ~/.nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
