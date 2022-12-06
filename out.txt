@@ -1,0 +1,233 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.016  000.016: --- NVIM STARTING ---
+000.155  000.139: event init
+000.680  000.525: early init
+001.301  000.621: locale set
+001.354  000.053: init first window
+002.193  000.839: inits 1
+002.217  000.024: window checked
+002.470  000.253: parsing arguments
+003.430  000.442  000.442: require('vim.shared')
+004.340  000.354  000.354: require('vim._meta')
+004.344  000.908  000.554: require('vim._editor')
+004.345  001.477  000.127: require('vim._init_packages')
+004.347  000.400: init lua interpreter
+007.312  002.965: expanding arguments
+007.389  000.078: inits 2
+007.664  000.275: init highlight
+007.666  000.002: waiting for UI
+010.624  002.959: done waiting for UI
+010.641  000.017: init screen for UI
+010.817  000.176: init default mappings
+010.836  000.019: init default autocommands
+012.138  000.103  000.103: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin.vim
+012.528  000.057  000.057: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/indent.vim
+023.540  000.348  000.348: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/syntax/synload.vim
+024.174  000.374  000.374: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.lua
+024.765  000.031  000.031: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.vim
+027.651  002.626  002.626: require('vim.filetype')
+030.330  000.483  000.483: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin/lua.vim
+032.260  000.459  000.459: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin/lua.lua
+034.226  000.460  000.460: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/indent/lua.vim
+036.398  001.178  001.178: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/syntax/lua.vim
+036.593  014.230  008.273: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/syntax/syntax.vim
+037.187  000.259  000.259: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.lua
+037.405  000.019  000.019: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.vim
+039.926  001.928  001.928: sourcing /Users/jwtuck/.local/share/nvim/site/autoload/plug.vim
+043.120  000.247  000.247: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftoff.vim
+047.125  000.037  000.037: sourcing /Users/jwtuck/.config/nvim/plugged/vim-polyglot/filetype.vim
+047.564  000.041  000.041: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.vim
+048.132  000.157  000.157: sourcing /Users/jwtuck/.config/nvim/plugged/vim-fugitive/ftdetect/fugitive.vim
+048.662  000.235  000.235: sourcing /Users/jwtuck/.config/nvim/plugged/vim-polyglot/ftdetect/polyglot.vim
+060.794  014.657  014.187: sourcing /Users/jwtuck/.config/nvim/plugged/vim-polyglot/autoload/polyglot/init.vim
+060.825  014.946  000.289: sourcing /Users/jwtuck/.config/nvim/plugged/vim-polyglot/filetype.vim
+061.837  000.527  000.527: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.lua
+062.187  000.040  000.040: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.vim
+063.645  000.045  000.045: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin.vim
+064.104  000.045  000.045: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/indent.vim
+068.681  000.457  000.457: require('vim.treesitter.language')
+068.694  001.680  001.223: require('vim.treesitter.query')
+073.113  000.800  000.800: require('vim.treesitter.languagetree')
+073.127  001.761  000.961: require('vim.treesitter')
+073.331  003.012  001.251: require('nvim-treesitter.parsers')
+073.814  000.480  000.480: require('nvim-treesitter.utils')
+073.823  004.421  000.929: require('nvim-treesitter.ts_utils')
+073.829  005.132  000.711: require('nvim-treesitter.tsrange')
+074.167  000.337  000.337: require('nvim-treesitter.caching')
+074.187  008.219  001.070: require('nvim-treesitter.query')
+074.279  009.521  001.302: require('nvim-treesitter.configs')
+075.720  000.469  000.469: require('nvim-treesitter.info')
+076.243  000.520  000.520: require('nvim-treesitter.shell_command_selectors')
+076.265  001.970  000.982: require('nvim-treesitter.install')
+076.951  012.750  001.259: require('plugins.nvim-treesitter')
+078.470  000.480  000.480: require('telescope._extensions')
+078.475  001.074  000.594: require('telescope')
+079.021  000.544  000.544: require('telescope.themes')
+082.086  000.710  000.710: require('plenary.bit')
+082.402  000.312  000.312: require('plenary.functional')
+082.433  000.016  000.016: require('ffi')
+082.449  002.135  001.097: require('plenary.path')
+082.456  002.842  000.708: require('plenary.strings')
+082.735  000.277  000.277: require('telescope.deprecated')
+084.239  000.462  000.462: require('plenary.log')
+084.426  000.882  000.420: require('telescope.log')
+085.927  000.649  000.649: require('plenary.job')
+086.226  000.296  000.296: require('telescope.state')
+086.233  001.805  000.860: require('telescope.utils')
+086.241  003.504  000.818: require('telescope.sorters')
+086.474  000.222  000.222: require('vim.inspect')
+086.617  000.024  000.024: require('vim.F')
+087.991  008.959  002.091: require('telescope.config')
+091.707  000.501  000.501: require('telescope.actions.state')
+091.717  001.008  000.506: require('telescope._extensions.file_browser.utils')
+094.321  000.562  000.562: require('plenary.window.border')
+094.630  000.306  000.306: require('plenary.window')
+094.949  000.317  000.317: require('plenary.popup.utils')
+094.955  001.801  000.616: require('plenary.popup')
+095.351  000.395  000.395: require('telescope.pickers.scroller')
+095.788  000.434  000.434: require('telescope.actions.utils')
+096.719  000.443  000.443: require('telescope.actions.mt')
+096.740  000.949  000.506: require('telescope.actions.set')
+097.880  000.442  000.442: require('telescope.config.resolve')
+097.884  001.142  000.700: require('telescope.pickers.entry_display')
+098.191  000.305  000.305: require('telescope.from_entry')
+098.780  007.061  002.035: require('telescope.actions')
+098.813  009.241  001.172: require('telescope._extensions.file_browser.actions')
+099.653  000.441  000.441: require('telescope._extensions.file_browser.make_entry')
+101.493  000.232  000.232: require('plenary.tbl')
+101.498  000.510  000.278: require('plenary.vararg.rotate')
+101.499  000.734  000.225: require('plenary.vararg')
+101.743  000.242  000.242: require('plenary.errors')
+101.748  001.356  000.380: require('plenary.async.async')
+102.960  000.257  000.257: require('plenary.async.structs')
+102.966  000.631  000.374: require('plenary.async.control')
+102.971  000.955  000.324: require('plenary.async.util')
+102.972  001.223  000.268: require('plenary.async.tests')
+102.974  003.010  000.431: require('plenary.async')
+103.742  000.351  000.351: require('plenary.class')
+103.765  000.789  000.439: require('telescope._')
+104.913  001.145  001.145: require('telescope.make_entry')
+104.916  005.261  000.316: require('telescope.finders.async_oneshot_finder')
+105.511  000.262  000.262: require('telescope.finders.async_static_finder')
+105.790  000.276  000.276: require('telescope.finders.async_job_finder')
+105.795  000.878  000.340: require('telescope.finders')
+106.391  000.595  000.595: require('plenary.scandir')
+106.453  007.638  000.464: require('telescope._extensions.file_browser.finders')
+108.247  000.421  000.421: require('telescope.debounce')
+108.698  000.447  000.447: require('telescope.mappings')
+109.070  000.369  000.369: require('telescope.pickers.highlights')
+109.382  000.310  000.310: require('telescope.pickers.window')
+110.351  000.561  000.561: require('telescope.algos.linked_list')
+110.355  000.970  000.409: require('telescope.entry_manager')
+110.659  000.302  000.302: require('telescope.pickers.multi')
+110.673  003.866  001.047: require('telescope.pickers')
+110.676  004.221  000.354: require('telescope._extensions.file_browser.picker')
+111.080  000.403  000.403: require('telescope._extensions.file_browser.config')
+111.122  022.097  000.594: require('telescope._extensions.file_browser')
+111.252  000.050  000.050: require('vim.keymap')
+111.266  034.303  001.580: require('plugins.telescope')
+112.929  000.450  000.450: require('bufferline.lazy')
+113.403  000.469  000.469: require('bufferline.constants')
+113.885  000.479  000.479: require('bufferline.commands')
+113.892  002.185  000.787: require('bufferline')
+114.684  000.791  000.791: require('bufferline.utils')
+115.393  000.700  000.700: require('bufferline.config')
+116.023  000.624  000.624: require('bufferline.groups')
+116.334  000.291  000.291: require('bufferline.colors')
+116.971  000.449  000.449: require('bufferline.highlights')
+118.019  000.347  000.347: require('bufferline.hover')
+118.837  000.753  000.753: require('bufferline.ui')
+118.913  007.641  001.501: require('plugins.bufferline')
+120.892  000.526  000.526: require('lualine_require')
+121.857  002.498  001.972: require('lualine')
+123.627  000.439  000.439: require('catppuccin.palettes')
+124.301  000.671  000.671: require('catppuccin')
+124.554  000.248  000.248: require('catppuccin.palettes.mocha')
+127.461  008.538  004.682: require('plugins.lualine')
+130.471  001.464  001.464: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/catppuccin/colors/catppuccin.lua
+132.083  004.615  003.150: require('plugins.catppuccin')
+132.090  118.825  018.690: sourcing /Users/jwtuck/.config/nvim/init.vim
+132.210  002.390: sourcing vimrc file(s)
+133.483  000.663  000.663: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-surround/plugin/surround.vim
+134.426  000.016  000.016: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-polyglot/filetype.vim
+134.846  000.225  000.225: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.lua
+135.072  000.040  000.040: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/filetype.vim
+135.410  000.036  000.036: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin.vim
+135.720  000.038  000.038: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/indent.vim
+137.435  003.606  003.251: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-sensible/plugin/sensible.vim
+137.997  000.294  000.294: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+139.600  001.284  001.284: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-fugitive/plugin/fugitive.vim
+140.847  000.924  000.924: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-abolish/plugin/abolish.vim
+141.970  000.316  000.316: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+142.735  000.557  000.557: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+143.645  000.552  000.552: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+147.812  000.712  000.712: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/autoload/coc/highlight.vim
+148.761  000.650  000.650: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/autoload/coc/color.vim
+152.209  011.054  008.267: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+153.682  000.609  000.609: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+154.532  000.291  000.291: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+155.182  002.629  001.729: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+155.943  000.440  000.440: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+156.429  000.173  000.173: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/plenary.nvim/plugin/plenary.vim
+157.291  000.187  000.187: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/nvim-web-devicons/plugin/nvim-web-devicons.vim
+158.200  000.527  000.527: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/tabular/plugin/Tabular.vim
+158.939  000.235  000.235: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-polyglot/plugin/polyglot.vim
+160.335  000.394  000.394: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/gzip.vim
+160.736  000.240  000.240: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/health.vim
+163.737  000.490  000.490: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+164.024  003.122  002.632: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/matchit.vim
+164.472  000.285  000.285: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/matchparen.vim
+164.710  000.074  000.074: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/netrwPlugin.vim
+165.550  000.231  000.231: sourcing /Users/jwtuck/.local/share/nvim/rplugin.vim
+165.567  000.705  000.474: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/rplugin.vim
+165.864  000.146  000.146: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/shada.vim
+166.100  000.081  000.081: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/spellfile.vim
+166.435  000.178  000.178: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/tarPlugin.vim
+166.799  000.186  000.186: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/tohtml.vim
+167.038  000.072  000.072: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/tutor.vim
+167.523  000.298  000.298: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/zipPlugin.vim
+169.664  000.623  000.623: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/telescope.nvim/plugin/telescope.lua
+171.735  000.305  000.305: require('nvim-treesitter.statusline')
+172.236  000.498  000.498: require('nvim-treesitter.query_predicates')
+172.240  001.999  001.196: require('nvim-treesitter')
+172.660  002.625  000.626: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.lua
+174.678  000.363  000.363: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/plugin/man.lua
+174.741  011.122: loading rtp plugins
+175.024  000.283: loading packages
+176.106  000.281  000.281: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/tabular/autoload/tabular.vim
+177.632  002.238  001.957: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/tabular/after/plugin/TabularMaps.vim
+177.849  000.587: loading after plugins
+177.859  000.010: inits 3
+180.972  003.113: reading ShaDa
+185.968  000.603  000.603: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/autoload/provider/clipboard.vim
+188.723  000.088  000.088: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin/lua.vim
+190.993  000.312  000.312: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/ftplugin/lua.lua
+192.800  000.258  000.258: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-polyglot/indent/lua.vim
+193.032  000.028  000.028: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/indent/lua.vim
+194.689  001.011  001.011: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-polyglot/syntax/lua.vim
+194.996  000.038  000.038: sourcing /usr/local/Homebrew/Cellar/neovim/0.8.0/share/nvim/runtime/syntax/lua.vim
+196.352  013.042: opening buffers
+199.506  000.354  000.354: require('bufferline.state')
+200.413  000.570  000.570: sourcing /Users/jwtuck/dotfiles/config/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+200.664  003.388: BufEnter autocommands
+200.670  000.006: editing files in windows
+200.834  000.163: VimEnter autocommands
+200.836  000.002: UIEnter autocommands
+200.838  000.003: before starting main loop
+203.301  000.580  000.580: require('bufferline.tabpages')
+203.974  000.656  000.656: require('bufferline.models')
+204.400  000.385  000.385: require('bufferline.pick')
+204.762  000.359  000.359: require('bufferline.duplicates')
+205.467  000.686  000.686: require('bufferline.diagnostics')
+207.961  002.096  002.096: require('nvim-web-devicons')
+210.772  000.332  000.332: require('bufferline.numbers')
+211.244  000.415  000.415: require('bufferline.sorters')
+211.732  000.423  000.423: require('bufferline.offset')
+212.008  000.271  000.271: require('bufferline.custom_area')
+214.534  007.494: first screen update
+214.537  000.003: --- NVIM STARTED ---
