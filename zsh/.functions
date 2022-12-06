@@ -29,3 +29,11 @@ localsync () {
     "$1" "$2"
 }
 
+yqp () {
+  # patch "$2" <<< $(diff -U0 -w -b --ignore-blank-lines $2 <(yq $1 $2))
+  diff=$(diff -U0 -w -b --ignore-blank-lines $2 <(yq $1 $2))
+  line=$(echo $diff| grep '@@' | cut -f2 -d ' ' | sed 's/-//')
+
+  echo $diff | patch $2
+  sed $line"s/$/\n/" $2 -i
+}
