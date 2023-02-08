@@ -53,8 +53,6 @@ set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
 " Highlight searches
 set hlsearch
-" Ignore case of searches
-set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
 " Always show status line
@@ -158,7 +156,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -169,6 +166,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
 Plug 'stevearc/aerial.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
 
 lua require('plugins.aerial')
@@ -179,3 +177,4 @@ lua require('plugins.lualine')
 lua require('plugins.catppuccin')
 lua require('mappings')
 
+colorscheme catppuccin-mocha
