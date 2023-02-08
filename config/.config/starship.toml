@@ -1,0 +1,8 @@
+[package]
+disabled=true
+
+[git_status]
+format='([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style) )'
+
+[directory]
+fish_style_pwd_dir_length=1
