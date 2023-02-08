@@ -48,6 +48,7 @@ yabai -m config window_gap                   5
 yabai -m config external_bar                 all:20:0
 
 # window borders
+yabai -m config window_border_blur           off
 yabai -m config window_border                on
 yabai -m config active_window_border_color   0xff6495ed
 yabai -m config normal_window_border_color   0xff555555
