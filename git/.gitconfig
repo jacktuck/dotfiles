@@ -27,6 +27,8 @@
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 	co = checkout
+	cb = "!git checkout $(git branch --all | fzf | tr -d '[:space:]') --track"
+
 	purge = clean -xfd --exclude node_modules
 	nevermind = "!git reset --hard HEAD && git clean -d -f"
 
