@@ -167,6 +167,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
 Plug 'stevearc/aerial.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'romainl/vim-cool'
 call plug#end()
 
 lua require('plugins.aerial')
