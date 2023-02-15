@@ -27,7 +27,14 @@
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 	co = checkout
-	cb = "!git checkout $(git branch --all | fzf | tr -d '[:space:]') --track"
+
+  # Fuzzy branch checkout https://github.com/junegunn/fzf/wiki/examples#git
+	cb = "!f() {  \
+		local branches branch; \
+		branches=$(git branch --all | grep -v HEAD); \
+		branch=$(echo \"$branches\" | fzf-tmux -d 20% +m); \
+		git checkout $(echo \"$branch\" | sed \"s/.* //\" | sed \"s#remotes/[^/]*/##\"); \
+	}; f; unset f"
 
 	purge = clean -xfd --exclude node_modules
 	nevermind = "!git reset --hard HEAD && git clean -d -f"
