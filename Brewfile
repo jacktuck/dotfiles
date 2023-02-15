@@ -34,6 +34,8 @@ brew "colordiff"
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Tool to perform numerical, textual & statistical operations
 brew "datamash"
 # Good-lookin' diffs with diff-highlight and more
@@ -44,6 +46,8 @@ brew "docker"
 brew "docker-compose", link: false
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Multi-format archive and compression library
+brew "libarchive"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
@@ -74,6 +78,8 @@ brew "grip"
 brew "htop"
 # Apache HTTP server
 brew "httpd", restart_service: true
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Toolkit for embedding hypervisor capabilities in your application
 brew "hyperkit"
 # Lightweight and flexible command-line JSON processor
@@ -84,6 +90,8 @@ brew "kcat"
 brew "ldns"
 # Library that implements the rsync remote-delta algorithm
 brew "librsync"
+# Mac App Store command-line interface
+brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
 # MongoDB CLI enables you to manage your MongoDB in the Cloud
@@ -184,3 +192,10 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+mas "ColorSlurp", id: 1287239339
+mas "Keynote", id: 409183694
+mas "MeetingBar", id: 1532419400
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835
