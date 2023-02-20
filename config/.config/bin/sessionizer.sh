@@ -1,6 +1,6 @@
 DIRS=("dotfiles")
 cd ~
-for dir in $(find code/* projects/* -maxdepth 0 -type d);
+for dir in $(find code projects -mindepth 1 -maxdepth 1 -type d);
     do DIRS+=($dir);
 done
 DIRS=$(printf '%s\n' "${DIRS[@]}")
