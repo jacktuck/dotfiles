@@ -134,7 +134,8 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 nmap <leader>rn <Plug>(coc-rename)
 
-nmap <leader>f  <Plug>(coc-format)
+" coc-prettier isn't working
+nmap <leader>f :w \| !npx prettier --write %<CR> 
 
 " setlocal foldmethod=expr
 " setlocal foldexpr=nvim_treesitter#foldexpr()

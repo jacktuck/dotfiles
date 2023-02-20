@@ -18,7 +18,10 @@ vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>", {})
 -- Tabular
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
 
--- Save a file as root (,W)
+-- Write file
+vim.keymap.set('n', '<leader>w', ':w <CR>', {})
+
+-- Write file as sudo
 vim.keymap.set('n', '<leader>W', ':w !sudo tee % > /dev/null<CR>', {})
 
 -- Clear search highlight
