@@ -24,3 +24,5 @@ vim.keymap.set('n', '<leader>W', ':w !sudo tee % > /dev/null<CR>', {})
 -- Clear search highlight
 vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
 
+vim.keymap.set('n', '[b', ':bprevious<CR>', {})
+vim.keymap.set('n', ']b', ':bnext<CR>', {})
