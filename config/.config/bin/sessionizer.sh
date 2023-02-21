@@ -1,11 +1,15 @@
 DIRS=("dotfiles")
 cd ~
-for dir in $(find code/* projects/* -maxdepth 0 -type d);
+for dir in $(find code projects -mindepth 1 -maxdepth 1 -type d);
     do DIRS+=($dir);
 done
 DIRS=$(printf '%s\n' "${DIRS[@]}")
 
 DIR=$(echo "$DIRS" | fzf-tmux -p --reverse --border-label "Switch project")
+
+# Return early if no dir was selected
+[ -z "$DIR" ] && exit 0;
+
 SESSION_NAME=$(echo "$DIR" | tr ' ' '_' | tr '.' '_')
 SESSION_NAME=$(basename "$SESSION_NAME")
 
