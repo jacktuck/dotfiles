@@ -32,7 +32,7 @@
 	cb = "!f() {  \
 		local branches branch; \
 		branches=$(git branch --all | grep -v HEAD); \
-		branch=$(echo \"$branches\" | fzf-tmux -d 20% +m); \
+		branch=$(echo \"$branches\" | fzf-tmux -p --border-label \"Switch branch\"); \
 		git checkout $(echo \"$branch\" | sed \"s/.* //\" | sed \"s#remotes/[^/]*/##\"); \
 	}; f; unset f"
 
