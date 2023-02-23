@@ -1,8 +1,23 @@
 [package]
 disabled=true
 
+[docker_context]
+disabled=true
+
 [git_status]
 format='([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style) )'
 
 [directory]
 fish_style_pwd_dir_length=1
+style = "blue bold dimmed"
+
+[jobs]
+disabled = true
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold green)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_visual_symbol = "[❮](bold green)"
+vimcmd_replace_symbol = "[❮](bold green)"
+vimcmd_replace_one_symbol = "[❮](bold green)"
