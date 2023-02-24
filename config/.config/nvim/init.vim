@@ -92,52 +92,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" coc config
 set signcolumn=yes
-
-let g:coc_global_extensions = [
-  \ 'coc-pairs',
-  \ 'coc-prettier',
-  \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-json',
-  \ 'coc-yaml',
-  \ 'coc-go',
-  \ 'coc-java'
-  \ ]
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Remap keys for code-actions
-nmap <leader>ab  <Plug>(coc-codeaction)
-nmap <leader>al  <Plug>(coc-codeaction-line)
-
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-nmap <leader>rn <Plug>(coc-rename)
-
-
-" setlocal foldmethod=expr
-" setlocal foldexpr=nvim_treesitter#foldexpr()
-
 set noshowmode
 set noshowcmd
 set shortmess+=F
@@ -152,7 +107,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', { 'do': 'npm install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
@@ -168,6 +122,17 @@ Plug 'stevearc/aerial.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'romainl/vim-cool'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 lua require('plugins.aerial')
@@ -177,6 +142,9 @@ lua require('plugins.bufferline')
 lua require('plugins.lualine')
 lua require('plugins.catppuccin')
 lua require('plugins.null-ls')
+lua require('plugins.nvim-cmp')
+lua require('plugins.nvim-lspconfig')
+lua require('plugins.mason')
 lua require('mappings')
 
 colorscheme catppuccin-mocha
