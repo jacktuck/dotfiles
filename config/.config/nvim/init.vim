@@ -134,8 +134,6 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 nmap <leader>rn <Plug>(coc-rename)
 
-" coc-prettier isn't working
-nmap <leader>f :w \| !npx prettier --write %<CR> 
 
 " setlocal foldmethod=expr
 " setlocal foldexpr=nvim_treesitter#foldexpr()
@@ -169,6 +167,7 @@ Plug 'godlygeek/tabular'
 Plug 'stevearc/aerial.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'romainl/vim-cool'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
 
 lua require('plugins.aerial')
@@ -177,6 +176,7 @@ lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
 lua require('plugins.catppuccin')
+lua require('plugins.null-ls')
 lua require('mappings')
 
 colorscheme catppuccin-mocha
