@@ -34,14 +34,28 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
+
+require("lspconfig").tsserver.setup {
+    capabilities = capabilities,
 }
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
+require("lspconfig").pyright.setup {
+    capabilities = capabilities,
+}
+require("lspconfig").lua_ls.setup {
+    capabilities = capabilities,
+}
+require("lspconfig").rust_analyzer.setup {
+    capabilities = capabilities,
+}
+require("lspconfig").docker_compose_language_service.setup {
+    capabilities = capabilities,
+}
+require("lspconfig").bashls.setup {
+    capabilities = capabilities,
+}
+require("lspconfig").gopls.setup {
+    capabilities = capabilities,
 }
