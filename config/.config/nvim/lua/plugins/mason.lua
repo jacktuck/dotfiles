@@ -4,9 +4,15 @@ require("mason-lspconfig").setup {
         "tsserver",
         "pyright",
         "lua_ls",
-        "rust_analyzer", 
-        "docker_compose_language_service", 
-        "bashls", 
+        "rust_analyzer",
+        "docker_compose_language_service",
+        "bashls",
         "gopls"
+    }
+}
+
+require 'cmp'.setup {
+    sources = {
+        { name = 'nvim_lsp' }
     }
 }
