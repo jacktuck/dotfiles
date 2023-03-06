@@ -200,7 +200,7 @@
 
 [init]
 
-	defaultBranch = main
+	defaultBranch = master
 
 [user]
 

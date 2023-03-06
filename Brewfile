@@ -5,6 +5,7 @@
 # Alternative to top/htop
 # Ambitious Vim-fork focused on extensibility and agility
 # Apache HTTP server
+# App to build and share containerized applications and microservices
 # Autoformat shell script source code
 # Automate deployment, configuration, and upgrading
 # C library implementing the SSH2 protocol
@@ -15,7 +16,6 @@
 # Command-line fuzzy finder written in Go
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 # Cross-shell prompt for astronauts
-# Cryptography and SSL/TLS Toolkit
 # Custom macOS statusbar with shell plugin, interaction and graph support
 # DNS library written in C
 # Developer targeted fonts with a high number of glyphs
@@ -25,6 +25,8 @@
 # Distributed revision control system
 # Download with resuming and segmented downloading
 # Emulator for x86 and PowerPC
+# Executes a program periodically, showing output fullscreen
+# Fast and simple Node.js version manager
 # Fast, highly customisable system info script
 # Fish shell like syntax highlighting for zsh
 # GNU File, Shell, and Text utilities
@@ -48,7 +50,6 @@
 # Library that implements the rsync remote-delta algorithm
 # Lightweight and flexible command-line JSON processor
 # Mac App Store command-line interface
-# Manage multiple Node.js versions
 # MongoDB CLI enables you to manage your MongoDB in the Cloud
 # Monitor data's progress through a pipe
 # Multi-format archive and compression library
@@ -85,6 +86,7 @@
 # Tool that provides consistent, highly configurable symbols for apps
 # Tool to perform numerical, textual & statistical operations
 # Toolkit for embedding hypervisor capabilities in your application
+# User interface to the TELNET protocol
 # User-friendly cURL replacement (command-line HTTP client)
 # Zsh port of Fish shell's history search
 brew "ansible", link: false
@@ -100,8 +102,10 @@ brew "diff-so-fancy"
 brew "docker"
 brew "docker-compose", link: false
 brew "fd"
+brew "felixkratz/formulae/sketchybar"
 brew "ffmpeg"
 brew "findutils"
+brew "fnm"
 brew "freetype"
 brew "fx"
 brew "fzf"
@@ -121,6 +125,7 @@ brew "hyperkit"
 brew "jq"
 brew "kcat"
 brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 brew "ldns"
 brew "libarchive"
 brew "librsync"
@@ -133,11 +138,9 @@ brew "moreutils"
 brew "neofetch"
 brew "neovim"
 brew "numpy"
-brew "nvm"
 brew "openblas"
 brew "openjdk@8"
 brew "openssh"
-brew "openssl@3"
 brew "p7zip"
 brew "parallel"
 brew "pass"
@@ -155,28 +158,28 @@ brew "rename"
 brew "ripgrep"
 brew "rust"
 brew "shfmt"
-brew "sketchybar", restart_service: true
 brew "ssh-copy-id"
 brew "starship"
 brew "stow"
-brew "tcl-tk"
+brew "tcl-tk", link: false
 brew "teamookla/speedtest/speedtest"
+brew "telnet"
 brew "tmux"
 brew "tree"
+brew "watch"
 brew "wdiff"
 brew "webp"
 brew "wget"
 brew "xclip"
-brew "yabai", args: ["HEAD"], restart_service: true
 brew "yarn"
 brew "yq", args: ["HEAD"]
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 cask "alacritty"
 cask "basictex"
+cask "docker"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
-cask "google-chrome"
 cask "sf-symbols"
 mas "ColorSlurp", id: 1287239339
 mas "Keynote", id: 409183694

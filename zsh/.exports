@@ -43,13 +43,3 @@ export GPG_TTY=$(tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
-
-# Load NVM
-mkdir -p ~/.nvm;
-export NVM_DIR=~/.nvm;
-source $(brew --prefix nvm)/nvm.sh;
-
-[ ! -f "$HOME/z.sh" ] && wget "https://raw.githubusercontent.com/rupa/z/master/z.sh" -O "$HOME/z.sh" 
-. "$HOME/z.sh"
-
-export COC_NODE_PATH="$(nvm which 14)"
