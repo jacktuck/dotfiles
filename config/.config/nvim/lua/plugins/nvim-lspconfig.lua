@@ -60,4 +60,3 @@ require("lspconfig").gopls.setup {
   capabilities = capabilities,
 }
 
-vim.lsp.set_log_level("debug")
