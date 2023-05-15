@@ -37,3 +37,11 @@ yqp () {
   echo $diff | patch --no-backup-if-mismatch $2
   sed $line"s/$/\n/" $2 -i
 }
+
+findrename () {
+        fd $1 | xargs -n 1 rename "s/$1/$2/g"
+}
+
+findreplace () {
+        rg $1 --files-with-matches -0 | xargs -0 gsed -i "s/$1/$2/g"
+}
