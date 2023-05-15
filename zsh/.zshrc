@@ -13,7 +13,6 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-completions
 # antigen bundle chriskempson/base16-shell
 
 antigen apply
@@ -35,7 +34,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env)"
 
 
 [ ! -f "$HOME/z.sh" ] && wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O "$HOME/z.sh"

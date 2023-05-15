@@ -6,21 +6,32 @@ require('lualine').setup {
     always_divide_middle = false,
     globalstatus = true,
   },
+  inactive_winbar = {
+    lualine_c = {
+      {
+        "filename",
+      },
+      { "aerial", sep = " › " },
+    }
+  },
   winbar = {
     lualine_c = {
-      { "aerial", sep =  " › "},
+      {
+        "filename",
+      },
+      { "aerial", sep = " › " },
     }
   },
   sections = {
-    lualine_a = {"mode"},
+    lualine_a = { "mode" },
     lualine_b = {
-        {
-            "filename",
-            file_status = true, -- displays file status (readonly status, modified status)
-            path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-        },
-      'branch', 
-      'diff', 
+      {
+        "filename",
+        file_status = true, -- displays file status (readonly status, modified status)
+        path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+      },
+      'branch',
+      'diff',
     },
     lualine_c = {},
     lualine_x = {},
@@ -29,6 +40,6 @@ require('lualine').setup {
       "filetype",
       "progress",
     },
-    lualine_z = {"location"},
+    lualine_z = { "location" },
   }
 }
