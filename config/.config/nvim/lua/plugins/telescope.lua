@@ -6,9 +6,13 @@ require 'telescope'.setup {
   },
   extensions = {
     file_browser = {
+      preview = {
+        ls_short = true,
+      },
       hidden = { file_browser = true, folder_browser = false },
       respect_gitignore = false,
       depth = 1,
+      display_stat = false,
     },
   },
   pickers = {

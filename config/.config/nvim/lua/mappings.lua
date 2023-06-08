@@ -9,8 +9,9 @@ vim.keymap.set('n', '<leader>blame', ":Git blame<CR>", {})
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
+vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>", {})
+vim.keymap.set("n", "<leader>fb.", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
 vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
-vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>", {})
 vim.keymap.set('n', '<leader>fc', ":Telescope treesitter<CR>", {})
 vim.keymap.set('n', '<leader>gc', ":Telescope git_commits<CR>", {})
 vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>", {})
