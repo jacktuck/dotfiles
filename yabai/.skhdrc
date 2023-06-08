@@ -8,7 +8,7 @@ alt + cmd - b : yabai -m space --layout bsp
 # alt + cmd - n : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
 # shift + alt + cmd - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
 
-alt + cmd - x: yabai -m window --toggle float;yabai -m window --grid 5:5:1:1:3:3
+alt + cmd - x: yabai -m window --toggle float;yabai -m window --grid 7:7:1:1:5:5
 
 # navigate spaces
 alt + cmd - 1 : yabai -m display --focus $(yabai -m query --displays --space 1 | jq '.index'); skhd -k "ctrl - 1"
