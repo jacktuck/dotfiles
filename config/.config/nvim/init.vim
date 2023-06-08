@@ -133,6 +133,8 @@ Plug 'hrsh7th/nvim-cmp'
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
 lua require('plugins.aerial')
