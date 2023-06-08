@@ -1,4 +1,4 @@
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -39,23 +39,24 @@ local lsp_flags = {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("lspconfig").tsserver.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").pyright.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").lua_ls.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").rust_analyzer.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").docker_compose_language_service.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").bashls.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
 require("lspconfig").gopls.setup {
-    capabilities = capabilities,
+  capabilities = capabilities,
 }
+
