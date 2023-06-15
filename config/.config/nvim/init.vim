@@ -114,12 +114,11 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
 Plug 'stevearc/aerial.nvim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'romainl/vim-cool'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'williamboman/mason.nvim'
@@ -130,6 +129,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'projekt0n/github-nvim-theme'
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -142,11 +143,13 @@ lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
-lua require('plugins.catppuccin')
+" lua require('plugins.catppuccin')
 lua require('plugins.null-ls')
 lua require('plugins.nvim-cmp')
 lua require('plugins.nvim-lspconfig')
 lua require('plugins.mason')
 lua require('mappings')
 
-colorscheme catppuccin-mocha
+" colorscheme catppuccin-mocha
+colorscheme github_dark_dimmed
+" colorscheme github_dark_high_contrast
