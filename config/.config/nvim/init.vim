@@ -100,12 +100,12 @@ set shortmess+=F
 let loaded_netrwPlugin = 1
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
@@ -114,28 +114,26 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
 Plug 'stevearc/aerial.nvim'
-" Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'romainl/vim-cool'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'projekt0n/github-nvim-theme'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'projekt0n/github-nvim-theme'
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
 lua require('plugins.aerial')
@@ -143,13 +141,12 @@ lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
 lua require('plugins.bufferline')
 lua require('plugins.lualine')
-" lua require('plugins.catppuccin')
 lua require('plugins.null-ls')
 lua require('plugins.nvim-cmp')
 lua require('plugins.nvim-lspconfig')
 lua require('plugins.mason')
 lua require('mappings')
+lua require("nvim-autopairs").setup {}
 
-" colorscheme catppuccin-mocha
 colorscheme github_dark_dimmed
 " colorscheme github_dark_high_contrast
