@@ -132,11 +132,6 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 alias bump='npm version --git-tag-version false'
 
-alias vi='echo "use (n)vim"'
-
-# LSP server needs node 14
-alias vim='_vim() { echo no | fnm use 14 && nvim $1; fnm use default }; _vim'
-
 # Miscellaneous
 alias screencapture="osascript ~/scripts/screen_capture.scpt"
 alias restart_en0="sudo ifconfig en0 down && sudo ifconfig en0 up"
