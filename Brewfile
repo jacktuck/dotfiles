@@ -124,8 +124,6 @@ brew "pass"
 brew "qemu"
 # Tool for managing OCI containers and pods
 brew "podman"
-# Pretty, minimal and fast ZSH prompt
-brew "pure"
 # Monitor data's progress through a pipe
 brew "pv"
 # Python version management
@@ -146,8 +144,6 @@ brew "rust"
 brew "shfmt"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
-# Cross-shell prompt for astronauts
-brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Tool Command Language

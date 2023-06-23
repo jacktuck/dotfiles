@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -137,3 +135,11 @@ alias screencapture="osascript ~/scripts/screen_capture.scpt"
 alias restart_en0="sudo ifconfig en0 down && sudo ifconfig en0 up"
 alias ssid="networksetup -getairportnetwork en0 | awk '{print \$NF}'"
 alias wifiPass="security find-generic-password -D 'AirPort network password' -a $(ssid) -g | grep 'password:'"
+
+findrename () {
+        fd $1 | xargs -n 1 rename "s/$1/$2/g"
+}
+
+findreplace () {
+        rg $1 --files-with-matches -0 | xargs -0 gsed -i "s/$1/$2/g"
+}
