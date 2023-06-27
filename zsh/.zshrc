@@ -45,8 +45,19 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+PYENV_ROOT="${HOME}/.pyenv"
+if [[ -d "$PYENV_ROOT}" ]]; then
+  pyenv () {
+    if ! (($path[(Ie)${PYENV_ROOT}/bin])); then
+      path[1,0]="${PYENV_ROOT}/bin"
+    fi
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+    unfunction pyenv
+  }
+else
+  unset PYENV_ROOT
+fi
 eval "$(fnm env)"
 
 
