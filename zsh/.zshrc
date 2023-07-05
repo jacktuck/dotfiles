@@ -17,6 +17,7 @@ done;
 unset file
 
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 autoload -Uz compinit
 compinit
 
@@ -40,7 +41,6 @@ zinit light starship/starship
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"

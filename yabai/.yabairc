@@ -56,10 +56,20 @@ yabai -m config window_border_width          3
 
 yabai -m config debug_output on
 
-yabai -m rule --add app="^1Password 7$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-# yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add title='Preferences$' manage=off
+
+ignored_apps=(
+  "1Password"
+  "Alfred Preferences"
+  "App Store"
+  "Bluetooth Explorer"
+  "Finder"
+  "Messenger"
+  "System Information"
+  "System Preferences"
+)
+
+for app in "${ignored_apps[@]}";
+  do yabai -m rule --add app="${app}" manage=off;
+done;
 
 echo "yabai configuration loaded.."
