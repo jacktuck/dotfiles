@@ -1,3 +1,6 @@
+-- Source vimrc
+vim.keymap.set('n', '<leader>r', ":w | :source $MYVIMRC<CR>", {})
+
 -- Fugitive
 -- vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
 -- vim.keymap.set('n', '<leader>gs', ":Git status<CR>", {})
