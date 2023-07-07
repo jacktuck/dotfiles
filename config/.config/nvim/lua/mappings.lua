@@ -1,5 +1,9 @@
 --
-vim.keymay.set('n', '<leader>cl', "ayiwOconsole.log(\"<C-R>a:\", <C-R>a);<Esc>")
+-- Refactorings
+vim.keymap.set('n', '<leader>cl', "\"ayiwoconsole.log(\"<C-R>a:\", <C-R>a);<Esc>0", {})
+
+-- Source vimrc
+vim.keymap.set('n', '<leader>r', ":source $MYVIMRC<CR>", {})
 
 -- Fugitive
 -- vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
