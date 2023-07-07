@@ -1,3 +1,6 @@
+--
+vim.keymay.set('n', '<leader>cl', "ayiwOconsole.log(\"<C-R>a:\", <C-R>a);<Esc>")
+
 -- Fugitive
 -- vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
 -- vim.keymap.set('n', '<leader>gs', ":Git status<CR>", {})
