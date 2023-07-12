@@ -1,10 +1,15 @@
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
- -- tsserver requires node 14
-vim.env.PATH=vim.env.NODE_14 .. ":" .. vim.env.PATH
+-- tsserver requires node 14
+vim.env.PATH = vim.env.NODE_14 .. ":" .. vim.env.PATH
 
 require("lspconfig").tsserver.setup {
+  settings = {
+    completions = {
+      completeFunctionCalls = true,
+    }
+  },
   capabilities = capabilities,
 }
 require("lspconfig").pyright.setup {
@@ -57,4 +62,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
   end,
 })
-
