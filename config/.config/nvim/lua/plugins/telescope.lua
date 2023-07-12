@@ -16,9 +16,6 @@ require 'telescope'.setup {
     },
   },
   pickers = {
-    find_files = {
-      find_command = { "rg", "--files", "--hidden" },
-    },
     live_grep = {
       additional_args = function(opts)
         return { "--hidden" }
