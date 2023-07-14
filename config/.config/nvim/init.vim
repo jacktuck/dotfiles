@@ -107,7 +107,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
@@ -150,6 +150,7 @@ lua require('plugins.null-ls')
 lua require('plugins.nvim-cmp')
 lua require('plugins.nvim-lspconfig')
 lua require('plugins.mason')
+lua require('plugins.gitsigns')
 lua require('mappings')
 lua require("nvim-autopairs").setup {}
 

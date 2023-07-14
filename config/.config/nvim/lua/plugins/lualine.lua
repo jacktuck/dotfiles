@@ -29,19 +29,20 @@ require('lualine').setup {
       {
         "filename",
         file_status = true, -- displays file status (readonly status, modified status)
-        path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        path = 1,           -- 0 = just filename, 1 = relative path, 2 = absolute path
       },
     },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {
-      { 'diagnostics',
-        sources = { 'nvim_diagnostic', 'coc' },
+      {
+        'diagnostics',
+        sources = { 'nvim_diagnostic' },
         sections = { 'error', 'warn' },
         symbols = { error = '', warn = '󰈻' },
-        colored = true, -- Displays diagnostics status in color if set to true.
+        colored = true,           -- Displays diagnostics status in color if set to true.
         update_in_insert = false, -- Update diagnostics in insert mode.
-        always_visible = false, -- Show diagnostics even if there are none.
+        always_visible = false,   -- Show diagnostics even if there are none.
       },
       -- "filetype",
       -- "progress",
