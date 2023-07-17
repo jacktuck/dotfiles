@@ -24,6 +24,11 @@ vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
 vim.keymap.set('n', '<leader>fc', ":Telescope treesitter<CR>", {})
 vim.keymap.set('n', '<leader>gc', ":Telescope git_commits<CR>", {})
 vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>", {})
+vim.keymap.set('n', '<leader>gs', ":Telescope git_status<CR>", {})
+
+-- Quickfix lists
+vim.keymap.set('n', '[q', ":cp<CR>", {})
+vim.keymap.set('n', ']q', ":cn<CR>", {})
 
 -- Tabular
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
