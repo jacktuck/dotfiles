@@ -43,22 +43,25 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-
-PYENV_ROOT="${HOME}/.pyenv"
-if [[ -d "$PYENV_ROOT}" ]]; then
-  pyenv () {
-    if ! (($path[(Ie)${PYENV_ROOT}/bin])); then
-      path[1,0]="${PYENV_ROOT}/bin"
-    fi
-    eval "$(command pyenv init -)"
-    pyenv "$@"
-    unfunction pyenv
-  }
-else
-  unset PYENV_ROOT
+# Try to find pyenv, if it's not on the path
+export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
 fi
+
+# Lazy load pyenv
+if type pyenv > /dev/null; then
+    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+            eval "$(command pyenv virtualenv-init -)"
+        fi
+        pyenv $@
+    }
+fi
+
 eval "$(fnm env)"
 
 
