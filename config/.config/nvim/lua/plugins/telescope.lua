@@ -20,7 +20,14 @@ require 'telescope'.setup {
     find_files = {
       find_command = { "fd", "--type", "file", "--hidden" },
     },
+    grep_string = {
+      only_sort_text = true,
+      additional_args = function(opts)
+        return { "--hidden" }
+      end
+    },
     live_grep = {
+      only_sort_text = true,
       additional_args = function(opts)
         return { "--hidden" }
       end
