@@ -45,4 +45,7 @@ vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
 vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
 
-vim.keymap.set('n', 'f', ':lua vim.lsp.buf.format()<CR>', {})
+vim.keymap.set('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>', {})
+
+-- TODO: convert to a lua function
+vim.keymap.set('n', '<leader>lv','$T#dt"F:lvt#y | :let a=system("latestLibTag", @")[:-2] | exec ".s/#/#".a."/g"<CR>', {})

@@ -2,6 +2,7 @@ local builtin = require('telescope.builtin')
 
 require 'telescope'.setup {
   defaults = require('telescope.themes').get_dropdown {
+    path_display = { "smart" },
     file_ignore_patterns = { ".git/" },
   },
   extensions = {
@@ -17,7 +18,7 @@ require 'telescope'.setup {
   },
   pickers = {
     find_files = {
-      find_command = { "fd", "--hidden" },
+      find_command = { "fd", "--type", "file", "--hidden" },
     },
     live_grep = {
       additional_args = function(opts)
