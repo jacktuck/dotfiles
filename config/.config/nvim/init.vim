@@ -100,13 +100,13 @@ set shortmess+=F
 let loaded_netrwPlugin = 1
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
+Plug 'windwp/nvim-autopairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -116,10 +116,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'godlygeek/tabular'
-Plug 'stevearc/aerial.nvim'
 Plug 'romainl/vim-cool'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'williamboman/mason.nvim'
@@ -138,14 +136,14 @@ Plug 'hrsh7th/cmp-calc'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rmagatti/auto-session'
 call plug#end()
 
 lua require("luasnip.loaders.from_vscode").load()
 
-lua require('plugins.aerial')
 lua require('plugins.nvim-treesitter')
 lua require('plugins.telescope')
-lua require('plugins.bufferline')
+lua require('plugins.auto-session')
 lua require('plugins.lualine')
 lua require('plugins.null-ls')
 lua require('plugins.nvim-cmp')
