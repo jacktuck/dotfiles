@@ -5,7 +5,7 @@ vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\", <C-R>a);<Esc>
 vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\", <C-R>a);<Esc>0", {})
 
 -- Source vimrc
-vim.keymap.set('n', '<C-r>', ":source $MYVIMRC<CR>", {})
+vim.keymap.set('n', '<leader><leader>r', ":source $MYVIMRC<CR>", {})
 
 -- Fugitive
 -- vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
