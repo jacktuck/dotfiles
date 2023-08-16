@@ -139,19 +139,30 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rmagatti/auto-session'
 call plug#end()
 
-lua require("luasnip.loaders.from_vscode").load()
 
-lua require('plugins.nvim-treesitter')
-lua require('plugins.telescope')
-lua require('plugins.auto-session')
-lua require('plugins.lualine')
-lua require('plugins.null-ls')
-lua require('plugins.nvim-cmp')
-lua require('plugins.nvim-lspconfig')
-lua require('plugins.mason')
-lua require('plugins.gitsigns')
-lua require('mappings')
-lua require("nvim-autopairs").setup {}
+lua << EOF
+	local modules = {
+    "plugins.nvim-treesitter",
+    "plugins.telescope",
+    "plugins.auto-session",
+    "plugins.lualine",
+    "plugins.null-ls",
+    "plugins.nvim-cmp",
+    "plugins.nvim-lspconfig",
+    "plugins.mason",
+    "plugins.gitsigns",
+    "plugins.nvim-autopairs",
+    "mappings",
+	}
+
+	-- Refresh module cache
+	for k, v in pairs(modules) do
+		package.loaded[v] = nil
+		require(v)
+	end
+EOF
+
+
 
 colorscheme github_dark_dimmed
 " colorscheme github_dark_high_contrast
