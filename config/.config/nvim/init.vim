@@ -137,8 +137,13 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rmagatti/auto-session'
+Plug 'vim-test/vim-test'
 call plug#end()
 
+let test#strategy = "neovim"
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
 
 lua << EOF
 	local modules = {
