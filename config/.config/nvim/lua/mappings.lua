@@ -7,6 +7,12 @@ vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\", <C-R>a);<Esc
 -- Source vimrc
 vim.keymap.set('n', '<leader><leader>r', ":source $MYVIMRC<CR>", {})
 
+-- Vim-test
+vim.keymap.set('n', '<leader>tn', ":TestNearest<CR>", {})
+vim.keymap.set('n', '<leader>tf', ":TestFile<CR>", {})
+vim.keymap.set('n', '<leader>ta', ":TestSuite<CR>", {})
+vim.keymap.set('n', '<leader>tv', ":TestVisit<CR>", {})
+
 -- Fugitive
 -- vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
 -- vim.keymap.set('n', '<leader>gs', ":Git status<CR>", {})
