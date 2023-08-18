@@ -37,7 +37,7 @@
 	}; f; unset f"
 
 	purge = clean -xfd --exclude node_modules
-	nevermind = "!git reset --hard HEAD && git clean -d -f"
+	nvm = "!git reset --hard HEAD && git clean -d -f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
