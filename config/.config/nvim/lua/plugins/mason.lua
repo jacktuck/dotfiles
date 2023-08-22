@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
     ensure_installed = {
-        "tsserver",
+        "tsserver@0.11.2", -- node 12 support
         "pyright",
         "lua_ls",
         "rust_analyzer",
@@ -10,4 +10,3 @@ require("mason-lspconfig").setup {
         "gopls"
     }
 }
-
