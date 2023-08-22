@@ -140,11 +140,6 @@ Plug 'rmagatti/auto-session'
 Plug 'vim-test/vim-test'
 call plug#end()
 
-let test#strategy = "neovim"
-if has('nvim')
-  tmap <C-o> <C-\><C-n>
-endif
-
 lua << EOF
 	local modules = {
     "plugins.nvim-treesitter",
@@ -167,6 +162,12 @@ lua << EOF
 	end
 EOF
 
+let test#strategy = "neovim"
+let g:test#javascript#runner = "jest"
+
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
 
 
 colorscheme github_dark_dimmed

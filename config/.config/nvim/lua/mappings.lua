@@ -24,6 +24,7 @@ vim.keymap.set('n', '<leader>blame', ":Git blame<CR>", {})
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
+vim.keymap.set('n', '<leader>fl', ":Telescope resume<CR>", {})
 -- vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>", {})
 vim.keymap.set("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
 vim.keymap.set('n', '<leader>fg', function()
