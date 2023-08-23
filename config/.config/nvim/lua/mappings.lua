@@ -53,6 +53,8 @@ vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
 
 vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
+vim.keymap.set('n', 'bd', ':bd<CR>', {})
+vim.keymap.set('n', 'bd!', ':bd!<CR>', {})
 
 vim.keymap.set('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>', {})
 
