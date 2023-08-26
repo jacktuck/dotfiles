@@ -8,7 +8,7 @@ local has_words_before = function()
 end
 
 
-require("luasnip.loaders.from_vscode").load()
+require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
   snippet = {
@@ -54,8 +54,6 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
-    { name = 'tmux' },
-    { name = 'calc' },
   }, {
     { name = 'buffer' },
   })
