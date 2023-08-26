@@ -39,6 +39,11 @@ vim.keymap.set('n', '<leader>fs', ":Telescope git_status<CR>", {})
 vim.keymap.set('n', '[q', ":cp<CR>", {})
 vim.keymap.set('n', ']q', ":cn<CR>", {})
 
+-- Treesitter
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })
+
 -- Tabular
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
 
