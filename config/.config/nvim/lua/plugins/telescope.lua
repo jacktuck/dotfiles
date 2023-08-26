@@ -2,7 +2,7 @@ local builtin = require('telescope.builtin')
 
 require 'telescope'.setup {
   defaults = require('telescope.themes').get_dropdown {
-    path_display = { "smart" },
+    path_display = { "truncate" },
     file_ignore_patterns = { ".git/" },
   },
   extensions = {
