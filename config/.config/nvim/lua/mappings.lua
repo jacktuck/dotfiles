@@ -26,14 +26,14 @@ vim.keymap.set('n', '<leader>gv', ":GBrowse <CR>", {})
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
 vim.keymap.set('n', '<leader>fl', ":Telescope resume<CR>", {})
-vim.keymap.set("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
+vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
+vim.keymap.set('n', '<leader>fb', function()
+	require('telescope.builtin').buffers({ ignore_current_buffer = true, sort_mru = true })
+end)
 vim.keymap.set('n', '<leader>fg', function()
 	local search = vim.fn.input("Grep > ")
 	if (string.len(search) > 1) then require('telescope.builtin').grep_string({ search = search }) end
 end)
-vim.keymap.set('n', '<leader>fc', ":Telescope git_commits<CR>", {})
-vim.keymap.set('n', '<leader>fb', ":Telescope git_branches<CR>", {})
-vim.keymap.set('n', '<leader>fs', ":Telescope git_status<CR>", {})
 
 -- Quickfix lists
 vim.keymap.set('n', '[q', ":cp<CR>", {})
