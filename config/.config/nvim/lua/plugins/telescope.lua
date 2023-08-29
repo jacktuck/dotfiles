@@ -26,12 +26,13 @@ require 'telescope'.setup {
         return { "--hidden" }
       end
     },
-    live_grep = {
-      only_sort_text = true,
-      additional_args = function(opts)
-        return { "--hidden" }
-      end
-    },
+    buffers = {
+      mappings = {
+        i = {
+          ["<C-d>"] = require('telescope.actions').delete_buffer
+        }
+      }
+    }
   }
 }
 
