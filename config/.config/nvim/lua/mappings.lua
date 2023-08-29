@@ -17,7 +17,10 @@ vim.keymap.set('n', '<leader>tv', ":TestVisit<CR>", {})
 vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
 vim.keymap.set('n', '<leader>gs', ":Git<CR>", {})
 vim.keymap.set('n', '<leader>gl', ":Git l<CR>", {})
-vim.keymap.set('n', '<leader>gc', ":Git commit<CR>", {})
+vim.keymap.set('n', '<leader>gc', function()
+	local msg = vim.fn.input("Commit msg: ")
+	return ':Git commit -m "' .. msg .. '"<CR>'
+end, { expr = true })
 vim.keymap.set('n', '<leader>gw', ":Gwrite<CR>", {})
 vim.keymap.set('n', '<leader>gr', ":Gread<CR>", {})
 vim.keymap.set('n', '<leader>gb', ":Git blame<CR>", {})
@@ -41,7 +44,7 @@ vim.keymap.set('n', ']q', ":cn<CR>", {})
 
 -- Treesitter
 vim.keymap.set("n", "[c", function()
-  require("treesitter-context").go_to_context()
+	require("treesitter-context").go_to_context()
 end, { silent = true })
 
 -- Tabular
