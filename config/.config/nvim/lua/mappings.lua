@@ -29,6 +29,7 @@ vim.keymap.set('n', '<leader>gv', ":GBrowse <CR>", {})
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
 vim.keymap.set('n', '<leader>fl', ":Telescope resume<CR>", {})
+vim.keymap.set('n', '<leader>fs', ":Telescope git_status<CR>", {})
 vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
 vim.keymap.set('n', '<leader>fb', function()
 	require('telescope.builtin').buffers({ ignore_current_buffer = true, sort_mru = true })
