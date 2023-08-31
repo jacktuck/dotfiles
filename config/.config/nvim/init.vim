@@ -103,7 +103,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -138,9 +137,13 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rmagatti/auto-session'
 Plug 'vim-test/vim-test'
+Plug 'numToStr/Comment.nvim'
 call plug#end()
 
 lua << EOF
+  require('Comment').setup()
+  require("nvim-autopairs").setup()
+
 	local modules = {
     "plugins.nvim-treesitter",
     "plugins.telescope",
@@ -151,7 +154,6 @@ lua << EOF
     "plugins.nvim-lspconfig",
     "plugins.mason",
     "plugins.gitsigns",
-    "plugins.nvim-autopairs",
     "mappings",
 	}
 
