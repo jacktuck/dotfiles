@@ -1,4 +1,3 @@
---
 -- Refactorings
 vim.keymap.set('n', '<leader>lc', "\"ayiwoconsole.log(\"<C-R>a:\", <C-R>a);<Esc>0", {})
 vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\", <C-R>a);<Esc>0", {})
@@ -14,8 +13,8 @@ vim.keymap.set('n', '<leader>ta', ":TestSuite<CR>", {})
 vim.keymap.set('n', '<leader>tv', ":TestVisit<CR>", {})
 
 -- Fugitive
+vim.keymap.set('n', '<leader>G', ":Git<CR>", {})
 vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
-vim.keymap.set('n', '<leader>gs', ":Git<CR>", {})
 vim.keymap.set('n', '<leader>gl', ":Git l<CR>", {})
 vim.keymap.set('n', '<leader>gc', function()
 	local msg = vim.fn.input("Commit msg: ")
@@ -24,7 +23,8 @@ end, { expr = true })
 vim.keymap.set('n', '<leader>gw', ":Gwrite<CR>", {})
 vim.keymap.set('n', '<leader>gr', ":Gread<CR>", {})
 vim.keymap.set('n', '<leader>gb', ":Git blame<CR>", {})
-vim.keymap.set('n', '<leader>gv', ":GBrowse <CR>", {})
+vim.keymap.set('n', '<leader>gv', ":Git show<CR>", {})
+vim.keymap.set('n', '<leader>go', ":GBrowse<CR>", {})
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
@@ -60,6 +60,7 @@ vim.keymap.set('n', '<leader>W', ':w !sudo tee % > /dev/null<CR>', {})
 -- Clear search highlight
 vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
 
+-- Buffers
 vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
 vim.keymap.set('n', 'bd', ':bd<CR>', {})
