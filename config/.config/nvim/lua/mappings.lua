@@ -1,7 +1,7 @@
 -- Refactorings
-vim.keymap.set('n', '<leader>lc', "\"ayiwoconsole.log(\"<C-R>a:\", <C-R>a);<Esc>0", {})
-vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\", <C-R>a);<Esc>0", {})
-vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\", <C-R>a);<Esc>0", {})
+vim.keymap.set('n', '<leader>lc', "\"ayiwoconsole.log(\"<C-R>a:\",<C-R>a);<Esc>0", {})
+vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\",<C-R>a);<Esc>0", {})
+vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\",<C-R>a);<Esc>0", {})
 
 -- Source vimrc
 vim.keymap.set('n', '<leader><leader>r', ":source $MYVIMRC<CR>", {})
@@ -52,7 +52,9 @@ end, { silent = true })
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
 
 -- Write file
-vim.keymap.set('n', '<leader>w', ':w <CR>', {})
+vim.keymap.set('n', '<leader>w', ':w<CR>', {})
+vim.keymap.set('n', '<leader>wq', ':wq<CR>', {})
+vim.keymap.set('n', '<leader>wqa', ':wqa<CR>', {})
 
 -- Write file as sudo
 vim.keymap.set('n', '<leader>W', ':w !sudo tee % > /dev/null<CR>', {})
@@ -65,6 +67,8 @@ vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
 vim.keymap.set('n', 'bd', ':bd<CR>', {})
 vim.keymap.set('n', 'bd!', ':bd!<CR>', {})
+vim.keymap.set('n', 'bda', ':bufdo bd<CR>', {})
+vim.keymap.set('n', 'bda!', ':bufdo bd!<CR>', {})
 
 vim.keymap.set('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>', {})
 
