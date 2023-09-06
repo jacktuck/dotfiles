@@ -139,8 +139,8 @@ alias wifiPass="security find-generic-password -D 'AirPort network password' -a 
 # Interactive JQ 
 ijq () {
 	file=$1
-	query=$(echo '' | fzf --sync --print-query --preview "cat $file | jq {q}")
-	jq "$query" "$file"
+	query=$(echo '' | fzf --sync --print-query --preview "cat $file | jq {q} || cat $query $file")
+	jq "$query" "$file" 
 }
 
 findrename () {
