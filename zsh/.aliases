@@ -150,3 +150,11 @@ findrename () {
 findreplace () {
         rg $1 --files-with-matches -0 | xargs -0 gsed -i "s/$1/$2/g"
 }
+
+update_nvim () {
+	git clone https://github.com/neovim/neovim.git
+	cd neovim
+	git checkout stable
+	make CMAKE_BUILD_TYPE=Release
+	sudo make install
+}
