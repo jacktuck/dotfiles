@@ -16,9 +16,16 @@ require 'telescope'.setup {
       display_stat = false,
     },
   },
+
   pickers = {
     find_files = {
       find_command = { "fd", "--type", "file", "--hidden" },
+    },
+    live_grep = {
+      only_sort_text = true,
+      additional_args = function(opts)
+        return { "--hidden" }
+      end
     },
     grep_string = {
       only_sort_text = true,
