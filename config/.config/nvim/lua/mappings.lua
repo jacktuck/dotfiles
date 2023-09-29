@@ -32,8 +32,8 @@ vim.keymap.set('n', '<leader>gp', ":Git pull<CR>", {})
 vim.keymap.set('n', '<leader>go', ":GBrowse<CR>", {})
 
 -- Telescope
+vim.keymap.set('n', '<leader>f.', ":Telescope resume<CR>", {})
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
-vim.keymap.set('n', '<leader>fl', ":Telescope resume<CR>", {})
 vim.keymap.set('n', '<leader>fs', ":Telescope git_status<CR>", {})
 vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
 vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
