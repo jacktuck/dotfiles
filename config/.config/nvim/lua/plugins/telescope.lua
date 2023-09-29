@@ -1,9 +1,15 @@
 local builtin = require('telescope.builtin')
 
 require 'telescope'.setup {
-  defaults = require('telescope.themes').get_dropdown {
+  defaults = require('telescope.themes').get_ivy {
     path_display = { "truncate" },
     file_ignore_patterns = { ".git/" },
+    preview = {
+      treesitter = false
+    },
+    layout_config = {
+      height = 100,
+    },
   },
   extensions = {
     file_browser = {
@@ -16,9 +22,16 @@ require 'telescope'.setup {
       display_stat = false,
     },
   },
+
   pickers = {
     find_files = {
       find_command = { "fd", "--type", "file", "--hidden" },
+    },
+    live_grep = {
+      only_sort_text = true,
+      additional_args = function(opts)
+        return { "--hidden" }
+      end
     },
     grep_string = {
       only_sort_text = true,
