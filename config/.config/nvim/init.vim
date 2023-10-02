@@ -135,7 +135,7 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rmagatti/auto-session'
+" Plug 'rmagatti/auto-session'
 Plug 'vim-test/vim-test'
 Plug 'numToStr/Comment.nvim'
 call plug#end()
@@ -147,7 +147,7 @@ lua << EOF
 	local modules = {
     "plugins.nvim-treesitter",
     "plugins.telescope",
-    "plugins.auto-session",
+    -- "plugins.auto-session",
     "plugins.lualine",
     "plugins.null-ls",
     "plugins.nvim-cmp",

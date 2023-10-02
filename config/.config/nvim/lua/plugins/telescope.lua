@@ -4,6 +4,9 @@ require 'telescope'.setup {
   defaults = require('telescope.themes').get_ivy {
     path_display = { "truncate" },
     file_ignore_patterns = { ".git/" },
+    preview = {
+      treesitter = false
+    },
     layout_config = {
       height = 100,
     },
