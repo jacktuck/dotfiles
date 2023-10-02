@@ -3,6 +3,14 @@ vim.keymap.set('n', '<leader>lc', "\"ayiwoconsole.log(\"<C-R>a:\",<C-R>a);<Esc>0
 vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\",<C-R>a);<Esc>0", {})
 vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\",<C-R>a);<Esc>0", {})
 
+-- Re-center verticle jumps
+vim.keymap.set('n', '<C-u>', '<C-u>zz', {})
+vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
+vim.keymap.set('n', 'n', 'nzz', {})
+vim.keymap.set('n', 'N', 'Nzz', {})
+
+
+
 -- Source vimrc
 vim.keymap.set('n', '<leader><leader>r', ":source $MYVIMRC<CR>", {})
 
@@ -76,10 +84,9 @@ vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
 -- Buffers
 vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
-vim.keymap.set('n', 'bd', ':bd<CR>', {})
-vim.keymap.set('n', 'bd!', ':bd!<CR>', {})
-vim.keymap.set('n', 'bda', ':bufdo bd<CR>', {})
-vim.keymap.set('n', 'bda!', ':bufdo bd!<CR>', {})
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', {})
+vim.keymap.set('n', '<leader>bd!', ':bd!<CR>', {})
+vim.keymap.set('n', '<leader>bd!!', ':bufdo bd!<CR>', {})
 
 vim.keymap.set('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>', {})
 

@@ -39,20 +39,20 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # general space settings
-yabai -m config layout bsp
-yabai -m config top_padding                  45
-yabai -m config bottom_padding               40 
-yabai -m config left_padding                 30
-yabai -m config right_padding                30
-yabai -m config window_gap                   5
+yabai -m config layout stack
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               -10 
+yabai -m config left_padding                 -5 
+yabai -m config right_padding                -5 
+yabai -m config window_gap                   -5
 yabai -m config external_bar                 all:20:0
 
 # window borders
 yabai -m config window_border_blur           off
-yabai -m config window_border                on
-yabai -m config active_window_border_color   0xff6495ed
-yabai -m config normal_window_border_color   0xff555555
-yabai -m config window_border_width          3
+yabai -m config window_border                off 
+# yabai -m config active_window_border_color   0xff6495ed
+# yabai -m config normal_window_border_color   0xff555555
+yabai -m config window_border_width          -2 
 
 yabai -m config debug_output on
 
@@ -62,7 +62,6 @@ ignored_apps=(
   "Alfred Preferences"
   "App Store"
   "Bluetooth Explorer"
-  "Finder"
   "Messenger"
   "System Information"
   "System Preferences"

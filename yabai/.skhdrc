@@ -1,83 +1,19 @@
 # toggle full screen
-alt + cmd - f : yabai -m window --toggle zoom-fullscreen
-
-# reset layout
-alt + cmd - b : yabai -m space --layout bsp
-
-# navigate windows
-# alt + cmd - n : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
-# shift + alt + cmd - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
-
-alt + cmd - x: yabai -m window --toggle float;yabai -m window --grid 7:7:1:1:5:5
-
-# navigate spaces
-alt + cmd - 1 : yabai -m display --focus $(yabai -m query --displays --space 1 | jq '.index'); skhd -k "ctrl - 1"
-alt + cmd - 2 : yabai -m display --focus $(yabai -m query --displays --space 2 | jq '.index'); skhd -k "ctrl - 2"
-alt + cmd - 3 : yabai -m display --focus $(yabai -m query --displays --space 3 | jq '.index'); skhd -k "ctrl - 3"
-alt + cmd - 4 : yabai -m display --focus $(yabai -m query --displays --space 4 | jq '.index'); skhd -k "ctrl - 4"
-alt + cmd - 5 : yabai -m display --focus $(yabai -m query --displays --space 5 | jq '.index'); skhd -k "ctrl - 5"
-alt + cmd - 6 : yabai -m display --focus $(yabai -m query --displays --space 6 | jq '.index'); skhd -k "ctrl - 6"
-alt + cmd - 7 : yabai -m display --focus $(yabai -m query --displays --space 7 | jq '.index'); skhd -k "ctrl - 7"
-alt + cmd - 8 : yabai -m display --focus $(yabai -m query --displays --space 8 | jq '.index'); skhd -k "ctrl - 8"
-alt + cmd - 9 : yabai -m display --focus $(yabai -m query --displays --space 9 | jq '.index'); skhd -k "ctrl - 9"
-alt + cmd - 0 : yabai -m display --focus $(yabai -m query --displays --space 10 | jq '.index'); skhd -k "ctrl - 10"
-
-# move window to space
-shift + alt + cmd - 1 : yabai -m window --space 1; skhd -k "alt + cmd - 1"
-shift + alt + cmd - 2 : yabai -m window --space 2; skhd -k "alt + cmd - 2"
-shift + alt + cmd - 3 : yabai -m window --space 3; skhd -k "alt + cmd - 3"
-shift + alt + cmd - 4 : yabai -m window --space 4; skhd -k "alt + cmd - 4"
-shift + alt + cmd - 5 : yabai -m window --space 5; skhd -k "alt + cmd - 5"
-shift + alt + cmd - 6 : yabai -m window --space 6; skhd -k "alt + cmd - 6"
-shift + alt + cmd - 7 : yabai -m window --space 7; skhd -k "alt + cmd - 7"
-shift + alt + cmd - 8 : yabai -m window --space 8; skhd -k "alt + cmd - 8"
-shift + alt + cmd - 9 : yabai -m window --space 9; skhd -k "alt + cmd - 9"
-shift + alt + cmd - 0 : yabai -m window --space 0; skhd -k "alt + cmd - 0"
+hyper - f : yabai -m window --toggle zoom-fullscreen
+hyper - x : yabai -m window --toggle float;yabai -m window --grid 7:7:1:1:5:5
 
 # set focus
-cmd + alt - j : yabai -m window --focus south
-cmd + alt - k : yabai -m window --focus north
-cmd + alt - h : yabai -m window --focus west
-cmd + alt - l : yabai -m window --focus east
+# focus the prev window in a stack
+hyper - p : yabai -m window --focus stack.prev
+# focus the next window in a stack
+hyper - n : yabai -m window --focus stack.next
+# focus the most recently focused window in a stack
+hyper - a : yabai -m window --focus stack.recent
 
-# warp windows
-lshift + alt + cmd - j : yabai -m window --warp south
-lshift + alt + cmd - k : yabai -m window --warp north
-lshift + alt + cmd - h : yabai -m window --warp west
-lshift + alt + cmd - l : yabai -m window --warp east
-
-# stack windows
-rshift + alt + cmd - j : yabai -m window --stack south
-rshift + alt + cmd - k : yabai -m window --stack north
-rshift + alt + cmd - h : yabai -m window --stack west
-rshift + alt + cmd - l : yabai -m window --stack east
-
-# set window size
-shift + ctrl - j : yabai -m window --resize top:0:30; yabai -m window --resize bottom:0:30
-shift + ctrl - k : yabai -m window --resize top:0:-30; yabai -m window --resize bottom:0:-30
-shift + ctrl - h : yabai -m window --resize right:-30:0; yabai -m window --resize left:-30:0
-shift + ctrl - l : yabai -m window --resize right:30:0; yabai -m window --resize left:30:0
-
-# media keys
-# mute sound
-cmd + shift - down: osascript -e 'set volume output muted not (output muted of (get volume settings))'
-# lower sound
-cmd - down: osascript -e 'set volume output volume (output volume of (get volume settings)) - 10'
-# raise sound
-cmd - up: osascript -e 'set volume output volume (output volume of (get volume settings)) + 10'
-# prev track
-cmd - left : osascript -e 'tell application "Spotify" to previous track'
-# next track
-cmd - right : osascript -e 'tell application "Spotify" to next track'
-
-# play/pause
-cmd - return : osascript -e 'tell application "Spotify" to playpause'
-
-# see if i can live without these
-# set insertion point 
-# cmd + alt + shift - j : yabai -m window --insert south
-# cmd + alt + shift - k : yabai -m window --insert north
-# cmd + alt + shift - h : yabai -m window --insert west
-# cmd + alt + shift - l : yabai -m window --insert east
-# cmd + alt + shift - s : yabai -m window --insert stack
-
+# switch apps
+meh - t : open -a "Alacritty"
+meh - g : open -a "Google Chrome"
+meh - c : open -a "Slack"
+meh - f : open -a "Finder"
+meh - s : open -a "Spotify"
+meh - n : open -a "Notes"
