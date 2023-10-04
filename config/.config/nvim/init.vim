@@ -106,7 +106,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'windwp/nvim-autopairs'
+Plug 'vim-airline/vim-airline'
+Plug 'ThePrimeagen/harpoon'
+" Plug 'windwp/nvim-autopairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -135,19 +137,18 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-" Plug 'rmagatti/auto-session'
 Plug 'vim-test/vim-test'
 Plug 'numToStr/Comment.nvim'
 call plug#end()
 
+
 lua << EOF
   require('Comment').setup()
-  require("nvim-autopairs").setup()
+  -- require("nvim-autopairs").setup()
 
 	local modules = {
     "plugins.nvim-treesitter",
     "plugins.telescope",
-    -- "plugins.auto-session",
     "plugins.lualine",
     "plugins.null-ls",
     "plugins.nvim-cmp",

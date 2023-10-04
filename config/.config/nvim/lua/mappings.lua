@@ -49,14 +49,15 @@ end)
 
 
 vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
-vim.keymap.set('n', '<leader>fG', function ()
+vim.keymap.set('n', '<leader>fG', function()
 	return ':Telescope live_grep default_text=<C-r><C-w><CR>'
 end, { expr = true })
 
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
-vim.keymap.set('n', '<leader>fF', function ()
+vim.keymap.set('n', '<leader>fF', function()
 	return ':Telescope find_files default_text=<C-r><C-w><CR>'
 end, { expr = true })
+vim.keymap.set("n", "<leader>fm", ":Telescope harpoon marks<CR>", {})
 
 -- Quickfix lists
 vim.keymap.set('n', '[q', ":cp<CR>", {})
@@ -66,6 +67,21 @@ vim.keymap.set('n', ']q', ":cn<CR>", {})
 vim.keymap.set("n", "[c", function()
 	require("treesitter-context").go_to_context()
 end, { silent = true })
+
+
+vim.keymap.set("n", "<leader>ma", function()
+	require("harpoon.mark").add_file()
+end, { silent = true })
+
+vim.keymap.set("n", "<leader>mr", function()
+	require("harpoon.mark").rm_file()
+end, { silent = true })
+
+for i = 1, 9 do
+	vim.keymap.set("n", "<leader>" .. i, function()
+		require("harpoon.ui").nav_file(i)
+	end, { silent = true })
+end
 
 -- Tabular
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
