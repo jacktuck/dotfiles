@@ -6,9 +6,7 @@ function Harpoon_files()
 	for idx = 1, hp_marks.get_length() do
 		local file_path = hp_marks.get_marked_file_name(idx)
 		local file_name
-		if file_path == "" then
-			file_name = "(empty)"
-		else
+		if file_path ~= "" then
 			file_name = vim.fn.fnamemodify(file_path, ':t')
 		end
 
@@ -23,10 +21,14 @@ function Harpoon_files()
 			next = " "
 		end
 
-		if file_path == current_file_path then
-			contents[idx] = string.format("%%#lualine_a_normal#%s%s %s%s", prev, idx, file_name, next)
+		if file_path == "" then
+			contents[idx] = ""
 		else
-			contents[idx] = string.format("%%#lualine_a_inactive#%s%s %s%s", prev, idx, file_name, next)
+			if file_path == current_file_path then
+				contents[idx] = string.format("%%#lualine_a_normal#%s%s %s%s", prev, idx, file_name, next)
+			else
+				contents[idx] = string.format("%%#lualine_a_inactive#%s%s %s%s", prev, idx, file_name, next)
+			end
 		end
 	end
 
