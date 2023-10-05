@@ -66,22 +66,26 @@ vim.keymap.set('n', ']q', ":cn<CR>", {})
 -- Treesitter
 vim.keymap.set("n", "[c", function()
 	require("treesitter-context").go_to_context()
-end, { silent = true })
+end, {})
 
 
 vim.keymap.set("n", "<leader>m", function()
-	require("harpoon.mark").add_file()
-end, { silent = true })
-
-vim.keymap.set("n", "<leader>rm", function()
-	require("harpoon.mark").rm_file()
-end, { silent = true })
+	require("harpoon.mark").toggle_file()
+end, {})
 
 for i = 1, 9 do
 	vim.keymap.set("n", "<leader>" .. i, function()
 		require("harpoon.ui").nav_file(i)
-	end, { silent = true })
+	end, {})
 end
+
+vim.keymap.set("n", "<leader>n", function()
+	require("harpoon.ui").nav_next()
+end, {})
+
+vim.keymap.set("n", "<leader>p", function()
+	require("harpoon.ui").nav_prev()
+end, {})
 
 -- Tabular
 vim.keymap.set('n', '<leader>ft', ':g/|/Tab /|<CR>', {})
