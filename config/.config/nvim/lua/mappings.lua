@@ -68,9 +68,13 @@ vim.keymap.set("n", "[c", function()
 	require("treesitter-context").go_to_context()
 end, {})
 
-
+-- Harpoon
 vim.keymap.set("n", "<leader>m", function()
 	require("harpoon.mark").toggle_file()
+end, {})
+
+vim.keymap.set("n", "<leader>rm", function()
+	require("harpoon.mark").clear_all()
 end, {})
 
 for i = 1, 9 do
