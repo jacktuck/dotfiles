@@ -69,11 +69,11 @@ vim.keymap.set("n", "[c", function()
 end, { silent = true })
 
 
-vim.keymap.set("n", "<leader>ma", function()
+vim.keymap.set("n", "<leader>m", function()
 	require("harpoon.mark").add_file()
 end, { silent = true })
 
-vim.keymap.set("n", "<leader>mr", function()
+vim.keymap.set("n", "<leader>rm", function()
 	require("harpoon.mark").rm_file()
 end, { silent = true })
 
