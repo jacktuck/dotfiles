@@ -24,13 +24,7 @@ vim.keymap.set('n', '<leader>tv', ":TestVisit<CR>", {})
 vim.keymap.set('n', '<leader>G', ":Git<CR>", {})
 vim.keymap.set('n', '<leader>gd', ":Git diff<CR>", {})
 vim.keymap.set('n', '<leader>gl', ":Git l<CR>", {})
-vim.keymap.set('n', '<leader>gc', function()
-	local msg = vim.fn.input("Commit msg: ")
-	if (msg ~= nil and msg ~= '') then
-		return ':Git commit -m "' .. msg .. '"<CR>'
-	end
-end, { expr = true })
-
+vim.keymap.set('n', '<leader>gc', ":Git commit -v | :only | :norm! gg<CR>", {})
 vim.keymap.set('n', '<leader>gw', ":Gwrite<CR>", {})
 vim.keymap.set('n', '<leader>gr', ":Gread<CR>", {})
 vim.keymap.set('n', '<leader>gb', ":Git blame<CR>", {})
