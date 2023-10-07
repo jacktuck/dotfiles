@@ -3,6 +3,8 @@ vim.keymap.set('n', '<leader>lc', "\"ayiwoconsole.log(\"<C-R>a:\",<C-R>a);<Esc>0
 vim.keymap.set('n', '<leader>li', "\"ayiwologger.info(\"<C-R>a:\",<C-R>a);<Esc>0", {})
 vim.keymap.set('n', '<leader>le', "\"ayiwologger.error(\"<C-R>a:\",<C-R>a);<Esc>0", {})
 
+
+
 -- Re-center verticle jumps
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {})
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
