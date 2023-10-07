@@ -20,26 +20,38 @@ require 'telescope'.setup {
       respect_gitignore = false,
       depth = 1,
       display_stat = false,
+      disable_devicons = true,
     },
   },
 
   pickers = {
     find_files = {
+      path_display = function(opts, path)
+        local tail = require("telescope.utils").path_tail(path)
+        return string.format("%s - %s", tail, path)
+      end,
       find_command = { "fd", "--type", "file", "--hidden" },
+      disable_devicons = true,
     },
     live_grep = {
       only_sort_text = true,
       additional_args = function(opts)
         return { "--hidden" }
-      end
+      end,
+      disable_devicons = true
     },
     grep_string = {
       only_sort_text = true,
       additional_args = function(opts)
         return { "--hidden" }
-      end
+      end,
+      disable_devicons = true
     },
     buffers = {
+      path_display = function(opts, path)
+        local tail = require("telescope.utils").path_tail(path)
+        return string.format("%s - %s", tail, path)
+      end,
       mappings = {
         i = {
           ["<C-d>"] = require('telescope.actions').delete_buffer
