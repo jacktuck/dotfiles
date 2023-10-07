@@ -127,7 +127,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'projekt0n/github-nvim-theme'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -174,5 +174,4 @@ if has('nvim')
 endif
 
 
-colorscheme github_dark_dimmed
-" colorscheme github_dark_high_contrast
+colorscheme catppuccin-frappe
