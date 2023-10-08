@@ -224,6 +224,10 @@ cask "docker"
 cask "font-fira-code-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
+# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono-nerd-font"
+# Full TeX Live distribution without GUI applications
+cask "mactex-no-gui"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 mas "ColorSlurp", id: 1287239339

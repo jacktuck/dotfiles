@@ -21,3 +21,29 @@ vimcmd_symbol = "[❮](bold green)"
 vimcmd_visual_symbol = "[❮](bold green)"
 vimcmd_replace_symbol = "[❮](bold green)"
 vimcmd_replace_one_symbol = "[❮](bold green)"
+
+[aws]
+symbol = "aws "
+
+[git_branch]
+symbol = ""
+
+[golang]
+symbol = "go "
+version_format='v${major}'
+
+[java]
+symbol = "java "
+version_format='v${major}'
+
+[nodejs]
+symbol = "node "
+version_format='v${major}'
+
+[python]
+symbol = "py "
+version_format='v${major}'
+
+[rust]
+symbol = "rs "
+version_format='v${major}'
