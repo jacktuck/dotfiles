@@ -56,7 +56,8 @@ require 'telescope'.setup {
         i = {
           ["<C-d>"] = require('telescope.actions').delete_buffer
         }
-      }
+      },
+      disable_devicons = true,
     }
   }
 }

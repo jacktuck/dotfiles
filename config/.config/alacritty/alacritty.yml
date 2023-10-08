@@ -37,15 +37,15 @@ window:
 
 font:
   normal:
-    family: "JetBrains Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Regular
 
   bold:
-    family: "JetBrains Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold
 
   italic:
-    family: "JetBrains Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Italic
 
   # Point size of the font
