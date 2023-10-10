@@ -39,7 +39,7 @@ function Harpoon_files()
 			if file_path == current_file_path then
 				contents[idx] = string.format("%%#lualine_a_normal#%s%s %s%s", prev, idx, file_name, next)
 			else
-				contents[idx] = string.format("%%#lualine_a_inactive#%s%s %s%s", prev, idx, file_name, next)
+				contents[idx] = string.format("%%#lualine_b_inactive#%s%s %s%s", prev, idx, file_name, next)
 			end
 		end
 	end
@@ -49,7 +49,7 @@ end
 
 require('lualine').setup {
 	options = {
-		theme = "onedark",
+		theme = "nord",
 		section_separators = '',
 		component_separators = '',
 		always_divide_middle = true,
