@@ -1,4 +1,4 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 
 setopt auto_cd # lazy directory switching
 setopt append_history
@@ -26,8 +26,13 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+zinit ice wait="1" lucid
 zinit load agkozak/zsh-z
+
+
+zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
+
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 zinit ice wait="1" lucid
@@ -36,6 +41,7 @@ zinit light Aloxaf/fzf-tab
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
+
 
 zinit light starship/starship
 
@@ -83,4 +89,4 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-# zprof
+zprof &> prof.txt
