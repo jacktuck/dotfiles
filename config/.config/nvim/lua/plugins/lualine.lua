@@ -21,6 +21,17 @@ function Harpoon_files()
 			next = " "
 		end
 
+		for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+			local buf_name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":.")
+
+			if vim.api.nvim_buf_get_option(buf, 'modified') then
+				if buf_name == file_path then
+					file_name = file_name .. "*"
+				end
+			end
+		end
+
+
 		if file_path == "" then
 			contents[idx] = ""
 		else
