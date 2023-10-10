@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 setopt auto_cd # lazy directory switching
 setopt append_history
@@ -89,4 +89,4 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-zprof &> prof.txt
+# zprof &> prof.txt

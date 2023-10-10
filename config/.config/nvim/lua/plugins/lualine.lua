@@ -30,6 +30,7 @@ function Harpoon_files()
 				end
 			end
 		end
+	
 
 
 		if file_path == "" then
@@ -48,7 +49,7 @@ end
 
 require('lualine').setup {
 	options = {
-		theme = "dracula",
+		theme = "onedark",
 		section_separators = '',
 		component_separators = '',
 		always_divide_middle = true,
