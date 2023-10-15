@@ -53,7 +53,6 @@ require('lualine').setup {
 		section_separators = '',
 		component_separators = '',
 		always_divide_middle = true,
-		globalstatus = true,
 	},
 	tabline = {
 		lualine_a = {
