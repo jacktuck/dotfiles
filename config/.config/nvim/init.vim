@@ -1,3 +1,5 @@
+lua vim.loader.enable()
+
 set background=dark
 set shell=/bin/zsh
 
