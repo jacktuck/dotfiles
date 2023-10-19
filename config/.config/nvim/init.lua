@@ -109,9 +109,9 @@ require("lazy").setup({
 	{ 'godlygeek/tabular', event = "VeryLazy" },
 	{ 'romainl/vim-cool',  event = "VeryLazy" },
 	{
-		'jose-elias-alvarez/null-ls.nvim',
+		'nvimtools/none-ls.nvim',
 		event = { "BufReadPre", "BufNewFile" },
-		opts = function() require('plugins.null-ls') end
+		opts = function() require('plugins.none-ls') end
 	},
 	{
 		'williamboman/mason.nvim',
