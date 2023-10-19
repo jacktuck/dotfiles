@@ -1,7 +1,6 @@
 -- tsserver requires node 14
-vim.env.PATH = vim.env.NODE_14 .. ":" .. vim.env.PATH
+-- vim.env.PATH = vim.env.NODE_14 .. ":" .. vim.env.PATH
 
-require("mason").setup()
 require("mason-lspconfig").setup {
     ensure_installed = {
         "tsserver",
