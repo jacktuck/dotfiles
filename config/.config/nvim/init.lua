@@ -96,6 +96,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "LazyFile", "VeryLazy" },
+		opts = function() require('plugins.nvim-treesitter') end,
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-context'
 		}
