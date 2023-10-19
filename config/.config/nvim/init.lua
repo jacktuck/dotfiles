@@ -95,6 +95,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		event = { "LazyFile", "VeryLazy" },
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-context'
 		}
@@ -109,12 +110,29 @@ require("lazy").setup({
 	{
 		'jose-elias-alvarez/null-ls.nvim',
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { "mason.nvim" },
 		opts = function() require('plugins.null-ls') end
 	},
-	{ 'williamboman/mason.nvim' },
-	{ 'williamboman/mason-lspconfig.nvim' },
-	{ 'neovim/nvim-lspconfig' },
+	{
+		'williamboman/mason.nvim',
+		config = true,
+		lazy = true,
+	},
+	{
+		'williamboman/mason-lspconfig.nvim',
+		lazy = true,
+		config = function()
+			require("plugins.mason-lspconfig")
+		end,
+		dependencies = { 'williamboman/mason.nvim' }
+	},
+	{
+		'neovim/nvim-lspconfig',
+		event = "LazyFile",
+		dependencies = { 'williamboman/mason-lspconfig.nvim', 'williamboman/mason.nvim' },
+		config = function()
+			require('plugins.nvim-lspconfig')
+		end
+	},
 	{
 		"catppuccin/nvim",
 		lazy = true,
@@ -134,7 +152,7 @@ require("lazy").setup({
 			'rafamadriz/friendly-snippets',
 			'L3MON4D3/LuaSnip',
 		},
-		opts = function() require('plugins.nvim-cmp') end
+		config = function() require('plugins.nvim-cmp') end
 	},
 	{
 		'vim-test/vim-test',
@@ -147,23 +165,7 @@ require("lazy").setup({
 	},
 })
 
-
-local modules = {
-	"plugins.mason",
-	"plugins.nvim-treesitter",
-	"plugins.nvim-lspconfig",
-	"mappings",
-	-- "plugins.lualine",
-	-- "plugins.null-ls",
-	-- "plugins.nvim-cmp",
-	-- "plugins.gitsigns",
-}
-
--- Refresh module cache
-for k, v in pairs(modules) do
-	package.loaded[v] = nil
-	require(v)
-end
+require("mappings")
 
 vim.g["test#strategy"] = "neovim"
 vim.g["test#javascript#runner"] = "jest"
