@@ -98,9 +98,6 @@ vim.keymap.set('n', '<leader>wqa', ':wqa<CR>', {})
 -- Write file as sudo
 vim.keymap.set('n', '<leader>W', ':w !sudo tee % > /dev/null<CR>', {})
 
--- Clear search highlight
-vim.keymap.set('n', '<Esc>', ':noh<CR>', {})
-
 -- Buffers
 vim.keymap.set('n', '[b', ':bprevious<CR>', {})
 vim.keymap.set('n', ']b', ':bnext<CR>', {})
