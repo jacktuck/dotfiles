@@ -1,5 +1,9 @@
 local vim = vim
 local options = {
+	expandtab = true,
+	smartindent = true,
+	tabstop = 2,
+	shiftwidth = 2,
 	clipboard = "unnamedplus",
 	wildmenu = true,
 	backspace = "indent,eol,start",
@@ -14,7 +18,6 @@ local options = {
 	number = true,
 	termguicolors = true,
 	cursorline = true,
-	tabstop = 2,
 	listchars = "tab:▸ ,trail:·,eol:¬,nbsp:_",
 	list = true,
 	hlsearch = true,
@@ -83,9 +86,9 @@ require("lazy").setup({
 			require('plugins.gitsigns')
 		end
 	},
-	{ 'christoomey/vim-tmux-navigator',    event = "VeryLazy" },
-	{ 'nvim-lua/plenary.nvim',             lazy = true },
-	{ 'nvim-lua/popup.nvim',               lazy = true },
+	{ 'christoomey/vim-tmux-navigator', event = "VeryLazy" },
+	{ 'nvim-lua/plenary.nvim',          lazy = true },
+	{ 'nvim-lua/popup.nvim',            lazy = true },
 	{
 		'nvim-telescope/telescope.nvim',
 		event = "VeryLazy",
