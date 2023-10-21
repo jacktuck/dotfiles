@@ -81,12 +81,38 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		}
 	},
-	{ 'tpope/vim-surround', event = "VeryLazy" },
-	{ 'tpope/vim-repeat',   event = "VeryLazy" },
-	{ 'tpope/vim-abolish',  event = "VeryLazy" },
-	{ 'tpope/vim-fugitive', event = "VeryLazy" },
-	{ 'tpope/vim-rhubarb',  event = "VeryLazy" },
-	{ 'jacktuck/harpoon',   event = "VeryLazy" },
+	{
+		'tpope/vim-surround',
+		event = "VeryLazy",
+	},
+	{
+		'tpope/vim-surround',
+		event = "VeryLazy",
+	},
+	{
+		'tpope/vim-repeat',
+		event = "VeryLazy",
+	},
+	{
+		'tpope/vim-abolish',
+		event = "VeryLazy",
+	},
+	{
+		'tpope/vim-rhubarb',
+		event = "VeryLazy",
+	},
+	{
+		'jacktuck/harpoon',
+		event = "VeryLazy",
+	},
+	{
+		"ruifm/gitlinker.nvim",
+		opts = true,
+		dependencies = {
+			"nvim-lua/plenary.nvim"
+		},
+		event = "VeryLazy"
+	},
 	{
 		'lewis6991/gitsigns.nvim',
 		event = "LazyFile",
@@ -94,9 +120,18 @@ require("lazy").setup({
 			require('plugins.gitsigns')
 		end
 	},
-	{ 'christoomey/vim-tmux-navigator', event = "VeryLazy" },
-	{ 'nvim-lua/plenary.nvim',          lazy = true },
-	{ 'nvim-lua/popup.nvim',            lazy = true },
+	{
+		'christoomey/vim-tmux-navigator',
+		event = "VeryLazy",
+	},
+	{
+		'nvim-lua/plenary.nvim',
+		lazy = true,
+	},
+	{
+		'nvim-lua/popup.nvim',
+		lazy = true,
+	},
 	{
 		'nvim-telescope/telescope.nvim',
 		event = "VeryLazy",
@@ -106,13 +141,14 @@ require("lazy").setup({
 			'nvim-telescope/telescope-file-browser.nvim',
 			"kkharji/sqlite.lua"
 		},
-
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "LazyFile", "VeryLazy" },
-		opts = function() require('plugins.nvim-treesitter') end,
+		opts = function()
+			require('plugins.nvim-treesitter')
+		end,
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-context'
 		}
@@ -120,14 +156,26 @@ require("lazy").setup({
 	{
 		'nvim-lualine/lualine.nvim',
 		event = "VeryLazy",
-		opts = function() require('plugins.lualine') end,
+		opts = function()
+			require('plugins.lualine')
+		end,
 	},
-	{ 'godlygeek/tabular', event = "VeryLazy" },
-	{ 'romainl/vim-cool',  event = "VeryLazy" },
+	{
+		'godlygeek/tabular',
+		event = "VeryLazy",
+	},
+	{
+		'romainl/vim-cool',
+		event = "VeryLazy",
+	},
 	{
 		'nvimtools/none-ls.nvim',
 		event = { "BufReadPre", "BufNewFile" },
-		opts = function() require('plugins.none-ls') end
+		opts = function()
+			require(
+				'plugins.none-ls'
+			)
+		end
 	},
 	{
 		'williamboman/mason.nvim',
@@ -140,7 +188,9 @@ require("lazy").setup({
 		config = function()
 			require("plugins.mason-lspconfig")
 		end,
-		dependencies = { 'williamboman/mason.nvim' }
+		dependencies = {
+			'williamboman/mason.nvim',
+		}
 	},
 	{
 		'neovim/nvim-lspconfig',
@@ -152,16 +202,15 @@ require("lazy").setup({
 			require('plugins.nvim-lspconfig')
 		end
 	},
-	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{
-		"EdenEast/nightfox.nvim",
+		"Wansmer/treesj",
+		keys = { '<space>m', '<space>j', '<space>s' },
+		config = true,
 		lazy = true,
 	},
 	{
-		"catppuccin/nvim",
+		"EdenEast/nightfox.nvim",
 		lazy = true,
-		name = "catppuccin",
-		priority = 1000
 	},
 	{
 		"hrsh7th/nvim-cmp",
