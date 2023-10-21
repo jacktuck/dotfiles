@@ -83,14 +83,19 @@ require("lazy").setup({
 			require('plugins.gitsigns')
 		end
 	},
-	{ 'christoomey/vim-tmux-navigator', event = "VeryLazy" },
-	{ 'nvim-lua/plenary.nvim',          lazy = true },
-	{ 'nvim-lua/popup.nvim',            lazy = true },
+	{ 'christoomey/vim-tmux-navigator',    event = "VeryLazy" },
+	{ 'nvim-lua/plenary.nvim',             lazy = true },
+	{ 'nvim-lua/popup.nvim',               lazy = true },
 	{
 		'nvim-telescope/telescope.nvim',
 		event = "VeryLazy",
 		opts = function() require('plugins.telescope') end,
-		dependencies = { 'nvim-telescope/telescope-file-browser.nvim' },
+		dependencies = {
+			'prochri/telescope-all-recent.nvim',
+			'nvim-telescope/telescope-file-browser.nvim',
+			"kkharji/sqlite.lua"
+		},
+
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -129,7 +134,9 @@ require("lazy").setup({
 	{
 		'neovim/nvim-lspconfig',
 		event = "LazyFile",
-		dependencies = { 'williamboman/mason-lspconfig.nvim', 'williamboman/mason.nvim' },
+		dependencies = {
+			'williamboman/mason-lspconfig.nvim',
+			'williamboman/mason.nvim' },
 		config = function()
 			require('plugins.nvim-lspconfig')
 		end
