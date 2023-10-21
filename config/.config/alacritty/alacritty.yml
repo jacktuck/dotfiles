@@ -2,32 +2,32 @@ env:
   TERM: xterm-256color
 
 key_bindings:
-  - { key: A,         mods: Alt,       chars: "\x1ba"                       }
-  - { key: B,         mods: Alt,       chars: "\x1bb"                       }
-  - { key: C,         mods: Alt,       chars: "\x1bc"                       }
-  - { key: D,         mods: Alt,       chars: "\x1bd"                       }
-  - { key: E,         mods: Alt,       chars: "\x1be"                       }
-  - { key: F,         mods: Alt,       chars: "\x1bf"                       }
-  - { key: G,         mods: Alt,       chars: "\x1bg"                       }
-  - { key: H,         mods: Alt,       chars: "\x1bh"                       }
-  - { key: I,         mods: Alt,       chars: "\x1bi"                       }
-  - { key: J,         mods: Alt,       chars: "\x1bj"                       }
-  - { key: K,         mods: Alt,       chars: "\x1bk"                       }
-  - { key: L,         mods: Alt,       chars: "\x1bl"                       }
-  - { key: M,         mods: Alt,       chars: "\x1bm"                       }
-  - { key: N,         mods: Alt,       chars: "\x1bn"                       }
-  - { key: O,         mods: Alt,       chars: "\x1bo"                       }
-  - { key: P,         mods: Alt,       chars: "\x1bp"                       }
-  - { key: Q,         mods: Alt,       chars: "\x1bq"                       }
-  - { key: R,         mods: Alt,       chars: "\x1br"                       }
-  - { key: S,         mods: Alt,       chars: "\x1bs"                       }
-  - { key: T,         mods: Alt,       chars: "\x1bt"                       }
-  - { key: U,         mods: Alt,       chars: "\x1bu"                       }
-  - { key: V,         mods: Alt,       chars: "\x1bv"                       }
-  - { key: W,         mods: Alt,       chars: "\x1bw"                       }
-  - { key: X,         mods: Alt,       chars: "\x1bx"                       }
-  - { key: Y,         mods: Alt,       chars: "\x1by"                       }
-  - { key: Z,         mods: Alt,       chars: "\x1bz"                       }
+  - { key: A, mods: Alt, chars: "\ea" }
+  - { key: B, mods: Alt, chars: "\eb" }
+  - { key: C, mods: Alt, chars: "\ec" }
+  - { key: D, mods: Alt, chars: "\ed" }
+  - { key: E, mods: Alt, chars: "\ee" }
+  - { key: F, mods: Alt, chars: "\ef" }
+  - { key: G, mods: Alt, chars: "\eg" }
+  - { key: H, mods: Alt, chars: "\eh" }
+  - { key: I, mods: Alt, chars: "\ei" }
+  - { key: J, mods: Alt, chars: "\ej" }
+  - { key: K, mods: Alt, chars: "\ek" }
+  - { key: L, mods: Alt, chars: "\el" }
+  - { key: M, mods: Alt, chars: "\em" }
+  - { key: N, mods: Alt, chars: "\en" }
+  - { key: O, mods: Alt, chars: "\eo" }
+  - { key: P, mods: Alt, chars: "\ep" }
+  - { key: Q, mods: Alt, chars: "\eq" }
+  - { key: R, mods: Alt, chars: "\er" }
+  - { key: S, mods: Alt, chars: "\es" }
+  - { key: T, mods: Alt, chars: "\et" }
+  - { key: U, mods: Alt, chars: "\eu" }
+  - { key: V, mods: Alt, chars: "\ev" }
+  - { key: W, mods: Alt, chars: "\ew" }
+  - { key: X, mods: Alt, chars: "\ex" }
+  - { key: Y, mods: Alt, chars: "\ey" }
+  - { key: Z, mods: Alt, chars: "\ez" }
 
 window:
   decorations: Buttonless
@@ -56,83 +56,36 @@ font:
   # false.
   use_thin_strokes: true
 
-# github Alacritty Colors
+draw_bold_text_with_bright_colors: true
+
+# Nightfox Alacritty Colors
+# Style: carbonfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_alacritty.yml
 colors:
-    # Default colors
-    primary:
-        background: "#303446" # base
-        foreground: "#C6D0F5" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#C6D0F5" # text
-        bright_foreground: "#C6D0F5" # text
-
-    # Cursor colors
-    cursor:
-        text: "#303446" # base
-        cursor: "#F2D5CF" # rosewater
-    vi_mode_cursor:
-        text: "#303446" # base
-        cursor: "#BABBF1" # lavender
-
-    # Search colors
-    search:
-        matches:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-        focused_match:
-            foreground: "#303446" # base
-            background: "#A6D189" # green
-        footer_bar:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-
-    # Keyboard regex hints
-    hints:
-        start:
-            foreground: "#303446" # base
-            background: "#E5C890" # yellow
-        end:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-
-    # Selection colors
-    selection:
-        text: "#303446" # base
-        background: "#F2D5CF" # rosewater
-
-    # Normal colors
-    normal:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    # Bright colors
-    bright:
-        black: "#626880" # surface2
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#A5ADCE" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    indexed_colors:
-        - { index: 16, color: "#EF9F76" }
-        - { index: 17, color: "#F2D5CF" }
+  # Default colors
+  primary:
+    background: '0x161616'
+    foreground: '0xf2f4f8'
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xee5396'
+    green:   '0x25be6a'
+    yellow:  '0x08bdba'
+    blue:    '0x78a9ff'
+    magenta: '0xbe95ff'
+    cyan:    '0x33b1ff'
+    white:   '0xdfdfe0'
+  # Bright colors
+  bright:
+    black:   '0x484848'
+    red:     '0xf16da6'
+    green:   '0x46c880'
+    yellow:  '0x2dc7c4'
+    blue:    '0x8cb6ff'
+    magenta: '0xc8a5ff'
+    cyan:    '0x52bdff'
+    white:   '0xe4e4e5'
+  indexed_colors:
+    - { index: 16, color: '0x3ddbd9' }
+    - { index: 17, color: '0xff7eb6' }

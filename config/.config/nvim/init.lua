@@ -152,6 +152,11 @@ require("lazy").setup({
 			require('plugins.nvim-lspconfig')
 		end
 	},
+	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+	{
+		"EdenEast/nightfox.nvim",
+		lazy = true,
+	},
 	{
 		"catppuccin/nvim",
 		lazy = true,
@@ -190,5 +195,5 @@ vim.g["test#strategy"] = "neovim"
 vim.g["test#javascript#runner"] = "jest"
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 
-vim.cmd('syntax on')
-vim.cmd("colorscheme catppuccin-frappe")
+vim.cmd("syntax on")
+vim.cmd("colorscheme carbonfox")

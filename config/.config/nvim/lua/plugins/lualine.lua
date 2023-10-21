@@ -49,7 +49,7 @@ end
 
 require('lualine').setup {
 	options = {
-		theme = "nord",
+		-- theme = "nord",
 		section_separators = '',
 		component_separators = '',
 		always_divide_middle = true,
