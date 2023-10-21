@@ -4,8 +4,11 @@ disabled=true
 [docker_context]
 disabled=true
 
+[git_branch]
+disabled=true
+
 [git_status]
-format='([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style) )'
+disabled=true
 
 [directory]
 fish_style_pwd_dir_length=1
@@ -24,9 +27,6 @@ vimcmd_replace_one_symbol = "[❮](bold green)"
 
 [aws]
 symbol = "aws "
-
-[git_branch]
-symbol = ""
 
 [golang]
 symbol = "go "

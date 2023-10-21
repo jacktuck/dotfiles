@@ -134,7 +134,8 @@ alias bump='npm version --git-tag-version false'
 alias screencapture="osascript ~/scripts/screen_capture.scpt"
 alias restart_en0="sudo ifconfig en0 down && sudo ifconfig en0 up"
 alias ssid="networksetup -getairportnetwork en0 | awk '{print \$NF}'"
-alias wifiPass="security find-generic-password -D 'AirPort network password' -a $(ssid) -g | grep 'password:'"
+
+alias wifiPass='_wifiPass() {security find-generic-password -D "AirPort network password" -a $(ssid) -g | grep "password:"}; _wifiPass'
 
 # Interactive JQ 
 ijq () {

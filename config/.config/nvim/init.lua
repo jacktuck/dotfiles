@@ -1,5 +1,8 @@
 local vim = vim
 local options = {
+	cmdheight = 0,
+	swapfile = false,
+	undofile = true,
 	expandtab = true,
 	smartindent = true,
 	tabstop = 2,
@@ -10,7 +13,6 @@ local options = {
 	gdefault = true,
 	encoding = "utf-8",
 	binary = true,
-	undofile = true,
 	modeline = true,
 	modelines = 4,
 	exrc = true,
@@ -23,11 +25,9 @@ local options = {
 	hlsearch = true,
 	incsearch = true,
 	laststatus = 2,
-	-- noerrorbells=true,
-	-- nostartofline=true,
 	ruler = true,
-	shortmess = "atI",
-	showmode = true,
+	shortmess = "csCFSW",
+	showmode = false,
 	title = true,
 	showcmd = true,
 	scrolloff = 3,
@@ -72,6 +72,14 @@ require("lazy").setup({
 		config = function()
 			vim.g.startuptime_tries = 10
 		end,
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		}
 	},
 	{ 'tpope/vim-surround', event = "VeryLazy" },
 	{ 'tpope/vim-repeat',   event = "VeryLazy" },
