@@ -58,4 +58,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.diagnostic.config({ signs = false })
+
+vim.diagnostic.config({ signs = true, virtual_text = false })
+
+vim.fn.sign_define("DiagnosticSignError", { numhl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { numhl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignInfo", { numhl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { numhl = "DiagnosticSignHint" })
+
+
