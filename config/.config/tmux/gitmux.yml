@@ -14,7 +14,7 @@ tmux:
     branch: "#[fg=white,bold]"
     staged: "#[fg=green,bold]"
     conflict: "#[fg=red,bold]"
-    modified: "#[fg=yellow,bold]"
+    modified: "#[fg=orange,bold]"
     untracked: "#[fg=gray,bold]"
     stashed: "#[fg=gray,bold]"
     clean: "#[fg=green,bold]"

@@ -82,7 +82,7 @@ require("lazy").setup({
 		}
 	},
 	{
-		'tpope/vim-surround',
+		'tpope/vim-fugitive',
 		event = "VeryLazy",
 	},
 	{
@@ -95,10 +95,6 @@ require("lazy").setup({
 	},
 	{
 		'tpope/vim-abolish',
-		event = "VeryLazy",
-	},
-	{
-		'tpope/vim-rhubarb',
 		event = "VeryLazy",
 	},
 	{
