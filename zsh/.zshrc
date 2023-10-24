@@ -16,6 +16,7 @@ for file in ~/dotfiles/{zsh,work}/.{services,exports,aliases}; do
 done;
 unset file
 
+export XDG_CONFIG_HOME="$HOME/.config"
 
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 autoload -Uz compinit
