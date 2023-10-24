@@ -1,4 +1,6 @@
 [alias]
+	force = push --force-with-lease
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --first-parent --pretty=oneline -n 10 --graph --abbrev-commit
 	ls = log --first-parent --pretty=oneline -n 5 --graph --abbrev-commit --name-status
