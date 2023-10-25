@@ -4,6 +4,9 @@ export PATH="$HOME/bin:$PATH";
 [ -d "/opt/homebrew/bin" ] && eval "$(/opt/homebrew/bin/brew shellenv)" # for m1 mac
 [ -d "/usr/local/homebrew/bin" ] && eval "$(/usr/local/homebrew/bin/brew shellenv)" # for intel mac
 
+# brew bins should be used over /usr/bin
+export PATH="$HOMEBREW_PREFIX/bin:$PATH";
+
 export TERM="xterm-256color"
 
 # Make vim the default editor.

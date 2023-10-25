@@ -5,3 +5,5 @@ bind main <Ctrl-R> !git rebase --autosquash -i %(commit)
 
 set blame-view-author = abbreviated
 set main-view-author = abbreviated
+
+bind generic d >sh -c 'DELTA_PAGER="less -RKc" git show %(commit)'
