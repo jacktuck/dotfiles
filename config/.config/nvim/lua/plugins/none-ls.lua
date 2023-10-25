@@ -12,6 +12,7 @@ null_ls.setup({
     null_ls.builtins.formatting.prettierd.with({
       prefer_local = true,
       diagnostics_format = "[#{c}] #{m} (#{s})",
+      disabled_filetypes = { "yaml" },
     }),
   },
 
