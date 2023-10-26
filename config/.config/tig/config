@@ -7,3 +7,4 @@ set blame-view-author = abbreviated
 set main-view-author = abbreviated
 
 bind generic d >sh -c 'DELTA_PAGER="less -RKc" git show %(commit)'
+bind status d >sh -c 'DELTA_PAGER="less -RKc" git diff %(file)'
