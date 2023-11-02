@@ -1,4 +1,5 @@
 local vim = vim
+
 local options = {
   cmdheight = 0,
   swapfile = false,
