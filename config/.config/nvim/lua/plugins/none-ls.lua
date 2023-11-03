@@ -3,10 +3,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.completion.spell,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
-      parefer_local = "node_modules/.bin",
+      prefer_local = true,
       diagnostics_format = "[#{c}] #{m} (#{s})",
     }),
     null_ls.builtins.formatting.prettierd.with({
@@ -14,6 +13,7 @@ null_ls.setup({
       diagnostics_format = "[#{c}] #{m} (#{s})",
       disabled_filetypes = { "yaml" },
     }),
+    null_ls.builtins.completion.spell,
   },
 
   on_attach = function(client, bufnr)
