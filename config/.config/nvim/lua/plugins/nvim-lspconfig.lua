@@ -1,3 +1,6 @@
+-- tsserver requires node 14
+vim.env.PATH = vim.env.NODE_14 .. ":" .. vim.env.PATH
+
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
