@@ -167,6 +167,7 @@
 
 [pull]
 	ff = true
+	rebase = true
 
 [push]
 	default = current
