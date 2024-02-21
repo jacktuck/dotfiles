@@ -35,7 +35,7 @@ function Harpoon_files()
       contents[idx] = ""
     else
       if file_path == current_file_path then
-        contents[idx] = string.format("%%#lualine_a_normal#%s%s %s%s", prev, idx, file_name, next)
+        contents[idx] = string.format("%%#lualine_c_normal#%s%s %s%s", prev, idx, file_name, next)
       else
         contents[idx] = string.format("%%#lualine_b_inactive#%s%s %s%s", prev, idx, file_name, next)
       end
@@ -80,6 +80,7 @@ require("lualine").setup({
       },
     },
     lualine_y = {
+      "diff",
       {
         "diagnostics",
         sources = { "nvim_diagnostic" },
