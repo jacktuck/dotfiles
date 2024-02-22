@@ -1,5 +1,10 @@
 local hp_marks = require("harpoon.mark")
 
+local theme = require("lualine.themes.catppuccin")
+
+theme.normal.c.bg = nil
+theme.inactive.b.bg = nil
+
 function Harpoon_files()
   local contents = {}
 
@@ -45,9 +50,11 @@ function Harpoon_files()
   return table.concat(contents)
 end
 
+-- "catppuccin",
+--
 require("lualine").setup({
   options = {
-    theme = "auto",
+    theme = theme,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     always_divide_middle = true,
@@ -74,12 +81,13 @@ require("lualine").setup({
   },
   sections = {
     lualine_a = {
-      -- "mode"
+      "mode",
     },
-    lualine_b = {
+    lualine_b = {},
+
+    lualine_c = {
       { Harpoon_files },
     },
-    lualine_c = {},
     lualine_x = {
 
       { "diff", colored = false },
