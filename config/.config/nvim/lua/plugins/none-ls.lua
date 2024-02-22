@@ -5,15 +5,13 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
-      prefer_local = true,
+      parefer_local = "node_modules/.bin",
       diagnostics_format = "[#{c}] #{m} (#{s})",
     }),
-    null_ls.builtins.formatting.prettierd.with({
-      prefer_local = true,
+    null_ls.builtins.formatting.prettier.with({
+      prefer_local = "node_modules/.bin",
       diagnostics_format = "[#{c}] #{m} (#{s})",
-      disabled_filetypes = { "yaml" },
     }),
-    null_ls.builtins.completion.spell,
   },
 
   on_attach = function(client, bufnr)

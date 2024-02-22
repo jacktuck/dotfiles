@@ -37,6 +37,8 @@ local options = {
   pumheight = 10,
   background = "dark",
   signcolumn = "yes",
+  -- spell = true,
+  -- spelllang = { "en_us" },
 }
 
 for k, v in pairs(options) do
@@ -226,6 +228,7 @@ require("lazy").setup({
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-nvim-lsp-signature-help",
+      "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
       "L3MON4D3/LuaSnip",

@@ -13,10 +13,9 @@ tmux:
     staged: "#[fg=lightgreen]"
     modified: "#[fg=yellow]"
     untracked: "#[fg=red]"
-    conflict: ""
-    stashed: ""
-    clean: ""
-    divergence: ""
+    conflict: "#[fg=red]"
+    stashed: "#[fg=white]"
+    divergence: "#[fg=white]"
   layout: [branch, ' ', flags]
   options:
     branch_max_len: 0
