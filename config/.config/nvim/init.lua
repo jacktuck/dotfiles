@@ -70,6 +70,19 @@ Event.mappings["User LazyFile"] = Event.mappings.LazyFile
 
 require("lazy").setup({
   {
+    "rebelot/kanagawa.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "<leader>gd", "<cmd><CR>", desc = "Git Diff View" },
+    },
+  },
+  {
     "dstein64/vim-startuptime",
     event = "VeryLazy",
     cmd = "StartupTime",
