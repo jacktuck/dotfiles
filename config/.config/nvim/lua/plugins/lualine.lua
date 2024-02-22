@@ -35,7 +35,7 @@ function Harpoon_files()
       contents[idx] = ""
     else
       if file_path == current_file_path then
-        contents[idx] = string.format("%%#lualine_a_normal#%s%s %s%s", prev, idx, file_name, next)
+        contents[idx] = string.format("%%#lualine_c_normal#%s%s %s%s", prev, idx, file_name, next)
       else
         contents[idx] = string.format("%%#lualine_b_inactive#%s%s %s%s", prev, idx, file_name, next)
       end
@@ -48,38 +48,41 @@ end
 require("lualine").setup({
   options = {
     theme = "auto",
-    section_separators = "",
-    component_separators = "",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
     always_divide_middle = true,
   },
   tabline = {
     lualine_a = {
-      { Harpoon_files },
+      {
+        "filename",
+        file_status = true, -- displays file status (readonly status, modified status)
+        path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+      },
     },
     lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
+    lualine_c = {
+      function()
+        return vim.fn.expand("%:h")
+      end,
+    },
+    lualine_x = {
+      "branch",
+    },
     lualine_y = {},
     lualine_z = {},
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = {
+      -- "mode"
+    },
     lualine_b = {
-      {
-        "filename",
-        file_status = true, -- displays file status (readonly status, modified status)
-        path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-      },
+      { Harpoon_files },
     },
     lualine_c = {},
     lualine_x = {
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-        color = { fg = "#ff9e64" },
-      },
-    },
-    lualine_y = {
+
+      { "diff", colored = false },
       {
         "diagnostics",
         sources = { "nvim_diagnostic" },
@@ -89,13 +92,8 @@ require("lualine").setup({
         update_in_insert = false, -- Update diagnostics in insert mode.
         always_visible = false, -- Show diagnostics even if there are none.
       },
-      "filetype",
-      "progress",
-      "location",
-      "branch",
     },
-    lualine_z = {
-      -- "location"
-    },
+    lualine_y = {},
+    lualine_z = {},
   },
 })

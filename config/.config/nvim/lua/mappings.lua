@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>ta", ":TestSuite<CR>", {})
 vim.keymap.set("n", "<leader>tv", ":TestVisit<CR>", {})
 
 -- Fugitive
-vim.keymap.set("n", "<leader>G", ":Git<CR>", {})
+vim.keymap.set("n", "<leader>G", ":vert Git | vert resize 60<CR>", {})
 vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", {})
 vim.keymap.set("n", "<leader>gl", ":Git l<CR>", {})
 vim.keymap.set("n", "<leader>gc", ":Git commit -v | :only | :norm! gg<CR>", {})
