@@ -1,7 +1,7 @@
 local vim = vim
 
 local options = {
-  cmdheight = 0,
+  -- cmdheight = 0,
   swapfile = false,
   undofile = true,
   expandtab = true,
@@ -49,7 +49,7 @@ end
 vim.loader.enable()
 
 --Change mapleader
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -291,3 +291,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 vim.cmd("syntax on")
+
+-- vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
+-- vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
