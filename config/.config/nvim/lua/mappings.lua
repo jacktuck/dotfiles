@@ -28,9 +28,10 @@ vim.keymap.set("n", "<leader>gP", ":Git push<CR>", {})
 vim.keymap.set("n", "<leader>gp", ":Git pull<CR>", {})
 
 -- Telescope
-vim.keymap.set("n", "<leader>b", function()
+vim.keymap.set("n", "<leader>B", function()
   require("telescope.builtin").buffers({ ignore_current_buffer = true, sort_mru = true })
 end)
+vim.keymap.set("n", "<leader>b", ":Telescope git_branches<CR>", {})
 vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", {})
 vim.keymap.set("n", "<leader>F", ":Telescope file_browser<CR>", {})
 vim.keymap.set("n", "<leader>s", ":Telescope live_grep<CR>", {})
