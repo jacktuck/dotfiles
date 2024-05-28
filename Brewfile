@@ -204,20 +204,10 @@ brew "zsh-syntax-highlighting"
 brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
-# Quantum Mechanical Keyboard (QMK) Firmware
-brew "qmk/qmk/qmk", link: false
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
-# GPU-accelerated terminal emulator
-cask "alacritty"
-# Compact TeX distribution as alternative to the full TeX Live / MacTeX
-cask "basictex"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Developer targeted fonts with a high number of glyphs
@@ -226,14 +216,9 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-# Full TeX Live distribution without GUI applications
-cask "mactex-no-gui"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 mas "ColorSlurp", id: 1287239339
 mas "Keynote", id: 409183694
 mas "MeetingBar", id: 1532419400
 mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
