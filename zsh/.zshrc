@@ -1,5 +1,7 @@
 # zmodload zsh/zprof
 
+echo loading zshrc
+
 setopt auto_cd # lazy directory switching
 setopt append_history
 setopt inc_append_history
@@ -15,6 +17,8 @@ for file in ~/dotfiles/{zsh,work}/.{services,exports,aliases}; do
 	[ -f "$file" ] && source "$file";
 done;
 unset file
+
+echo sourced files
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -69,7 +73,7 @@ if type pyenv > /dev/null; then
     }
 fi
 
-eval "$(fnm env)"
+command -v fnm && eval "$(fnm env)"
 
 
 bindkey '^I'   complete-word       # tab          | complete
