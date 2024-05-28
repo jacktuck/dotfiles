@@ -115,7 +115,7 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "jacktuck/harpoon",
+    "ThePrimeagen/harpoon",
     event = "VeryLazy",
   },
   {
