@@ -46,7 +46,9 @@ version_format='v${major}'
 [python]
 symbol = "py "
 version_format='v${major}'
+pyenv_prefix='foo '
+pyenv_version_name=false
 
 [rust]
 symbol = "rs "
-version_format='v${major}'
+vepyenv_version_namersion_format='v${major}'
