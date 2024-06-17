@@ -186,6 +186,9 @@ require("lazy").setup({
   {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"nvimtools/none-ls-extras.nvim"
+		},
     opts = function()
       require("plugins.none-ls")
     end,

@@ -1,10 +1,11 @@
 local null_ls = require("null-ls")
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.eslint_d.with({
+    require("none-ls.diagnostics.eslint_d").with({
       parefer_local = "node_modules/.bin",
       diagnostics_format = "[#{c}] #{m} (#{s})",
     }),
