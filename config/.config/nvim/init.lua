@@ -117,6 +117,24 @@ require("lazy").setup({
   {
     "ThePrimeagen/harpoon",
     event = "VeryLazy",
+    config = function ()
+			local id = vim.api.nvim_create_augroup("auto_harpoon_modified", {
+				clear = false,
+			})
+			vim.api.nvim_create_autocmd({ "BufRead" }, {
+				group = id,
+				pattern = { "*" },
+				callback = function()
+					vim.api.nvim_create_autocmd({ "InsertEnter", "BufModifiedSet" }, {
+						buffer = 0,
+						once = true,
+						callback = function()
+							require("harpoon.mark").add_file()
+						end,
+					})
+				end,
+			})
+    end
   },
   {
     "ruifm/gitlinker.nvim",
@@ -270,6 +288,7 @@ require("lazy").setup({
     event = "VeryLazy",
     config = true,
   },
+
 })
 
 require("mappings")
@@ -297,3 +316,7 @@ vim.cmd("syntax on")
 
 -- vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
 -- vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
+--
+--
+--
+--
