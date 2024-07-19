@@ -79,7 +79,7 @@ vim.keymap.set("n", "[b", ":bprevious<CR>", {})
 vim.keymap.set("n", "]b", ":bnext<CR>", {})
 
 -- Tabular
-vim.keymap.set("n", "<leader><tab>f", ":g/|/Tab /|<CR>", {})
+vim.keymap.set("n", "<leader>T", ":g/|/Tab /|<CR>", {})
 
 -- TODO: convert to a lua function
 vim.keymap.set(
