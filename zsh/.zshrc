@@ -91,3 +91,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # zprof &> prof.txt
+#
+# Disable windows opening animations
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
