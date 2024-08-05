@@ -4,8 +4,10 @@ export PATH="$HOME/bin:$PATH";
 [ -d "/opt/homebrew/bin" ] && eval "$(/opt/homebrew/bin/brew shellenv)" # for m1 mac
 [ -d "/usr/local/homebrew/bin" ] && eval "$(/usr/local/homebrew/bin/brew shellenv)" # for intel mac
 
-# brew bins should be used over /usr/bin
+# brew setup
 export PATH="$HOMEBREW_PREFIX/bin:$PATH";
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
 
 # local bins
 export PATH="$HOME/.bin:$PATH";
