@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>m", function()
   require("harpoon.mark").toggle_file()
 end, {})
 
-vim.keymap.set("n", "<leader>rm", function()
+vim.keymap.set("n", "<leader>MM", function()
   require("harpoon.mark").clear_all()
 end, {})
 
