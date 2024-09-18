@@ -77,6 +77,9 @@ bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward
+bindkey -e
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
 
 
 # disable sort when completing `git checkout`
