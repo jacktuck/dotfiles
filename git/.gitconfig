@@ -198,3 +198,6 @@
 
 [remote "origin"]
 	prune = true
+[rerere]
+	enabled = true
+	autoupdate = true
