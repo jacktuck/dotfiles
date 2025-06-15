@@ -6,6 +6,6 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     "docker_compose_language_service",
     "bashls",
-    "gopls",
+    "gopls"
   },
 })

@@ -46,6 +46,7 @@ zinit ice as"command" from"gh-r" \
 
 zinit light starship/starship
 
+
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
@@ -71,16 +72,15 @@ fi
 
 command -v fnm > /dev/null && eval "$(fnm env)"
 
-
+bindkey -e
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward
-bindkey -e
 bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
-
+bindkey '[[' vi-cmd-mode
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -97,3 +97,9 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 #
 # Disable windows opening animations
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
+# Prevent the Fn key from starting Dictation:
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+
+# Mission control workaround for Aerospace
+defaults write com.apple.dock expose-group-apps -bool true

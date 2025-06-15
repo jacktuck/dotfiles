@@ -48,11 +48,11 @@ end, {})
 
 -- Harpoon
 vim.keymap.set("n", "<leader>m", function()
-  require("harpoon.mark").toggle_file()
+  require("harpoon.ui").toggle_quick_menu()
 end, {})
 
-vim.keymap.set("n", "<leader>MM", function()
-  require("harpoon.mark").clear_all()
+vim.keymap.set("n", "<leader>M", function()
+  require("harpoon.mark").toggle_file()
 end, {})
 
 for i = 1, 9 do
@@ -60,14 +60,6 @@ for i = 1, 9 do
     require("harpoon.ui").nav_file(i)
   end, {})
 end
-
-vim.keymap.set("n", "<leader>n", function()
-  require("harpoon.ui").nav_next()
-end, {})
-
-vim.keymap.set("n", "<leader>p", function()
-  require("harpoon.ui").nav_prev()
-end, {})
 
 -- Write file
 vim.keymap.set("n", "<leader>w", ":w<CR>", {})

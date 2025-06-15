@@ -1,6 +1,6 @@
 DIRS=("dotfiles")
 cd ~
-for dir in $(find code projects -mindepth 1 -maxdepth 1 -type d);
+for dir in $(find code projects -mindepth 2 -maxdepth 2 -type d | grep -v node_modules);
     do DIRS+=($dir);
 done
 DIRS=$(printf '%s\n' "${DIRS[@]}")

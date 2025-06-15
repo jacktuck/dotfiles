@@ -144,14 +144,45 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+#
+# [workspace-to-monitor-force-assignment]
+# 1 = 'main'
+# 2 = 'main'
+# 3 = 'main'
+# 4 = 'main'
+# 5 = [3,2]
+# 6 = [3,2]
+# 7 = [3,2j
+# 8 = [3,2]
+# 9 = ['^built-in retina display$', 'secondary']
+#
+[[on-window-detected]]
+if.app-name-regex-substring = '1Password'
+run = ['layout floating']
 
-[workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-4 = 'main'
-5 = [3,2]
-6 = [3,2]
-7 = [3,2]
-8 = [3,2]
-9 = ['^built-in retina display$', 'secondary']
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-name-regex-substring = 'Alacritty'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-name-regex-substring = 'Chrome'
+run = ['move-node-to-workspace 2']
+
+# [[on-window-detected]]
+# check-further-callbacks = true
+# if.app-name-regex-substring = 'Spotify'
+# run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-name-regex-substring = 'Slack'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-name-regex-substring = 'Mail'
+run = ['move-node-to-workspace 9']
+
