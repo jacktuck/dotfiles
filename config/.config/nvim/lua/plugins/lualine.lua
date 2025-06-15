@@ -1,10 +1,5 @@
 local hp_marks = require("harpoon.mark")
 
-local theme = require("lualine.themes.catppuccin")
-
-theme.normal.c.bg = nil
-theme.inactive.b.bg = nil
-
 function Harpoon_files()
   local contents = {}
 
@@ -54,7 +49,7 @@ end
 --
 require("lualine").setup({
   options = {
-    theme = theme,
+    theme = "seoul256",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     always_divide_middle = true,

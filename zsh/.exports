@@ -1,4 +1,5 @@
 export PATH="$HOME/bin:$PATH";
+export TERM="xterm-256color"
 
 # Load homebrew
 [ -d "/opt/homebrew/bin" ] && eval "$(/opt/homebrew/bin/brew shellenv)" # for m1 mac
@@ -8,11 +9,8 @@ export PATH="$HOME/bin:$PATH";
 export PATH="$HOMEBREW_PREFIX/bin:$PATH";
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
-
 # local bins
 export PATH="$HOME/.bin:$PATH";
-
-export TERM="xterm-256color"
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -30,8 +28,9 @@ export PYTHONIOENCODING='UTF-8';
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768'; export HISTFILESIZE="${HISTSIZE}";
-# Omit duplicates and commands that begin with a space from history.
-export HISTCONTROL='ignoreboth';
+
+# Omit duplicates
+export HISTCONTROL='ignoredups';
 
 # Prefer US English and use UTF-8.
 # export LANG='en_US.UTF-8'; export LC_ALL='en_US.UTF-8';
@@ -49,5 +48,9 @@ export MANPAGER='less -X';
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
+export ANSIBLE_SSH_ARGS="-o RemoteCommand=none"
+
 export DOCKER_HOST=unix:///var/run/docker.sock
+
 command -v fnm > /dev/null && export NODE_14=$(realpath "$(fnm exec --using 14 which node)/..")
+command -v fnm > /dev/null && export NODE_20=$(realpath "$(fnm exec --using 20 which node)/..")

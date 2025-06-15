@@ -21,7 +21,7 @@ local options = {
   number = true,
   termguicolors = true,
   cursorline = true,
-  listchars = "tab:▸ ,trail:·,eol:¬,nbsp:_",
+  listchars = "tab:▸ ,trail:·,nbsp:_",
   list = true,
   hlsearch = true,
   incsearch = true,
@@ -70,9 +70,12 @@ Event.mappings["User LazyFile"] = Event.mappings.LazyFile
 
 require("lazy").setup({
   {
-    "rebelot/kanagawa.nvim",
-    event = "VeryLazy",
+    "stevearc/oil.nvim",
     opts = {},
+    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
   },
   {
     "sindrets/diffview.nvim",
@@ -117,24 +120,6 @@ require("lazy").setup({
   {
     "ThePrimeagen/harpoon",
     event = "VeryLazy",
-    config = function ()
-			local id = vim.api.nvim_create_augroup("auto_harpoon_modified", {
-				clear = false,
-			})
-			vim.api.nvim_create_autocmd({ "BufRead" }, {
-				group = id,
-				pattern = { "*" },
-				callback = function()
-					vim.api.nvim_create_autocmd({ "InsertEnter", "BufModifiedSet" }, {
-						buffer = 0,
-						once = true,
-						callback = function()
-							require("harpoon.mark").add_file()
-						end,
-					})
-				end,
-			})
-    end
   },
   {
     "ruifm/gitlinker.nvim",
@@ -204,9 +189,9 @@ require("lazy").setup({
   {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"nvimtools/none-ls-extras.nvim"
-		},
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     opts = function()
       require("plugins.none-ls")
     end,
@@ -243,22 +228,29 @@ require("lazy").setup({
     config = true,
     lazy = true,
   },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("catppuccin")
+  --   end,
+  -- },
+  -- {
+  --   "rose-pine/neovim",
+  --   config = function()
+  --     require("rose-pine").setup({
+  --       disable_float_background = true,
+  --       disable_italics = true,
+  --     })
+  --     vim.cmd.colorscheme("rose-pine")
+  --   end,
+  -- },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
+    "rebelot/kanagawa.nvim",
+    event = "VeryLazy",
     config = function()
-      -- vim.cmd.colorscheme("catppuccin")
-    end,
-  },
-  {
-    "rose-pine/neovim",
-    config = function()
-      require("rose-pine").setup({
-        disable_float_background = true,
-        disable_italics = true,
-      })
-      vim.cmd.colorscheme("rose-pine")
+      vim.cmd.colorscheme("kanagawa-dragon")
     end,
   },
   {
@@ -318,5 +310,8 @@ vim.cmd("syntax on")
 -- vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
 --
 --
---
---
+vim.filetype.add({
+  pattern = {
+    ["%.%a+"] = "zsh", --set filetype for dotfiles with no extension
+  },
+})

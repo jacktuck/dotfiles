@@ -1,4 +1,5 @@
 local builtin = require("telescope.builtin")
+local disable_devicons = false
 
 require("telescope-all-recent").setup({})
 
@@ -22,7 +23,7 @@ require("telescope").setup({
       respect_gitignore = false,
       depth = 1,
       display_stat = false,
-      disable_devicons = true,
+      disable_devicons = disable_devicons,
     },
   },
 
@@ -33,21 +34,21 @@ require("telescope").setup({
         return string.format("%s - %s", tail, path)
       end,
       find_command = { "fd", "--type", "file", "--hidden" },
-      disable_devicons = true,
+      disable_devicons = disable_devicons,
     },
     live_grep = {
       only_sort_text = true,
       additional_args = function(opts)
         return { "--hidden" }
       end,
-      disable_devicons = true,
+      disable_devicons = disable_devicons,
     },
     grep_string = {
       only_sort_text = true,
       additional_args = function(opts)
         return { "--hidden" }
       end,
-      disable_devicons = true,
+      disable_devicons = disable_devicons,
     },
     buffers = {
       path_display = function(opts, path)
@@ -59,7 +60,7 @@ require("telescope").setup({
           ["<C-d>"] = require("telescope.actions").delete_buffer,
         },
       },
-      disable_devicons = true,
+      disable_devicons = disable_devicons,
     },
   },
 })
