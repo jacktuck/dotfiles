@@ -26,12 +26,6 @@ export NODE_REPL_MODE='sloppy'; export NODE_ENV='development'
 # stderr.
 export PYTHONIOENCODING='UTF-8';
 
-# Increase Bash history size. Allow 32³ entries; the default is 500.
-export HISTSIZE='32768'; export HISTFILESIZE="${HISTSIZE}";
-
-# Omit duplicates
-export HISTCONTROL='ignoredups';
-
 # Prefer US English and use UTF-8.
 # export LANG='en_US.UTF-8'; export LC_ALL='en_US.UTF-8';
 # export LC_ALL="POSIX"

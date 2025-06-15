@@ -1,13 +1,5 @@
 # zmodload zsh/zprof
 
-setopt auto_cd # lazy directory switching
-setopt append_history
-setopt inc_append_history
-setopt hist_find_no_dups
-setopt hist_ignore_space
-setopt no_hist_beep
-setopt share_history # share history between session/terminals
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -103,3 +95,28 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
 # Mission control workaround for Aerospace
 defaults write com.apple.dock expose-group-apps -bool true
+
+# Lazy directory switching
+setopt auto_cd
+
+# History file location
+export HISTFILE=~/.zsh_history
+
+# Number of commands to keep in memory per session
+export HISTSIZE=1000000
+
+# Number of commands to save to HISTFILE
+export SAVEHIST=1000000
+
+# Zsh options for robust history handling
+setopt append_history        # Append new commands to the history file instead of overwriting it
+setopt inc_append_history    # Immediately append each command to the history file as you enter it
+setopt share_history         # Share history in real-time across all open zsh sessions/terminals
+setopt hist_ignore_dups      # Ignore duplicate commands in the history list
+setopt hist_ignore_all_dups  # Remove older duplicates when a command is repeated later
+setopt hist_reduce_blanks    # Remove unnecessary blanks from history entries
+setopt hist_verify           # Show command for confirmation before running history expansion (!)
+setopt extended_history      # Save timestamp with each history entry
+setopt no_hist_beep          # Disable the beep sound on history expansion errors or completion
+
+source <(fzf --zsh)
