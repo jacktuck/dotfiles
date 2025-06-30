@@ -1,10 +1,9 @@
--- tsserver requires node 14
-vim.env.PATH = vim.env.NODE_14 .. ":" .. vim.env.PATH
+-- ts_ls requires node 14
+vim.env.PATH = vim.env.NODE_20 .. ":" .. vim.env.PATH
 
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
   settings = {
     completions = {
       completeFunctionCalls = true,

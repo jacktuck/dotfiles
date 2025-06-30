@@ -4,16 +4,11 @@ local options = {
   -- cmdheight = 0,
   swapfile = false,
   undofile = true,
-  expandtab = true,
-  smartindent = true,
-  tabstop = 2,
-  shiftwidth = 2,
   clipboard = "unnamedplus",
   wildmenu = true,
   backspace = "indent,eol,start",
   gdefault = true,
   encoding = "utf-8",
-  binary = true,
   modeline = true,
   modelines = 4,
   exrc = true,
@@ -68,13 +63,21 @@ local Event = require("lazy.core.handler.event")
 Event.mappings.LazyFile = { id = "LazyFile", event = { "BufReadPost", "BufNewFile", "BufWritePre" } }
 Event.mappings["User LazyFile"] = Event.mappings.LazyFile
 
+vim.g.sleuth_debug = 1
 require("lazy").setup({
+
+  {
+    "tpope/vim-sleuth",
+    lazy = false,
+  },
   {
     "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup()
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    end,
     opts = {},
-    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
     dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
   },
   {
@@ -93,9 +96,12 @@ require("lazy").setup({
       vim.g.startuptime_tries = 10
     end,
   },
+  -- disabled
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    config = function() end,
+    lazy = true,
     opts = {},
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -187,13 +193,30 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "nvimtools/none-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "nvimtools/none-ls-extras.nvim",
+    "saghen/blink.cmp",
+    version = "1.*",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    opts = {
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
+      },
+      keymap = { preset = "enter" },
+      completion = { documentation = { auto_show = false } },
     },
-    opts = function()
-      require("plugins.none-ls")
+  },
+  -- opts = function()
+  --   require("plugins.blink-cmp")
+  -- end,
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require("plugins.nvim-lint")
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("plugins.conform")
     end,
   },
   {
@@ -248,27 +271,10 @@ require("lazy").setup({
   -- },
   {
     "rebelot/kanagawa.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    priority = 1000,
     config = function()
       vim.cmd.colorscheme("kanagawa-dragon")
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      "f3fora/cmp-spell",
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-      "L3MON4D3/LuaSnip",
-    },
-    config = function()
-      require("plugins.nvim-cmp")
     end,
   },
   {
@@ -280,7 +286,15 @@ require("lazy").setup({
     event = "VeryLazy",
     config = true,
   },
-
+  {
+    "stevearc/quicker.nvim",
+    event = "FileType qf",
+    opts = {},
+    config = function()
+      require("quicker").setup()
+    end,
+  },
+  { "tpope/vim-rsi", event = "VeryLazy" },
 })
 
 require("mappings")
@@ -306,10 +320,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 vim.cmd("syntax on")
 
--- vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
--- vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
---
---
 vim.filetype.add({
   pattern = {
     ["%.%a+"] = "zsh", --set filetype for dotfiles with no extension
