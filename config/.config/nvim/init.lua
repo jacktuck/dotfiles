@@ -194,19 +194,11 @@ require("lazy").setup({
   },
   {
     "saghen/blink.cmp",
-    version = "1.*",
     dependencies = { "rafamadriz/friendly-snippets" },
-    opts = {
-      sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-      },
-      keymap = { preset = "enter" },
-      completion = { documentation = { auto_show = false } },
-    },
+    opts = function()
+      require("plugins.blink-cmp")
+    end,
   },
-  -- opts = function()
-  --   require("plugins.blink-cmp")
-  -- end,
   {
     "mfussenegger/nvim-lint",
     config = function()
