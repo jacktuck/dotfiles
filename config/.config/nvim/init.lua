@@ -263,9 +263,17 @@ require("lazy").setup({
   -- },
   {
     "rebelot/kanagawa.nvim",
-    -- event = "VeryLazy",
     priority = 1000,
     config = function()
+      require("kanagawa").setup({
+	commentStyle = { italic = false },
+	keywordStyle = { italic = false },
+	overrides = function()
+	  return {
+	    ["@variable.builtin"] = { italic = false },
+	  }
+	end
+      })
       vim.cmd.colorscheme("kanagawa-dragon")
     end,
   },
