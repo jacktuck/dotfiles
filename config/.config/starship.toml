@@ -49,4 +49,3 @@ pyenv_version_name=false
 
 [rust]
 symbol = "rs "
-vepyenv_version_namersion_format='v${major}'

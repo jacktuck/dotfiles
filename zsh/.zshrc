@@ -94,10 +94,10 @@ defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
 # Mission control workaround for Aerospace
-defaults write com.apple.dock expose-group-apps -bool true
+defaults write com.apple.dock expose-group-apps -bool true 
 
 # Lazy directory switching
-setopt auto_cd
+setopt auto_cd 
 
 # History file location
 export HISTFILE=~/.zsh_history
@@ -108,15 +108,17 @@ export HISTSIZE=1000000
 # Number of commands to save to HISTFILE
 export SAVEHIST=1000000
 
-# Zsh options for robust history handling
-setopt append_history        # Append new commands to the history file instead of overwriting it
-setopt inc_append_history    # Immediately append each command to the history file as you enter it
-setopt share_history         # Share history in real-time across all open zsh sessions/terminals
-setopt hist_ignore_dups      # Ignore duplicate commands in the history list
-setopt hist_ignore_all_dups  # Remove older duplicates when a command is repeated later
-setopt hist_reduce_blanks    # Remove unnecessary blanks from history entries
-setopt hist_verify           # Show command for confirmation before running history expansion (!)
-setopt extended_history      # Save timestamp with each history entry
-setopt no_hist_beep          # Disable the beep sound on history expansion errors or completion
+# Share history across zsh sessions (replaces extended_history and inc_append_history)
+setopt SHARE_HISTORY 
+# Ignore duplicate commands in the history list
+setopt HIST_IGNORE_DUPS
+# Remove older duplicates when a command is repeated later
+setopt HIST_IGNORE_ALL_DUPS
+# Remove unnecessary blanks from history entries
+setopt HIST_REDUCE_BLANKS
+# Show command for confirmation before running history expansion
+setopt HIST_VERIFY 
+# Disable the beep sound on history expansion errors or completion
+setopt NO_HIST_BEEP
 
 source <(fzf --zsh)
