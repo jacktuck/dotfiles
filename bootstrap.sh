@@ -20,5 +20,3 @@ for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
   echo "stowing $dir";
   stow $dir -t ~;
 done
-
-echo "0 9 * * * ~/dotfiles/work/commit_zsh_history.sh" | crontab -
