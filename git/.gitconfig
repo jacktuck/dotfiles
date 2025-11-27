@@ -140,7 +140,6 @@
 	new = green # additions
 
 [diff]
-	colorMoved = default
 	# Detect copies as well as renames.
 	renames = copies
 	algorithm = histogram
