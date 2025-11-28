@@ -6,7 +6,7 @@ require("telescope-all-recent").setup({})
 require("telescope").setup({
   defaults = require("telescope.themes").get_ivy({
     path_display = { "truncate" },
-    file_ignore_patterns = { ".git/" },
+    file_ignore_patterns = { "%.git/" },
     preview = {
       treesitter = false,
     },
