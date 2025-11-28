@@ -3,7 +3,7 @@ require("conform").setup({
     lua = { "stylua" },
     python = { "isort", "black" },
     rust = { "rustfmt", lsp_format = "fallback" },
-
+    json = { "prettierd", "prettier", stop_after_first = true },
     javascript = { "prettierd", "prettier", stop_after_first = true },
     javascriptreact = { "prettierd", "prettier", stop_after_first = true },
     typescript = { "prettierd", "prettier", stop_after_first = true },

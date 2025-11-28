@@ -237,12 +237,12 @@ require("lazy").setup({
       require("plugins.nvim-lspconfig")
     end,
   },
-  {
-    "Wansmer/treesj",
-    keys = { "<space>m", "<space>j", "<space>s" },
-    config = true,
-    lazy = true,
-  },
+  -- {
+  --   "Wansmer/treesj",
+  --   keys = { "<space>m", "<space>j", "<space>s" },
+  --   config = true,
+  --   lazy = true,
+  -- },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",

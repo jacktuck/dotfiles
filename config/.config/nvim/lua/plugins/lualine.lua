@@ -6,8 +6,11 @@ function Harpoon_files()
   for idx = 1, hp_marks.get_length() do
     local file_path = hp_marks.get_marked_file_name(idx)
     local file_name
+
     if file_path ~= "" then
-      file_name = vim.fn.fnamemodify(file_path, ":t")
+      local parent = vim.fn.fnamemodify(file_path, ":h:t")
+      local fname = vim.fn.fnamemodify(file_path, ":t")
+      file_name = parent .. "/" .. fname
     end
 
     local current_file_path = vim.fn.expand("%:f")
