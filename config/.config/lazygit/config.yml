@@ -21,20 +21,9 @@ gui:
       - '#cdd6f4'
     searchingActiveBorderColor:
       - '#f9e2af'
-  customCommands:
-    - key: "R"
-      description: "View Reflog"
-      command: "git reflog"
-      panel: "popup"   # opens in a popup, not full screen
-
-    - key: "C"
-      description: "View Commits"
-      command: "git log --oneline --graph --decorate"
-      panel: "popup"   # opens commits in a popup too
-# git:
-#   pagers:
-#     - pager: delta --dark --paging=never
 git:
   pagers:
-    - pager: diff-so-fancy
+    - useExternalDiffGitConfig: true
+    - colorArg: always
+
 
