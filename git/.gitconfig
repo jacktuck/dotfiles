@@ -184,7 +184,7 @@
 	defaultBranch = master
 
 [user]
-	name=jack
+	name="Jack Tuck"
 	email=8209433+jacktuck@users.noreply.github.com
 
 [remote "origin"]
