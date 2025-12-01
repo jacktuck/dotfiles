@@ -114,7 +114,7 @@
 	editor = nvim
 
 [diff]
-	external = difft --display=inline --override='package-lock.json:text' --override='yarn.lock:text'
+	external = difft --display=inline --override="*.yaml:text" --override="package-lock.json:text" --override="yarn.lock:text"
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
