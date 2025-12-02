@@ -213,24 +213,62 @@ require("lazy").setup({
   },
   {
     "williamboman/mason.nvim",
-    config = true,
-    lazy = true,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = true,
     config = function()
-      require("plugins.mason-lspconfig")
+      local mason = require("mason")
+      local registry = require("mason-registry")
+
+      mason.setup()
+
+      local servers = {
+        "typescript-language-server",
+        "lua-language-server",
+        "bash-language-server",
+        "docker-compose-language-service",
+        "pyright",
+        "rust-analyzer",
+        "gopls",
+      }
+
+      local tools = {
+        "eslint_d",
+        "prettierd",
+        "stylua",
+      }
+
+      local function ensure_installed(list)
+        for _, name in ipairs(list) do
+          local p = registry.get_package(name)
+          if not p:is_installed() then
+            vim.schedule(function()
+              print("[Mason] Starting installation of " .. name)
+            end)
+
+            p:once("install:success", function()
+              vim.schedule(function()
+                print("[Mason] Successfully installed " .. name)
+              end)
+            end)
+
+            p:once("install:failed", function()
+              vim.schedule(function()
+                print("[Mason] Failed to install " .. name)
+              end)
+            end)
+
+            p:install()
+          end
+        end
+      end
+
+      ensure_installed(servers)
+      ensure_installed(tools)
     end,
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
+    lazy = false,
   },
   {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
     dependencies = {
-      "williamboman/mason-lspconfig.nvim",
       "williamboman/mason.nvim",
     },
     config = function()
@@ -266,13 +304,13 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-	commentStyle = { italic = false },
-	keywordStyle = { italic = false },
-	overrides = function()
-	  return {
-	    ["@variable.builtin"] = { italic = false },
-	  }
-	end
+        commentStyle = { italic = false },
+        keywordStyle = { italic = false },
+        overrides = function()
+          return {
+            ["@variable.builtin"] = { italic = false },
+          }
+        end,
       })
       vim.cmd.colorscheme("kanagawa-dragon")
     end,

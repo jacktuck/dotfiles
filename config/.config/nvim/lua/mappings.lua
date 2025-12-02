@@ -9,12 +9,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "n", "nzz", {})
 vim.keymap.set("n", "N", "Nzz", {})
 
--- Vim-test
-vim.keymap.set("n", "<leader>tn", ":TestNearest<CR>", {})
-vim.keymap.set("n", "<leader>tf", ":TestFile<CR>", {})
-vim.keymap.set("n", "<leader>ta", ":TestSuite<CR>", {})
-vim.keymap.set("n", "<leader>tv", ":TestVisit<CR>", {})
-
 -- Fugitive
 vim.keymap.set("n", "<leader>G", ":vert Git | vert resize 60<CR>", {})
 vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", {})
