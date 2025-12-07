@@ -122,3 +122,4 @@ setopt HIST_VERIFY
 setopt NO_HIST_BEEP
 
 source <(fzf --zsh)
+

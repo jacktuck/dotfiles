@@ -15,11 +15,18 @@ return {
         "lua",
         "rust",
       },
+      auto_install = true,
       highlight = {
         enable = true,
         disable = function(_, bufnr)
+          local ok, parsers = pcall(require, "nvim-treesitter.parsers")
+          if ok then
+            local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
+            if not parsers.has_parser(ft) then return true end
+          end
           return vim.api.nvim_buf_line_count(bufnr) > 10000
         end,
+        additional_vim_regex_highlighting = false,
       },
       context = {
         enable = true,
