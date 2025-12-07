@@ -23,6 +23,10 @@ return {
         file_icons = false,
         git_icons = false,
       },
+      undotree = {
+        previewer = "undotree_native",
+        locate = false,
+      },
     }
   end,
   keys = {
@@ -46,6 +50,13 @@ return {
         require("fzf-lua").buffers({ sort_mru = true, ignore_current_buffer = true })
       end,
       desc = "Buffers",
+    },
+    {
+      "<leader>u",
+      function()
+        require("fzf-lua").undotree()
+      end,
+      desc = "Undotree",
     },
   },
 
