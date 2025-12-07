@@ -1,76 +1,19 @@
 -- Refactorings
-vim.keymap.set("n", "<leader>lc", '"ayiwoconsole.log("<C-R>a:",<C-R>a);<Esc>0', {})
-vim.keymap.set("n", "<leader>li", '"ayiwologger.info("<C-R>a:",<C-R>a);<Esc>0', {})
-vim.keymap.set("n", "<leader>le", '"ayiwologger.error("<C-R>a:",<C-R>a);<Esc>0', {})
+vim.keymap.set("n", "<leader>lc", '"ayiwoconsole.log("<C-R>a:",<C-R>a);<Esc>0', { desc = "Console log current word" })
+vim.keymap.set("n", "<leader>li", '"ayiwologger.info("<C-R>a:",<C-R>a);<Esc>0', { desc = "Logger info current word" })
+vim.keymap.set("n", "<leader>le", '"ayiwologger.error("<C-R>a:",<C-R>a);<Esc>0', { desc = "Logger error current word" })
 
 -- Re-center verticle jumps
-vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
-vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
-vim.keymap.set("n", "n", "nzz", {})
-vim.keymap.set("n", "N", "Nzz", {})
-
--- Fugitive
-vim.keymap.set("n", "<leader>G", ":vert Git | vert resize 60<CR>", {})
-vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", {})
-vim.keymap.set("n", "<leader>gl", ":Git l<CR>", {})
-vim.keymap.set("n", "<leader>gc", ":Git commit -v | :only | :norm! gg<CR>", {})
-vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", {})
-vim.keymap.set("n", "<leader>gr", ":Gread<CR>", {})
-vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", {})
-vim.keymap.set("n", "<leader>gv", ":Git show<CR>", {})
-vim.keymap.set("n", "<leader>gP", ":Git push<CR>", {})
-vim.keymap.set("n", "<leader>gp", ":Git pull<CR>", {})
-
--- Telescope
-vim.keymap.set("n", "<leader>B", function()
-  require("telescope.builtin").buffers({ ignore_current_buffer = true, sort_mru = true })
-end)
-vim.keymap.set("n", "<leader>b", ":Telescope git_branches<CR>", {})
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", {})
-vim.keymap.set("n", "<leader>F", ":Telescope file_browser<CR>", {})
-vim.keymap.set("n", "<leader>s", ":Telescope live_grep<CR>", {})
-vim.keymap.set("n", "<leader>.", ":Telescope resume<CR>", {})
-
--- Quickfix lists
-vim.keymap.set("n", "[q", ":cp<CR>", {})
-vim.keymap.set("n", "]q", ":cn<CR>", {})
-
--- Treesitter
-vim.keymap.set("n", "[c", function()
-  require("treesitter-context").go_to_context()
-end, {})
-
--- Harpoon
-vim.keymap.set("n", "<leader>m", function()
-  require("harpoon.ui").toggle_quick_menu()
-end, {})
-
-vim.keymap.set("n", "<leader>M", function()
-  require("harpoon.mark").toggle_file()
-end, {})
-
-for i = 1, 9 do
-  vim.keymap.set("n", "<leader>" .. i, function()
-    require("harpoon.ui").nav_file(i)
-  end, {})
-end
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Up half page, center" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Down half page, center" })
+vim.keymap.set("n", "n", "nzz", { desc = "Next match, center" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Prev match, center" })
 
 -- Write file
-vim.keymap.set("n", "<leader>w", ":w<CR>", {})
-vim.keymap.set("n", "<leader>wq", ":wq<CR>", {})
-vim.keymap.set("n", "<leader>W", ":w !sudo tee % > /dev/null<CR>", {}) -- as sudo
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write file" })
+vim.keymap.set("n", "<leader>W", ":noautocmd w<CR>", { desc = "Write without formatting" })
+vim.keymap.set("n", "<leader>w!", ":w !sudo tee % > /dev/null<CR>", { desc = "Write as sudo" }) -- as sudo
 
 -- Buffers
-vim.keymap.set("n", "[b", ":bprevious<CR>", {})
-vim.keymap.set("n", "]b", ":bnext<CR>", {})
-
--- Tabular
-vim.keymap.set("n", "<leader>T", ":g/|/Tab /|<CR>", {})
-
--- TODO: convert to a lua function
-vim.keymap.set(
-  "n",
-  "<leader>lv",
-  '$T#dt"F:lvt#y | :let a=system("latestLibTag", @")[:-2] | exec ".s/#/#".a."/g"<CR>',
-  {}
-)
+vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })

@@ -23,5 +23,6 @@ return {
         conform.format({ bufnr = args.buf })
       end,
     })
+
   end,
 }

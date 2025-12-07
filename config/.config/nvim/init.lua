@@ -30,10 +30,7 @@ local options = {
   updatetime = 100,
   relativenumber = true,
   pumheight = 10,
-  background = "dark",
   signcolumn = "yes",
-  -- spell = true,
-  -- spelllang = { "en_us" },
 }
 
 for k, v in pairs(options) do
