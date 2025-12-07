@@ -1,4 +1,0 @@
-(node:49897) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-(Use `MongoDB Compass Helper (Renderer) --trace-deprecation ...` to show where the warning was created)
-(node:52278) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-(Use `MongoDB Compass Helper (Renderer) --trace-deprecation ...` to show where the warning was created)
