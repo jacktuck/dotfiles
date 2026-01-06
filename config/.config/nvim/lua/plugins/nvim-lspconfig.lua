@@ -1,3 +1,11 @@
+--[[ Some keymaps are created unconditionally when Nvim starts:
+- "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|
+- "gra" is mapped in Normal and Visual mode to |vim.lsp.buf.code_action()|
+- "grr" is mapped in Normal mode to |vim.lsp.buf.references()|
+- "gri" is mapped in Normal mode to |vim.lsp.buf.implementation()|
+- "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
+- CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()| ]]
+
 return {
   "neovim/nvim-lspconfig",
   event = "LazyFile",
@@ -20,7 +28,11 @@ return {
         },
         rust_analyzer = { capabilities = capabilities },
         docker_compose_language_service = { capabilities = capabilities },
-        bashls = { capabilities = capabilities, filetypes = { "sh", "zsh" }, settings = { filetypes = { "sh", "zsh" } } },
+        bashls = {
+          capabilities = capabilities,
+          filetypes = { "sh", "zsh" },
+          settings = { filetypes = { "sh", "zsh" } },
+        },
         gopls = { capabilities = capabilities },
       },
       diagnostics = {
@@ -48,29 +60,6 @@ return {
     for server, server_opts in pairs(opts.servers) do
       lspconfig[server].setup(server_opts)
     end
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-      callback = function(ev)
-        vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-         local map = function(mode, lhs, rhs, desc)
-           vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc })
-         end
-        map("n", "gd", vim.lsp.buf.definition, "Goto definition")
-        map("n", "gy", vim.lsp.buf.type_definition, "Goto type")
-        map("n", "gI", vim.lsp.buf.implementation, "Goto implementation")
-        map("n", "gr", vim.lsp.buf.references, "References")
-        map("n", "K", vim.lsp.buf.hover, "Hover")
-         vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature help" })
-        map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
-        map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
-        map("n", "<leader>cf", function() vim.lsp.buf.format({ async = true }) end, "Format")
-        map("n", "<leader>cd", vim.diagnostic.open_float, "Line diagnostics")
-        map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
-        map("n", "[d", vim.diagnostic.goto_prev, "Prev diagnostic")
-        map("n", "<leader>ds", function() require("fzf-lua").lsp_document_symbols() end, "Document symbols")
-        map("n", "<leader>ws", function() require("fzf-lua").lsp_workspace_symbols() end, "Workspace symbols")
-      end,
-    })
     vim.diagnostic.config(opts.diagnostics)
   end,
 }
