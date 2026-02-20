@@ -3,6 +3,8 @@
 # Environment variables & PATH
 # Loaded for all Zsh invocations (interactive or scripts)
 # ------------------------------------------------
+#
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Basic PATH additions
 export PATH="$HOME/bin:$PATH"
