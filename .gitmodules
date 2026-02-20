@@ -1,4 +1,0 @@
-[submodule "work"]
-	path = work
-	url = git@github.com:jacktuck/work-dotfiles.git
-	ignore = all
