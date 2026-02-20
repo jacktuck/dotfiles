@@ -2,7 +2,7 @@
 # Interactive shell configuration
 # ------------------------------------------------
 
-file=~/work-dotfiles/source
+file=~/work-dotfiles/.source
 [ -f "$file" ] && source "$file"
 unset file
 
