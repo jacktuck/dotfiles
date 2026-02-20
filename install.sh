@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+cd "$(dirname "${BASH_SOURCE}")";
+
+echo "Creating dirs"
+mkdir -p ~/code
+
+echo "Cloning work dotfiles"
+[ ! -d ~/work-dotfiles ] && git clone git@github.com:jacktuck/work-dotfiles.git ~/work-dotfiles
+
+echo "Installing brew"
+if ! command -v brew &>/dev/null; then
+    echo "Homebrew not found. Installing..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Add Homebrew to PATH immediately for this shell
+    if [[ -x "/opt/homebrew/bin/brew" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"  # Apple Silicon
+    elif [[ -x "/usr/local/bin/brew" ]]; then
+        eval "$(/usr/local/bin/brew shellenv)"  # Intel
+    fi
+else
+    echo "Homebrew already installed, skipping."
+fi
+
+echo "Installing dependencies"
+brew bundle install --no-upgrade
+
+echo "Stowing files"
+stow --adopt .
