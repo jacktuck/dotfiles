@@ -27,3 +27,4 @@ brew bundle install --no-upgrade
 
 echo "Stowing files"
 stow --adopt .
+

@@ -59,5 +59,4 @@ return {
       desc = "Undotree",
     },
   },
-
 }
