@@ -1,14 +1,14 @@
-# ------------------------------------------------
-# Interactive shell configuration
-# ------------------------------------------------
+[[ $- == *i* ]] || return
 
-file=~/work-dotfiles/.source
-[ -f "$file" ] && source "$file"
-unset file
+[[ -f ~/work-dotfiles/.source ]] && source ~/work-dotfiles/.source
 
-FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
-autoload -Uz compinit
-compinit
+typeset -gU fpath FPATH
+for dir in \
+    "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions" \
+    "/usr/local/share/zsh/site-functions"; do
+    [[ -d $dir ]] && fpath=($dir $fpath)
+done
+autoload -Uz compinit && compinit -u
 
 # Zinit setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -34,15 +34,13 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
 # Lazy load pyenv
-if type pyenv > /dev/null; then
+if command -v pyenv > /dev/null; then
     export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
-    function pyenv() {
+    pyenv() {
         unset -f pyenv
         eval "$(command pyenv init -)"
-        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
-            eval "$(command pyenv virtualenv-init -)"
-        fi
-        pyenv $@
+        [[ -n ${ZSH_PYENV_LAZY_VIRTUALENV:-} ]] && eval "$(command pyenv virtualenv-init -)"
+        command pyenv "$@"
     }
 fi
 
@@ -68,14 +66,16 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # Switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-# Disable windows opening animations
-defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
-
-# Prevent the Fn key from starting Dictation
-defaults write com.apple.HIToolbox AppleFnUsageType -int 0
-
-# Mission control workaround for Aerospace
-defaults write com.apple.dock expose-group-apps -bool true 
+_macos_tune_defaults() {
+    [[ ${OSTYPE} == darwin* ]] || return
+    command -v defaults > /dev/null || return
+    [[ -n ${__ZSH_MAC_DEFAULTS:-} ]] && return
+    defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+    defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+    defaults write com.apple.dock expose-group-apps -bool true
+    export __ZSH_MAC_DEFAULTS=1
+}
+_macos_tune_defaults
 
 # Lazy directory switching
 setopt auto_cd 
