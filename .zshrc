@@ -27,7 +27,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait="1" lucid
 zinit light Aloxaf/fzf-tab
 
-eval "$(starship init zsh)"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
