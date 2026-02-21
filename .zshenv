@@ -1,12 +1,9 @@
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-typeset -gxU PATH path
-path=(
-    "$HOME/bin"
-    "$HOME/.opencode/bin"
-    "$HOME/.bin"
-    $path
-)
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.opencode/bin" ] && PATH="$HOME/.opencode/bin:$PATH"
+[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
+export PATH
 
 export TERM="${TERM:-xterm-256color}"
 export EDITOR="${EDITOR:-vim}"

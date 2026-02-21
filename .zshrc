@@ -2,12 +2,8 @@
 
 [[ -f ~/work-dotfiles/.source ]] && source ~/work-dotfiles/.source
 
-typeset -gU fpath FPATH
-for dir in \
-    "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions" \
-    "/usr/local/share/zsh/site-functions"; do
-    [[ -d $dir ]] && fpath=($dir $fpath)
-done
+[[ -d ${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions ]] && FPATH="${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions:${FPATH}"
+[[ -d /usr/local/share/zsh/site-functions ]] && FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 autoload -Uz compinit && compinit -u
 
 # Zinit setup
@@ -66,16 +62,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # Switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-_macos_tune_defaults() {
-    [[ ${OSTYPE} == darwin* ]] || return
-    command -v defaults > /dev/null || return
-    [[ -n ${__ZSH_MAC_DEFAULTS:-} ]] && return
+if command -v defaults > /dev/null; then
     defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
     defaults write com.apple.HIToolbox AppleFnUsageType -int 0
     defaults write com.apple.dock expose-group-apps -bool true
-    export __ZSH_MAC_DEFAULTS=1
-}
-_macos_tune_defaults
+fi
 
 # Lazy directory switching
 setopt auto_cd 
