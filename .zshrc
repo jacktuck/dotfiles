@@ -23,6 +23,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait="1" lucid
 zinit light Aloxaf/fzf-tab
 
+PURE_PROMPT_SYMBOL='$'
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
