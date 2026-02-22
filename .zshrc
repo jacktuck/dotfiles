@@ -1,4 +1,6 @@
-[[ $- == *i* ]] || return
+if [[ $- != *i* ]]; then
+  return
+fi
 
 [[ -f ~/work-dotfiles/.source ]] && source ~/work-dotfiles/.source
 
@@ -23,12 +25,10 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait="1" lucid
 zinit light Aloxaf/fzf-tab
 
-PURE_PROMPT_SYMBOL='$'
+zstyle ':prompt:pure:prompt:success' color '242'
+zstyle ':prompt:pure:prompt:error' color '242'
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
-
-export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
 
 # Lazy load pyenv
 if command -v pyenv > /dev/null; then
@@ -44,7 +44,6 @@ fi
 # Keybindings
 bindkey -e
 bindkey '^I'   complete-word       # tab          | complete
-bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward
