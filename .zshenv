@@ -23,6 +23,8 @@ export NODE_REPL_HISTORY="$HOME/.node_history"
 export NODE_REPL_HISTORY_SIZE='32768'
 export NODE_REPL_MODE='sloppy'
 
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+
 export PYTHONIOENCODING='UTF-8'
 export LESS_TERMCAP_md=$'\e[1;33m'
 export LESS='-Xr'
