@@ -23,9 +23,19 @@ return {
       for _, name in ipairs(list) do
         local p = registry.get_package(name)
         if not p:is_installed() then
-          vim.schedule(function() print("[Mason] Installing " .. name) end)
-          p:once("install:success", function() vim.schedule(function() print("[Mason] Installed " .. name) end) end)
-          p:once("install:failed", function() vim.schedule(function() print("[Mason] Failed " .. name) end) end)
+          vim.schedule(function()
+            print("[Mason] Installing " .. name)
+          end)
+          p:once("install:success", function()
+            vim.schedule(function()
+              print("[Mason] Installed " .. name)
+            end)
+          end)
+          p:once("install:failed", function()
+            vim.schedule(function()
+              print("[Mason] Failed " .. name)
+            end)
+          end)
           p:install()
         end
       end
