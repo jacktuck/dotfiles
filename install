@@ -2,15 +2,15 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-echo "Creating dirs"
+echo "Ensuring ~/code exists"
 mkdir -p ~/code
 
-echo "Cloning work dotfiles"
+echo "Ensuring ~/work-dotfiles is cloned"
 [ ! -d ~/work-dotfiles ] && git clone git@github.com:jacktuck/work-dotfiles.git ~/work-dotfiles
 
-echo "Installing brew"
+echo "Checking Homebrew"
 if ! command -v brew &>/dev/null; then
-    echo "Homebrew not found. Installing..."
+    echo "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # Add Homebrew to PATH immediately for this shell
     if [[ -x "/opt/homebrew/bin/brew" ]]; then
@@ -19,12 +19,18 @@ if ! command -v brew &>/dev/null; then
         eval "$(/usr/local/bin/brew shellenv)"  # Intel
     fi
 else
-    echo "Homebrew already installed, skipping."
+    echo "Homebrew already installed; skipping"
 fi
 
-echo "Installing dependencies"
+echo "Installing Brew bundle dependencies"
 brew bundle install --no-upgrade
 
-echo "Stowing files"
+echo "Stowing dotfiles into $HOME"
 stow --adopt .
 
+echo "Setting up tmux plugins (TPM)"
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+fi
+[ -x "$TPM_DIR/bin/install_plugins" ] && "$TPM_DIR/bin/install_plugins"

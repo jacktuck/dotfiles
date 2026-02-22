@@ -3,4 +3,5 @@ iterm2
 nvim/tmp
 nvim/plugged
 alacritty/themes
+tmux/plugins
 yarn
