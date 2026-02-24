@@ -38,10 +38,6 @@ zinit ice as"command" from"gh-r" \
 
 zinit light starship/starship
 
-export ESPANSO_CONFIG="$HOME/.config/expanso/default.yml"
-if ! pgrep -x espanso >/dev/null; then
-    espanso service start --unmanaged &> /dev/null
-fi
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold"
