@@ -43,6 +43,9 @@ vim.loader.enable()
 --Change mapleader
 vim.g.mapleader = " "
 
+-- Map double leader to switch to alternate buffer
+vim.keymap.set("n", "<leader><leader>", ":b#<CR>", { noremap = true, silent = true, desc = "Alternate buffer" })
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({

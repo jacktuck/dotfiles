@@ -58,5 +58,12 @@ return {
       end,
       desc = "Undotree",
     },
+    {
+      "<leader>q",
+      function()
+        require("fzf-lua").quickfix({})
+      end,
+      desc = "Find files",
+    },
   },
 }

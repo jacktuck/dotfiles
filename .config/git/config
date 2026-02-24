@@ -11,6 +11,7 @@
 
 	# Show the diff 
 	d = diff
+	dr = diff --no-ext-diff
 	ds = diff --staged
 
 	# Pull in remote changes for the current repository and all its submodules.
@@ -111,9 +112,7 @@
 	untrackedCache = true
 
 	editor = nvim
-
-[diff]
-	external = difft --display=inline --override="*.yaml:text" --override="package-lock.json:text" --override="yarn.lock:text"
+	pager = delta
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -139,6 +138,15 @@
 [diff "bin"]
 	# Use `hexdump` to diff binary files.
 	textconv = hexdump -v -C
+
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = DarkNeon
+
+[interactive]
+	diffFilter = delta --color-only
 
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/

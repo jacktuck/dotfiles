@@ -7,6 +7,7 @@ return {
         "typescript-language-server",
         "lua-language-server",
         "bash-language-server",
+        "docker-language-server",
         "docker-compose-language-service",
         "pyright",
         "rust-analyzer",
@@ -16,6 +17,8 @@ return {
     }
   end,
   config = function(_, opts)
+    vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath("data") .. "/mason/bin"
+
     local mason = require("mason")
     local registry = require("mason-registry")
     mason.setup()
