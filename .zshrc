@@ -8,7 +8,6 @@ fi
 [[ -d /usr/local/share/zsh/site-functions ]] && FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 autoload -Uz compinit && compinit -u
 
-# Zinit setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
 [ ! -d "$ZINIT_HOME/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -30,7 +29,6 @@ zstyle ':prompt:pure:prompt:error' color '242'
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
-# Lazy load pyenv
 if command -v pyenv > /dev/null; then
     export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
     pyenv() {
@@ -41,9 +39,8 @@ if command -v pyenv > /dev/null; then
     }
 fi
 
-# Keybindings
 bindkey -e
-bindkey '^I'   complete-word       # tab          | complete
+bindkey '^I'   complete-word
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward
@@ -51,13 +48,9 @@ bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
 bindkey '[[' vi-cmd-mode
 
-# Disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
-# Set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
-# Set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# Switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
 if command -v defaults > /dev/null; then
@@ -69,7 +62,6 @@ fi
 # Lazy directory switching
 setopt auto_cd 
 
-# Auto-history settings
 # Share history across zsh sessions (replaces extended_history and inc_append_history)
 setopt SHARE_HISTORY 
 # Ignore duplicate commands in the history list
@@ -83,7 +75,8 @@ setopt HIST_VERIFY
 # Disable the beep sound on history expansion errors or completion
 setopt NO_HIST_BEEP
 
-# -------------------------
-# FZF (keep exactly as-is)
-# -------------------------
+if command -v fnm > /dev/null; then
+    eval "$(fnm env --use-on-cd)"
+fi
+
 source <(fzf --zsh)
