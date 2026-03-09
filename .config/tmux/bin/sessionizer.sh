@@ -1,4 +1,4 @@
-DIRS=("dotfiles" "sandbox")
+DIRS=("dotfiles" "work-dotfiles" "sandbox")
 cd ~
 for dir in $(find code projects -mindepth 2 -maxdepth 2 -type d | grep -v node_modules);
     do DIRS+=($dir);
