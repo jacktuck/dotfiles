@@ -1,5 +1,5 @@
 [alias]
-	force = push --force-with-lease
+	fpush = push --force-with-lease
 
 	b = "!git branch | grep -i '*"'
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
