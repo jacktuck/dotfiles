@@ -8,6 +8,8 @@ return {
       ensure_installed = {
         "typescript",
         "javascript",
+        "markdown",
+        "markdown_inline",
         "python",
         "json",
         "java",

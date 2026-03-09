@@ -20,6 +20,7 @@ local options = {
   list = true,
   hlsearch = true,
   incsearch = true,
+  conceallevel = 2,
   laststatus = 2,
   ruler = true,
   shortmess = "csCFSW",
