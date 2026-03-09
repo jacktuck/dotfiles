@@ -14,7 +14,7 @@ return {
         git_icons = false,
       },
       grep = {
-        rg_opts = "--hidden --line-number --column --smart-case",
+        rg_opts = "--hidden --glob '!.git' --glob '!dist' --glob '!build' --line-number --column --smart-case",
       },
       buffers = {
         sort_mru = true,
