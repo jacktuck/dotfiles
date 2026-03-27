@@ -83,3 +83,11 @@ if command -v fnm > /dev/null; then
 fi
 
 source <(fzf --zsh)
+
+findrename () {
+        fd $1 | xargs -n 1 rename "s/$1/$2/g"
+}
+
+findreplace () {
+        rg $1 --files-with-matches -0 | xargs -0 gsed -i "s/$1/$2/g"
+}
