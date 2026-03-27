@@ -32,6 +32,7 @@ local options = {
   relativenumber = true,
   pumheight = 10,
   signcolumn = "yes",
+  spell = true,
 }
 
 for k, v in pairs(options) do
