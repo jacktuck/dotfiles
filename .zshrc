@@ -4,6 +4,9 @@ fi
 
 [[ -f ~/work-dotfiles/.source ]] && source ~/work-dotfiles/.source
 
+# pipx binaries
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+
 [[ -d ${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions ]] && FPATH="${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions:${FPATH}"
 [[ -d /usr/local/share/zsh/site-functions ]] && FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 autoload -Uz compinit && compinit -u
