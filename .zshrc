@@ -37,7 +37,7 @@ if command -v pyenv > /dev/null; then
     pyenv() {
         unset -f pyenv
         eval "$(command pyenv init -)"
-        [[ -n ${ZSH_PYENV_LAZY_VIRTUALENV:-} ]] && eval "$(command pyenv virtualenv-init -)"
+        eval "$(command pyenv virtualenv-init -)"
         command pyenv "$@"
     }
 fi
