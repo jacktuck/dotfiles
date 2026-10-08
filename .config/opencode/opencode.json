@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
+  "share": "disabled",
+  "autoupdate": false,
+  "permission": {
+    "doom_loop": "ask",
+    "bash": {
+      "*": "allow",
+      "ssh*": "ask",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "git stage*": "deny",
+      "*ansible-playbook*": "ask"
+    },
+    "external_directory": {
+      "*": "ask",
+      "~/code/**": "allow",
+      "/tmp/**": "allow"
+    }
+  }
+}
