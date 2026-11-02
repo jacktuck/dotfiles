@@ -54,6 +54,13 @@ inherit-env-vars = true
 [exec.env-vars]
 PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
+[workspace-to-monitor-force-assignment]
+1 = '1' # First monitor (ordered left to right)
+2 = '1'
+3 = '1'
+4 = '1'
+5 = ['2', '1'] # Second monitor when available, otherwise first
+
 [mode.main.binding]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
