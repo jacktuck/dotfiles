@@ -8,14 +8,16 @@
     "bash": {
       "*": "allow",
       "ssh*": "ask",
-      "git commit*": "deny",
-      "git push*": "deny",
-      "git stage*": "deny",
+      "git add*": "ask",
+      "git stage*": "ask",
+      "git commit*": "ask",
+      "git push*": "ask",
       "*ansible-playbook*": "ask"
     },
     "external_directory": {
       "*": "ask",
       "~/code/**": "allow",
+      "~/work/**": "allow",
       "~/ai/**": "allow",
       "/tmp/**": "allow"
     }
