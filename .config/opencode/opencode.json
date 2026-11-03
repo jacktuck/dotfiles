@@ -7,12 +7,9 @@
     "doom_loop": "ask",
     "bash": {
       "*": "allow",
-      "ssh*": "ask",
-      "git add*": "ask",
-      "git stage*": "ask",
-      "git commit*": "ask",
-      "git push*": "ask",
-      "*ansible-playbook*": "ask"
+      "*git*push*": "ask",
+      "*ansible-playbook*": "ask",
+      "*ssh*": "ask"
     },
     "external_directory": {
       "*": "ask",
